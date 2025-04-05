@@ -16,9 +16,9 @@ OUTPUT_DIR = "reasoning_chains"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Model ID for DeepSeek-R1-Distill-Llama-8B
-# MODEL_ID = "deepseek-ai/deepseek-llama-8b-r1-distill"
+MODEL_ID = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
 # use Pythia 1B
-MODEL_ID = "EleutherAI/pythia-160m"
+# MODEL_ID = "EleutherAI/pythia-160m"
 def load_model_and_tokenizer():
     """Load the DeepSeek-R1-Distill-Llama-8B model and tokenizer"""
     print(f"Loading model {MODEL_ID}...")
@@ -41,8 +41,9 @@ def load_model_and_tokenizer():
 
 def generate_reasoning_chain(model, tokenizer, task_text, max_tokens=500):
     """Generate a reasoning chain for a given task"""
-    # Create prompt
-    prompt = task_text
+    # Create prompt with correct user/assistant tokens
+    prompt = f"<｜User｜>{task_text}<｜Assistant｜>"
+    print(prompt)
     
     # Tokenize
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
