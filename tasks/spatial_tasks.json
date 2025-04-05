@@ -1,0 +1,152 @@
+[
+  {
+    "id": "spatial_0",
+    "category": "Spatial Reasoning",
+    "problem": "A cube is painted red on all faces and then cut into 27 equal smaller cubes. How many of these smaller cubes have exactly two red faces?"
+  },
+  {
+    "id": "spatial_1",
+    "category": "Spatial Reasoning",
+    "problem": "If you fold a square piece of paper in half vertically, then fold it in half horizontally, and then cut off the bottom-right corner of the folded paper, how many holes will the paper have when unfolded?"
+  },
+  {
+    "id": "spatial_2",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular prism has dimensions 3\u00d74\u00d75. A plane cuts through the prism passing through the center of the prism and parallel to one of the faces. What is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_3",
+    "category": "Spatial Reasoning",
+    "problem": "Four identical cubes are arranged in a 2\u00d72 grid. If you view this arrangement from directly above, from the front, and from the right side, what is the maximum number of cubes that could appear to be visible from all three perspectives combined?"
+  },
+  {
+    "id": "spatial_4",
+    "category": "Spatial Reasoning",
+    "problem": "A cylindrical hole of radius 2 cm is drilled through the center of a sphere of radius 5 cm. What is the volume of the remaining portion of the sphere?"
+  },
+  {
+    "id": "spatial_5",
+    "category": "Spatial Reasoning",
+    "problem": "A triangular pyramid has an equilateral triangle as its base with side length 6 cm. If all three edges from the apex to the base vertices have length 8 cm, what is the height of the pyramid?"
+  },
+  {
+    "id": "spatial_6",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with edge length 4 cm is cut by a plane that passes through two diagonally opposite vertices of the cube and through the midpoints of two edges that do not contain either of those vertices. What is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_7",
+    "category": "Spatial Reasoning",
+    "problem": "A regular octahedron has all edges of length 4 cm. What is the distance between two opposite vertices of the octahedron?"
+  },
+  {
+    "id": "spatial_8",
+    "category": "Spatial Reasoning",
+    "problem": "Three unit cubes are arranged in an L-shape (like a 3D Tetris piece). What is the minimum number of additional unit cubes needed to complete a 2\u00d72\u00d72 cube?"
+  },
+  {
+    "id": "spatial_9",
+    "category": "Spatial Reasoning",
+    "problem": "A right circular cone with height 12 cm and base radius 5 cm is cut by a plane parallel to the base at a height of 8 cm from the base. What is the radius of the resulting circular cross-section?"
+  },
+  {
+    "id": "spatial_10",
+    "category": "Spatial Reasoning",
+    "problem": "A 3\u00d73\u00d73 cube is built from 27 unit cubes. If the large cube is dipped in paint so that all the exterior faces are painted, how many of the small unit cubes have exactly two painted faces?"
+  },
+  {
+    "id": "spatial_11",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular sheet of paper has dimensions 8\u00d711. If you fold the paper so that one corner touches the opposite corner, what is the length of the crease formed?"
+  },
+  {
+    "id": "spatial_12",
+    "category": "Spatial Reasoning",
+    "problem": "A right circular cylinder with radius 3 cm and height 8 cm is cut by a plane that passes through a diameter of the top face and is tangent to the bottom face. What is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_13",
+    "category": "Spatial Reasoning",
+    "problem": "If you have a cube with side length 2, what is the maximum number of non-overlapping spheres of radius 0.5 that can fit inside the cube?"
+  },
+  {
+    "id": "spatial_14",
+    "category": "Spatial Reasoning",
+    "problem": "A tetrahedron has vertices at points (0,0,0), (1,0,0), (0,1,0), and (0,0,1). If a plane cuts this tetrahedron parallel to the xy-plane at z = 0.5, what is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_15",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular box has dimensions 4\u00d76\u00d78. Find the length of the longest straight line that can be drawn from one vertex of the box to another vertex."
+  },
+  {
+    "id": "spatial_16",
+    "category": "Spatial Reasoning",
+    "problem": "A square pyramid has a base with side length 10 cm and a height of 12 cm. What is the area of a cross-section formed by a plane that is parallel to the base and 4 cm above it?"
+  },
+  {
+    "id": "spatial_17",
+    "category": "Spatial Reasoning",
+    "problem": "If you rotate a 30-60-90 triangle around its shortest side, what 3D shape is formed and what is its volume if the shortest side has length 4?"
+  },
+  {
+    "id": "spatial_18",
+    "category": "Spatial Reasoning",
+    "problem": "A 4\u00d74\u00d74 cube is made up of 64 unit cubes. If the large cube is carved out so that all cubes that share a face, edge, or corner with the center of the large cube are removed, how many unit cubes remain?"
+  },
+  {
+    "id": "spatial_19",
+    "category": "Spatial Reasoning",
+    "problem": "An ant is at one vertex of a cube with side length 1. What is the shortest distance the ant must crawl along the surface of the cube to reach the opposite vertex?"
+  },
+  {
+    "id": "spatial_20",
+    "category": "Spatial Reasoning",
+    "problem": "If you draw all diagonals of a regular hexagon, how many triangles are formed in total (counting all triangles of any size)?"
+  },
+  {
+    "id": "spatial_21",
+    "category": "Spatial Reasoning",
+    "problem": "A solid wooden cube with side length 10 cm has a cylindrical hole of diameter 6 cm drilled through the center of the cube perpendicular to one of the faces. What is the volume of the remaining wood?"
+  },
+  {
+    "id": "spatial_22",
+    "category": "Spatial Reasoning",
+    "problem": "A regular octahedron has all edges of length 4 units. What is the volume of the octahedron?"
+  },
+  {
+    "id": "spatial_23",
+    "category": "Spatial Reasoning",
+    "problem": "Two cubes with side lengths 3 cm and 5 cm are positioned so that one vertex of each cube coincides, and corresponding edges from this vertex are aligned along the same lines. What is the volume of the intersection of the two cubes?"
+  },
+  {
+    "id": "spatial_24",
+    "category": "Spatial Reasoning",
+    "problem": "A semicircle with diameter 8 cm is revolved around its diameter. What is the volume of the resulting 3D shape?"
+  },
+  {
+    "id": "spatial_25",
+    "category": "Spatial Reasoning",
+    "problem": "Three circles with radii 3, 4, and 5 are placed so that each circle is externally tangent to the other two. What is the area of the region enclosed by the three circles?"
+  },
+  {
+    "id": "spatial_26",
+    "category": "Spatial Reasoning",
+    "problem": "A ladder 10 meters long leans against a vertical wall with its base 6 meters from the wall. If the top of the ladder slips down 2 meters, how far will the bottom of the ladder slide away from the wall?"
+  },
+  {
+    "id": "spatial_27",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular sheet of paper ABCD has dimensions 6\u00d78. The sheet is folded so that corner A touches the midpoint of side CD. What is the length of the crease formed by this fold?"
+  },
+  {
+    "id": "spatial_28",
+    "category": "Spatial Reasoning",
+    "problem": "A solid sphere of radius 5 cm has a mass of 500 grams. A cylindrical hole with radius 2 cm is drilled through the center of the sphere. What is the mass of the remaining solid?"
+  },
+  {
+    "id": "spatial_29",
+    "category": "Spatial Reasoning",
+    "problem": "An ant starts at one corner of a cube and wants to reach the opposite corner. If the ant can only walk along the edges of the cube, what is the minimum number of edges the ant must traverse?"
+  }
+]

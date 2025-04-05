@@ -1,0 +1,152 @@
+[
+  {
+    "id": "scientific_0",
+    "category": "Scientific Reasoning",
+    "problem": "A researcher notices that patients who consume a diet high in blueberries show lower rates of cognitive decline. The researcher concludes that blueberries prevent cognitive decline. What is the main flaw in this reasoning, and how could the researcher design a better study to test this hypothesis?"
+  },
+  {
+    "id": "scientific_1",
+    "category": "Scientific Reasoning",
+    "problem": "A pharmaceutical company tests a new pain medication on 1000 patients with chronic back pain. They find that 60% report reduced pain compared to 40% in the placebo group. The p-value is 0.03. What conclusions can reasonably be drawn from this data, and what additional information would be needed to determine if the medication should be approved for general use?"
+  },
+  {
+    "id": "scientific_2",
+    "category": "Scientific Reasoning",
+    "problem": "A biologist is studying the effects of a pesticide on bee populations. In controlled environments, she observes a 30% reduction in hive productivity when the pesticide is present. However, when conducting field studies, no significant difference is observed. Propose three possible explanations for this discrepancy and describe how you would test each explanation."
+  },
+  {
+    "id": "scientific_3",
+    "category": "Scientific Reasoning",
+    "problem": "Scientists notice that in regions with higher chocolate consumption, there are lower rates of heart disease. Based on this observation, what are three different hypotheses that could explain this correlation, and how would you design experiments to distinguish between them?"
+  },
+  {
+    "id": "scientific_4",
+    "category": "Scientific Reasoning",
+    "problem": "A new teaching method is implemented in 10 schools, and test scores improve by an average of 15%. The department of education wants to implement this method nationwide. What confounding variables might explain the improvement besides the teaching method itself? How would you design a study to control for these variables?"
+  },
+  {
+    "id": "scientific_5",
+    "category": "Scientific Reasoning",
+    "problem": "A researcher claims to have developed a plant fertilizer that increases crop yield by 25%. They tested it on 100 corn plants in a greenhouse, comparing it to 100 plants without the fertilizer. Identify three limitations of this study design and propose improvements that would provide more convincing evidence of the fertilizer's effectiveness."
+  },
+  {
+    "id": "scientific_6",
+    "category": "Scientific Reasoning",
+    "problem": "An ecologist is studying butterfly migration patterns and notices that in years with higher-than-average rainfall, butterflies tend to migrate earlier. Describe how you would design a controlled experiment to test whether rainfall directly affects migration timing or if other factors are involved."
+  },
+  {
+    "id": "scientific_7",
+    "category": "Scientific Reasoning",
+    "problem": "A medical researcher observes that patients who sleep less than 6 hours per night have higher rates of heart disease. What are the possible causal relationships between sleep and heart disease? Outline a research program that could distinguish between these possibilities."
+  },
+  {
+    "id": "scientific_8",
+    "category": "Scientific Reasoning",
+    "problem": "Three different teams of scientists studying climate change have produced models predicting temperature increases of 1.5\u00b0C, 2.7\u00b0C, and 4.1\u00b0C respectively by 2100. What factors might explain these differences, and how should policymakers evaluate these competing predictions?"
+  },
+  {
+    "id": "scientific_9",
+    "category": "Scientific Reasoning",
+    "problem": "A psychologist claims that listening to classical music improves mathematical ability. The study involved 50 university students who listened to Mozart for 10 minutes before taking a math test, and their scores were compared to their performance on a similar test without music. Critically evaluate this experimental design and suggest improvements."
+  },
+  {
+    "id": "scientific_10",
+    "category": "Scientific Reasoning",
+    "problem": "Scientists observe that a previously unknown virus is present in 80% of patients with a rare neurological disorder, but only in 5% of the general population. What are the possible explanations for this association, and what studies would you conduct to determine if the virus causes the disorder?"
+  },
+  {
+    "id": "scientific_11",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds that children who play violent video games show more aggressive behavior than those who don't. The researchers conclude that violent games cause aggression. Identify possible alternative explanations for this finding and explain what kind of study would better establish causation."
+  },
+  {
+    "id": "scientific_12",
+    "category": "Scientific Reasoning",
+    "problem": "An agricultural scientist wants to determine if a new irrigation system conserves water while maintaining crop yields. Describe a controlled experimental design that would provide strong evidence about the effectiveness of the new system compared to traditional irrigation methods."
+  },
+  {
+    "id": "scientific_13",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist observes an unexpected pattern in particle collision data that doesn't match current theoretical predictions. Outline the process this physicist should follow to determine whether this represents a new discovery or an experimental error."
+  },
+  {
+    "id": "scientific_14",
+    "category": "Scientific Reasoning",
+    "problem": "A new archaeological finding suggests humans arrived in North America 5,000 years earlier than previously thought. The evidence consists of stone tools and carbon-dated organic material. What questions should be asked about this evidence before accepting this new timeline, and what additional evidence would strengthen or weaken this claim?"
+  },
+  {
+    "id": "scientific_15",
+    "category": "Scientific Reasoning",
+    "problem": "Researchers observe that neighborhoods with more trees have lower crime rates. They propose planting trees in high-crime areas to reduce crime. Evaluate this proposal, considering alternative explanations for the correlation and how one might test the causal relationship."
+  },
+  {
+    "id": "scientific_16",
+    "category": "Scientific Reasoning",
+    "problem": "A marine biologist notices that coral reefs near populated islands show more bleaching than reefs near uninhabited islands. Outline a research plan to determine whether human activity is causing the increased bleaching, and if so, which specific activities are most harmful."
+  },
+  {
+    "id": "scientific_17",
+    "category": "Scientific Reasoning",
+    "problem": "A study reports that a specific genetic variant is associated with increased intelligence. The variant is found in 15% of the studied population and correlates with an average 5-point increase in IQ scores. What limitations should be considered when interpreting these results, and what follow-up studies would be appropriate?"
+  },
+  {
+    "id": "scientific_18",
+    "category": "Scientific Reasoning",
+    "problem": "A nutritionist conducts a study where 200 participants follow either a low-carb or low-fat diet for six months. The low-carb group loses an average of 12 pounds, while the low-fat group loses an average of 8 pounds. What factors beyond the diet composition might explain this difference, and how could the study design be improved?"
+  },
+  {
+    "id": "scientific_19",
+    "category": "Scientific Reasoning",
+    "problem": "Two pharmaceutical companies produce vaccines for the same virus. Company A reports 95% efficacy based on a trial with 40,000 participants across 5 countries. Company B reports 89% efficacy based on a trial with 20,000 participants in one country. How should public health officials evaluate these results when deciding which vaccine to purchase?"
+  },
+  {
+    "id": "scientific_20",
+    "category": "Scientific Reasoning",
+    "problem": "A geologist hypothesizes that a certain rock formation was created by ancient volcanic activity. What types of evidence would support or refute this hypothesis, and how could modern analytical techniques be applied to test it?"
+  },
+  {
+    "id": "scientific_21",
+    "category": "Scientific Reasoning",
+    "problem": "An astronomer detects an unusual radio signal that appears to be coming from a nearby star system. The signal does not match known natural phenomena. Describe the process of scientific investigation that should be followed before concluding that this represents evidence of extraterrestrial intelligence."
+  },
+  {
+    "id": "scientific_22",
+    "category": "Scientific Reasoning",
+    "problem": "A city implements a new traffic management system and observes a 20% reduction in average commute times over the following month. What variables might confound this result, and how could you design a study to determine the actual impact of the new system?"
+  },
+  {
+    "id": "scientific_23",
+    "category": "Scientific Reasoning",
+    "problem": "Paleontologists discover fossilized microorganisms in Martian rock samples that resemble ancient Earth bacteria. What sequence of tests and analyses would be necessary to determine whether these represent evidence of past life on Mars versus contamination or non-biological structures?"
+  },
+  {
+    "id": "scientific_24",
+    "category": "Scientific Reasoning",
+    "problem": "A researcher develops a hypothesis that exposure to a specific frequency of sound waves can improve memory consolidation during sleep. Design an experimental protocol to test this hypothesis, including appropriate controls and measurements."
+  },
+  {
+    "id": "scientific_25",
+    "category": "Scientific Reasoning",
+    "problem": "Scientists observe that areas with high air pollution have higher rates of respiratory diseases. They want to determine if different types of particulate matter (PM2.5, PM10, etc.) have different health impacts. Design a study that could differentiate the effects of various pollutants while controlling for socioeconomic and other environmental factors."
+  },
+  {
+    "id": "scientific_26",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist proposes a modification to Einstein's theory of general relativity that would explain certain astronomical observations without invoking dark matter. What observational or experimental evidence would be required to support this new theory over the standard model?"
+  },
+  {
+    "id": "scientific_27",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds that people who meditate regularly have different brain activity patterns than non-meditators. The researchers conclude that meditation changes brain function. What are the limitations of this conclusion, and how could researchers better establish whether meditation causes these brain changes?"
+  },
+  {
+    "id": "scientific_28",
+    "category": "Scientific Reasoning",
+    "problem": "An economist notices that countries with higher chocolate consumption have more Nobel Prize winners per capita. Assuming this correlation is accurate, explain why concluding that chocolate consumption causes Nobel Prize achievement would be problematic. What alternative explanations exist, and how might they be tested?"
+  },
+  {
+    "id": "scientific_29",
+    "category": "Scientific Reasoning",
+    "problem": "A conservation biologist wants to determine whether a captive breeding program for an endangered bird species will be successful if implemented. What preliminary research should be conducted, what metrics would indicate success, and how should the program be designed to test its effectiveness while maximizing conservation outcomes?"
+  }
+]

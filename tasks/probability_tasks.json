@@ -1,0 +1,152 @@
+[
+  {
+    "id": "probability_0",
+    "category": "Probabilistic Thinking",
+    "problem": "A fair six-sided die is rolled 10 times. What is the probability that the number 6 appears exactly twice in these 10 rolls?"
+  },
+  {
+    "id": "probability_1",
+    "category": "Probabilistic Thinking",
+    "problem": "In a class of 30 students, what is the probability that at least two students share the same birthday? Assume there are 365 days in a year and birthdays are distributed uniformly throughout the year."
+  },
+  {
+    "id": "probability_2",
+    "category": "Probabilistic Thinking",
+    "problem": "You have two fair coins. One is a regular coin with heads and tails. The other is a biased coin that comes up heads 75% of the time. You randomly select one coin and flip it twice. Both flips come up heads. What is the probability that you selected the biased coin?"
+  },
+  {
+    "id": "probability_3",
+    "category": "Probabilistic Thinking",
+    "problem": "A bag contains 5 red balls, 3 green balls, and 2 blue balls. If you draw 3 balls at random without replacement, what is the probability of getting exactly 2 red balls and 1 green ball?"
+  },
+  {
+    "id": "probability_4",
+    "category": "Probabilistic Thinking",
+    "problem": "A test for a certain disease has a false positive rate of 2% and a false negative rate of 5%. If 1% of the population has this disease, what is the probability that a person who tests positive actually has the disease?"
+  },
+  {
+    "id": "probability_5",
+    "category": "Probabilistic Thinking",
+    "problem": "Three fair six-sided dice are rolled. What is the probability that the sum of the numbers shown is exactly 10?"
+  },
+  {
+    "id": "probability_6",
+    "category": "Probabilistic Thinking",
+    "problem": "A standard deck of 52 cards is shuffled. You draw cards one by one without replacement until you get an ace. What is the expected number of cards you will need to draw?"
+  },
+  {
+    "id": "probability_7",
+    "category": "Probabilistic Thinking",
+    "problem": "In a group of 5 people, each person randomly selects one of the other 4 people to give a gift to. What is the probability that at least one person receives no gifts?"
+  },
+  {
+    "id": "probability_8",
+    "category": "Probabilistic Thinking",
+    "problem": "A fair coin is flipped until either the pattern HHT (heads, heads, tails) or the pattern HTH (heads, tails, heads) appears. What is the probability that HHT appears before HTH?"
+  },
+  {
+    "id": "probability_9",
+    "category": "Probabilistic Thinking",
+    "problem": "Five cards are dealt from a standard 52-card deck. What is the probability of getting exactly two pair (e.g., two kings, two queens, and one other card)?"
+  },
+  {
+    "id": "probability_10",
+    "category": "Probabilistic Thinking",
+    "problem": "A jar contains 10 red marbles and 8 blue marbles. You draw marbles one at a time without replacement until you have drawn all marbles of the same color. What is the expected number of marbles you will draw?"
+  },
+  {
+    "id": "probability_11",
+    "category": "Probabilistic Thinking",
+    "problem": "Two players take turns flipping a fair coin. The first player who gets heads wins. If player A goes first, what is the probability that player A wins?"
+  },
+  {
+    "id": "probability_12",
+    "category": "Probabilistic Thinking",
+    "problem": "A bag contains 3 red balls and 2 white balls. You draw balls one by one without replacement. If the first ball is red, what is the probability that the third ball is also red?"
+  },
+  {
+    "id": "probability_13",
+    "category": "Probabilistic Thinking",
+    "problem": "In a room of n people, what is the probability that at least one person shares a birthday with you? Assume there are 365 days in a year and birthdays are distributed uniformly throughout the year."
+  },
+  {
+    "id": "probability_14",
+    "category": "Probabilistic Thinking",
+    "problem": "You roll a fair six-sided die repeatedly and keep a running sum. What is the probability that you reach exactly 20 before exceeding 20?"
+  },
+  {
+    "id": "probability_15",
+    "category": "Probabilistic Thinking",
+    "problem": "A box contains 20 light bulbs, of which 4 are defective. If 6 bulbs are selected at random, what is the probability that at most 1 is defective?"
+  },
+  {
+    "id": "probability_16",
+    "category": "Probabilistic Thinking",
+    "problem": "Two players, A and B, take turns rolling a fair six-sided die. The first person to roll a 6 wins. If A goes first, what is the probability that B wins?"
+  },
+  {
+    "id": "probability_17",
+    "category": "Probabilistic Thinking",
+    "problem": "A multiple-choice test has 10 questions, each with 4 possible answers, only one of which is correct. A student guesses randomly on each question. What is the probability that the student gets at least 7 questions correct?"
+  },
+  {
+    "id": "probability_18",
+    "category": "Probabilistic Thinking",
+    "problem": "Three friends play a game where they each roll a fair six-sided die. The person with the highest unique roll wins. If there is no unique highest roll, they all roll again. What is the probability that the first player wins?"
+  },
+  {
+    "id": "probability_19",
+    "category": "Probabilistic Thinking",
+    "problem": "In a Bayesian network, event A has a prior probability of 0.3. Event B occurs with probability 0.8 if A occurs, and with probability 0.1 if A does not occur. If B is observed, what is the posterior probability of A given B?"
+  },
+  {
+    "id": "probability_20",
+    "category": "Probabilistic Thinking",
+    "problem": "A hunter has two rifles. The probability of hitting a target with the first rifle is 0.7, and with the second rifle is 0.4. The hunter randomly selects one of the rifles and fires at a target. Given that the shot hit the target, what is the probability that the hunter used the first rifle?"
+  },
+  {
+    "id": "probability_21",
+    "category": "Probabilistic Thinking",
+    "problem": "A casino game involves rolling two fair six-sided dice. You win $10 if the sum is 7, win $5 if the sum is 11, and lose $1 otherwise. What is the expected value of this game?"
+  },
+  {
+    "id": "probability_22",
+    "category": "Probabilistic Thinking",
+    "problem": "A biased coin comes up heads with probability p. You flip the coin n times and observe k heads. Using the maximum likelihood estimation, what is the estimated value of p?"
+  },
+  {
+    "id": "probability_23",
+    "category": "Probabilistic Thinking",
+    "problem": "You have 100 coins, and 99 of them are fair (with probability 0.5 of heads), but one of them is biased with probability 0.9 of heads. You pick a coin at random and flip it 10 times. You observe 9 heads and 1 tail. What is the probability that you picked the biased coin?"
+  },
+  {
+    "id": "probability_24",
+    "category": "Probabilistic Thinking",
+    "problem": "A lottery ticket has 6 numbers chosen from 1 to 49. The lottery draw also selects 6 numbers from 1 to 49. If you match all 6 numbers, you win the jackpot. What is the probability of winning the jackpot?"
+  },
+  {
+    "id": "probability_25",
+    "category": "Probabilistic Thinking",
+    "problem": "Two fair six-sided dice are rolled. Given that the sum of the two dice is at least 10, what is the probability that at least one of the dice shows a 6?"
+  },
+  {
+    "id": "probability_26",
+    "category": "Probabilistic Thinking",
+    "problem": "Five cards are dealt from a standard 52-card deck. What is the probability of getting a flush (all cards of the same suit) that is not a straight flush?"
+  },
+  {
+    "id": "probability_27",
+    "category": "Probabilistic Thinking",
+    "problem": "In a certain country, 45% of the population has blood type O, 40% has type A, 11% has type B, and 4% has type AB. A blood test correctly identifies the blood type with probability 0.95. If a test indicates a person has type O blood, what is the probability that they actually have type O blood?"
+  },
+  {
+    "id": "probability_28",
+    "category": "Probabilistic Thinking",
+    "problem": "A box contains 10 balls: 4 red, 3 blue, and 3 green. Five balls are drawn randomly without replacement. What is the probability that at least one ball of each color is drawn?"
+  },
+  {
+    "id": "probability_29",
+    "category": "Probabilistic Thinking",
+    "problem": "A random variable X follows a normal distribution with mean \u03bc = 50 and standard deviation \u03c3 = 10. What is the probability that the value of X is between 45 and 60?"
+  }
+]

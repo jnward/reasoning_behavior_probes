@@ -1,0 +1,152 @@
+[
+  {
+    "id": "systems_0",
+    "category": "Systems Thinking",
+    "problem": "A city implemented a new highway to reduce traffic congestion. Initially, travel times decreased by 20%, but after 6 months, congestion was worse than before the highway was built. Explain this phenomenon using systems thinking concepts."
+  },
+  {
+    "id": "systems_1",
+    "category": "Systems Thinking",
+    "problem": "In a predator-prey ecosystem with wolves and rabbits, the wolf population was reduced by 50% through hunting. One year later, the rabbit population had decreased by 30% rather than increasing as expected. What systemic factors might explain this counterintuitive outcome?"
+  },
+  {
+    "id": "systems_2",
+    "category": "Systems Thinking",
+    "problem": "A company implemented a bonus system tied to individual performance metrics. While individual productivity rose 15%, overall company performance decreased by 8%. Identify potential system-level explanations for this discrepancy."
+  },
+  {
+    "id": "systems_3",
+    "category": "Systems Thinking",
+    "problem": "A hospital reduced waiting times in the emergency department by adding more beds, but found that patient admission rates increased by 25% and overall costs rose significantly. Using systems thinking, analyze the unintended consequences of this intervention."
+  },
+  {
+    "id": "systems_4",
+    "category": "Systems Thinking",
+    "problem": "In a manufacturing system, quality inspections were increased at the final production stage, yet the number of defective products reaching customers increased. Explain how this could happen from a systems perspective."
+  },
+  {
+    "id": "systems_5",
+    "category": "Systems Thinking",
+    "problem": "A fishery management system introduced strict quotas on a certain fish species. Five years later, the overall marine ecosystem showed decreased biodiversity despite the target species recovering. What systems thinking concepts might explain this outcome?"
+  },
+  {
+    "id": "systems_6",
+    "category": "Systems Thinking",
+    "problem": "A social media platform changed its algorithm to reduce the spread of misinformation. While directly false content decreased by 40%, overall user polarization increased. Using systems thinking, explain this apparent contradiction."
+  },
+  {
+    "id": "systems_7",
+    "category": "Systems Thinking",
+    "problem": "A city banned plastic bags to reduce environmental impact. Two years later, the overall plastic waste had increased by 5%. Identify possible system-level explanations for this unexpected outcome."
+  },
+  {
+    "id": "systems_8",
+    "category": "Systems Thinking",
+    "problem": "In a complex supply chain, one company implemented just-in-time inventory to reduce costs. While their costs decreased, their suppliers' costs increased by 35% and delivery reliability decreased. Explain this situation through a systems thinking lens."
+  },
+  {
+    "id": "systems_9",
+    "category": "Systems Thinking",
+    "problem": "A school system implemented standardized testing to improve education quality. Test scores improved by 25% over three years, but college readiness and critical thinking skills declined. What systems dynamics might explain these contradictory results?"
+  },
+  {
+    "id": "systems_10",
+    "category": "Systems Thinking",
+    "problem": "A national healthcare system provided free preventive care services, expecting to reduce long-term costs. After five years, total healthcare spending had increased by 12%. Using systems thinking, identify possible explanations for this outcome."
+  },
+  {
+    "id": "systems_11",
+    "category": "Systems Thinking",
+    "problem": "Identify and explain three different types of feedback loops that might exist in an urban transportation system, and how they might interact to produce unexpected outcomes when new policies are implemented."
+  },
+  {
+    "id": "systems_12",
+    "category": "Systems Thinking",
+    "problem": "A company experiencing high employee turnover implemented higher salaries and better benefits. Six months later, turnover remained unchanged. Using systems archetypes, explain why this intervention might have failed to address the root problem."
+  },
+  {
+    "id": "systems_13",
+    "category": "Systems Thinking",
+    "problem": "In a water management system, engineers increased reservoir capacity by 30% to prevent flooding. During the next rainy season, downstream communities experienced 40% worse flooding. Explain this outcome using concepts of system boundaries and interconnections."
+  },
+  {
+    "id": "systems_14",
+    "category": "Systems Thinking",
+    "problem": "A social service agency implemented a new case management system to improve client outcomes. While the number of clients served increased by 50%, the average outcome quality decreased. What systems thinking principles could explain this result?"
+  },
+  {
+    "id": "systems_15",
+    "category": "Systems Thinking",
+    "problem": "A retail chain centralized its purchasing decisions to improve efficiency. While procurement costs decreased by 20%, overall profitability decreased. Identify potential system-level issues that could cause this unexpected outcome."
+  },
+  {
+    "id": "systems_16",
+    "category": "Systems Thinking",
+    "problem": "An agricultural system introduced genetically modified crops resistant to certain pests. After three growing seasons, farmers were dealing with new types of pests that caused more damage than before. Analyze this situation using systems thinking."
+  },
+  {
+    "id": "systems_17",
+    "category": "Systems Thinking",
+    "problem": "In a criminal justice system, mandatory minimum sentences were implemented to deter crime. Ten years later, crime rates were unchanged but incarceration costs had tripled. Using systems thinking, explain why the intended deterrence effect might not have materialized."
+  },
+  {
+    "id": "systems_18",
+    "category": "Systems Thinking",
+    "problem": "A global supply chain optimized for efficiency experienced catastrophic failures during a minor disruption in one region. Explain the concept of 'robust yet fragile' systems and how it applies to this situation."
+  },
+  {
+    "id": "systems_19",
+    "category": "Systems Thinking",
+    "problem": "A financial market implemented circuit breakers to prevent extreme volatility. While catastrophic crashes decreased, overall market volatility increased by 15%. Using systems concepts, explain this phenomenon."
+  },
+  {
+    "id": "systems_20",
+    "category": "Systems Thinking",
+    "problem": "An ecosystem containing five species exhibits stable population levels for decades. When a sixth species is introduced, two of the original species go extinct within five years. Explain how this could happen using the concept of system stability and attractors."
+  },
+  {
+    "id": "systems_21",
+    "category": "Systems Thinking",
+    "problem": "A power grid experiences increasing frequency of small outages after implementing smart grid technology designed to prevent large outages. Using the concept of self-organized criticality, explain how this pattern might emerge."
+  },
+  {
+    "id": "systems_22",
+    "category": "Systems Thinking",
+    "problem": "A team-based organization structure was implemented to replace a hierarchical one. While communication improved, decision-making slowed significantly. Analyze this using the concept of system optimization versus sub-optimization."
+  },
+  {
+    "id": "systems_23",
+    "category": "Systems Thinking",
+    "problem": "A city implemented a universal basic income pilot program in one district. While poverty decreased there, it increased in adjacent districts. Explain this outcome using systems boundaries and displacement effects."
+  },
+  {
+    "id": "systems_24",
+    "category": "Systems Thinking",
+    "problem": "A company reduced its carbon emissions by 50% by outsourcing manufacturing. From a systems perspective, evaluate whether this represents true environmental improvement and what metrics would provide a more accurate assessment."
+  },
+  {
+    "id": "systems_25",
+    "category": "Systems Thinking",
+    "problem": "A social network implemented content moderation algorithms that successfully reduced harmful content by 70%. Subsequently, user engagement dropped by 35% and harmful content migrated to private groups. Using systems thinking, analyze why the intervention had limited effectiveness."
+  },
+  {
+    "id": "systems_26",
+    "category": "Systems Thinking",
+    "problem": "A healthcare system improved emergency response times by 40% but saw no improvement in patient survival rates. Identify potential system-level explanations for this disconnect between process improvement and outcome improvement."
+  },
+  {
+    "id": "systems_27",
+    "category": "Systems Thinking",
+    "problem": "A manufacturing company implemented a zero-defect quality program that successfully eliminated defects but resulted in a 25% increase in production costs and 15% decrease in innovation. Using systems thinking, analyze the tradeoffs in this system."
+  },
+  {
+    "id": "systems_28",
+    "category": "Systems Thinking",
+    "problem": "A housing market experienced rapid price increases after zoning restrictions were implemented to preserve neighborhood character. Within five years, the demographic composition of the area changed dramatically despite the preservation effort. Explain this outcome using systems concepts."
+  },
+  {
+    "id": "systems_29",
+    "category": "Systems Thinking",
+    "problem": "An online marketplace platform changed its recommendation algorithm to maximize short-term revenue. While immediate sales increased by 30%, customer retention decreased by 20% over the following year. Using systems thinking, explain the dynamic that might be occurring."
+  }
+]

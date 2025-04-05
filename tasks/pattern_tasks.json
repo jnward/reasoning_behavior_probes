@@ -1,0 +1,152 @@
+[
+  {
+    "id": "pattern_0",
+    "category": "Pattern Recognition",
+    "problem": "What is the next number in this sequence? 1, 4, 9, 16, 25, 36, ..."
+  },
+  {
+    "id": "pattern_1",
+    "category": "Pattern Recognition",
+    "problem": "What letter should come next in this sequence? D, H, L, P, ..."
+  },
+  {
+    "id": "pattern_2",
+    "category": "Pattern Recognition",
+    "problem": "Find the next three terms in the sequence: 3, 1, 4, 1, 5, 9, 2, 6, ..."
+  },
+  {
+    "id": "pattern_3",
+    "category": "Pattern Recognition",
+    "problem": "What number replaces the question mark? 2, 3, 5, 8, 13, ?"
+  },
+  {
+    "id": "pattern_4",
+    "category": "Pattern Recognition",
+    "problem": "Identify the pattern and find the next row: \n1\n11\n21\n1211\n111221\n?"
+  },
+  {
+    "id": "pattern_5",
+    "category": "Pattern Recognition",
+    "problem": "What is the next number in this sequence? 1, 3, 6, 10, 15, 21, ..."
+  },
+  {
+    "id": "pattern_6",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: O, T, T, F, F, S, S, E, ..."
+  },
+  {
+    "id": "pattern_7",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number in the pattern: 2, 6, 12, 20, ?, 42"
+  },
+  {
+    "id": "pattern_8",
+    "category": "Pattern Recognition",
+    "problem": "What are the next two letters in this pattern? A, C, F, J, O, ..."
+  },
+  {
+    "id": "pattern_9",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 3, 6, 18, 72, 360, ..."
+  },
+  {
+    "id": "pattern_10",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 0, 1, 1, 2, 3, 5, 8, 13, 21, ?"
+  },
+  {
+    "id": "pattern_11",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 1, 8, 27, 64, ?, 216, 343"
+  },
+  {
+    "id": "pattern_12",
+    "category": "Pattern Recognition",
+    "problem": "What's the next symbol in this pattern? \u25cf, \u25a0, \u25b2, \u25cf\u25cf, \u25a0\u25a0, \u25b2\u25b2, \u25cf\u25cf\u25cf, ..."
+  },
+  {
+    "id": "pattern_13",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number in the sequence: 1, 4, 9, 16, 25, 36, 49, ..."
+  },
+  {
+    "id": "pattern_14",
+    "category": "Pattern Recognition",
+    "problem": "What is the next line in this pattern?\n1\n2 3\n4 5 6\n7 8 9 10\n?"
+  },
+  {
+    "id": "pattern_15",
+    "category": "Pattern Recognition",
+    "problem": "Identify the next term: 2, 4, 8, 16, 32, ..."
+  },
+  {
+    "id": "pattern_16",
+    "category": "Pattern Recognition",
+    "problem": "What number replaces the question mark? 1, 4, 10, 22, 46, ?"
+  },
+  {
+    "id": "pattern_17",
+    "category": "Pattern Recognition",
+    "problem": "What are the next two numbers in this sequence? 1, 2, 4, 7, 11, 16, ..."
+  },
+  {
+    "id": "pattern_18",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 1, 3, 7, 15, 31, ?"
+  },
+  {
+    "id": "pattern_19",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: J, F, M, A, M, J, J, ..."
+  },
+  {
+    "id": "pattern_20",
+    "category": "Pattern Recognition",
+    "problem": "What number completes this sequence? 4, 5, 8, 17, 44, ?"
+  },
+  {
+    "id": "pattern_21",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 2, 3, 5, 7, 11, 13, ..."
+  },
+  {
+    "id": "pattern_22",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 3, 1, 4, 1, 5, 9, 2, 6, 5, ..."
+  },
+  {
+    "id": "pattern_23",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this pattern? A1, B2, C4, D8, E16, ..."
+  },
+  {
+    "id": "pattern_24",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 16, 8, 4, 2, ?"
+  },
+  {
+    "id": "pattern_25",
+    "category": "Pattern Recognition",
+    "problem": "What is the next figure in this sequence?\n\u25cb\n\u25cb\u25cb\n\u25cb\u25cb\u25cb\n\u25cb\u25cb\u25cb\u25cb\n?"
+  },
+  {
+    "id": "pattern_26",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 2, 6, 18, 54, ..."
+  },
+  {
+    "id": "pattern_27",
+    "category": "Pattern Recognition",
+    "problem": "What are the next three letters in this sequence? A, A, B, C, E, H, ..."
+  },
+  {
+    "id": "pattern_28",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 1, 4, 7, 10, 13, ..."
+  },
+  {
+    "id": "pattern_29",
+    "category": "Pattern Recognition",
+    "problem": "What are the next two symbols in this pattern? \u2191, \u2192, \u2193, \u2190, \u2191, \u2192, ..."
+  }
+]

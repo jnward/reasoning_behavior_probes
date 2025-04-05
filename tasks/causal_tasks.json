@@ -1,0 +1,152 @@
+[
+  {
+    "id": "causal_0",
+    "category": "Causal Reasoning",
+    "problem": "A city implemented a new traffic light system at its busiest intersection. After installation, accidents decreased by 30%. The city council claims this proves the new system caused the reduction in accidents. What alternative explanations might exist for this correlation?"
+  },
+  {
+    "id": "causal_1",
+    "category": "Causal Reasoning",
+    "problem": "A researcher finds that children who eat breakfast perform better on morning tests than those who don't. She concludes that breakfast consumption causes improved cognitive performance. What confounding variables might be influencing this relationship?"
+  },
+  {
+    "id": "causal_2",
+    "category": "Causal Reasoning",
+    "problem": "A company notices that employees who participate in its optional wellness program have fewer sick days. The CEO wants to make the program mandatory to reduce absenteeism. Explain why this logic might be flawed from a causal reasoning perspective."
+  },
+  {
+    "id": "causal_3",
+    "category": "Causal Reasoning",
+    "problem": "Ice cream sales and drowning deaths both increase during summer months. A newspaper headline claims 'Ice Cream Sales Linked to Drowning Deaths.' What is the error in causal reasoning here, and what is the more likely explanation?"
+  },
+  {
+    "id": "causal_4",
+    "category": "Causal Reasoning",
+    "problem": "A study found that people who sleep with their shoes on tend to wake up with headaches. What's wrong with concluding that sleeping with shoes causes headaches?"
+  },
+  {
+    "id": "causal_5",
+    "category": "Causal Reasoning",
+    "problem": "After implementing a strict attendance policy, a school sees improved test scores. The principal attributes the improvement to the policy. Identify three alternative explanations that might account for this outcome."
+  },
+  {
+    "id": "causal_6",
+    "category": "Causal Reasoning",
+    "problem": "In a factory, Machine A breaks down, then Machine B breaks down, then Machine C breaks down. A technician claims Machine A's failure caused the cascade of breakdowns. What evidence would you need to evaluate this causal claim?"
+  },
+  {
+    "id": "causal_7",
+    "category": "Causal Reasoning",
+    "problem": "A marketing study shows that people who view a product advertisement are more likely to purchase the product than those who don't. What's problematic about concluding the advertisement caused the increased purchases?"
+  },
+  {
+    "id": "causal_8",
+    "category": "Causal Reasoning",
+    "problem": "A farmer notices that fields treated with a new fertilizer produce higher yields than untreated fields. However, the treated fields are also closer to a water source. How does this complicate the causal relationship between fertilizer and yield?"
+  },
+  {
+    "id": "causal_9",
+    "category": "Causal Reasoning",
+    "problem": "After a city builds a new public library, local reading test scores improve. City officials claim the library caused the improvement. What would strengthen or weaken this causal claim?"
+  },
+  {
+    "id": "causal_10",
+    "category": "Causal Reasoning",
+    "problem": "In a medical trial, patients receiving a new drug recover faster than those receiving a placebo. However, the patients receiving the drug also had more nurse visits. How does this affect the conclusion that the drug caused faster recovery?"
+  },
+  {
+    "id": "causal_11",
+    "category": "Causal Reasoning",
+    "problem": "A technology company introduces flexible working hours and observes increased productivity. What experiments could they design to determine if flexible hours actually caused the productivity increase?"
+  },
+  {
+    "id": "causal_12",
+    "category": "Causal Reasoning",
+    "problem": "Research shows that neighborhoods with more fast food restaurants have higher obesity rates. A health advocate argues for restricting fast food restaurants to reduce obesity. What causal reasoning issues should be considered before implementing this policy?"
+  },
+  {
+    "id": "causal_13",
+    "category": "Causal Reasoning",
+    "problem": "Students who participate in music programs tend to have higher math scores. A school board member proposes expanding music programs to improve math performance. What causal confounds should be considered before making this decision?"
+  },
+  {
+    "id": "causal_14",
+    "category": "Causal Reasoning",
+    "problem": "A political candidate notes that during her opponent's term in office, crime rates increased. She claims this proves her opponent's policies caused more crime. Explain the causal reasoning fallacy in this argument."
+  },
+  {
+    "id": "causal_15",
+    "category": "Causal Reasoning",
+    "problem": "In a forest, scientists observe that areas with more birdsong have healthier vegetation. One researcher suggests playing recorded birdsong to improve plant health. What's problematic about this causal inference?"
+  },
+  {
+    "id": "causal_16",
+    "category": "Causal Reasoning",
+    "problem": "A study finds that people who meditate regularly report less stress. The researchers conclude meditation reduces stress. A critic argues this conclusion isn't warranted. Why might the critic be correct from a causal reasoning perspective?"
+  },
+  {
+    "id": "causal_17",
+    "category": "Causal Reasoning",
+    "problem": "Historical data shows that countries with higher chocolate consumption have more Nobel laureates per capita. What's wrong with concluding that eating chocolate increases a nation's likelihood of producing Nobel Prize winners?"
+  },
+  {
+    "id": "causal_18",
+    "category": "Causal Reasoning",
+    "problem": "A retail store changes its layout and sales increase the following month. The manager attributes the sales increase to the new layout. What alternative explanations might exist, and how could you test whether the layout actually caused the increase?"
+  },
+  {
+    "id": "causal_19",
+    "category": "Causal Reasoning",
+    "problem": "An online article claims that vaccinated children have higher rates of developmental disorders than unvaccinated children. Assuming this correlation is accurate, explain why this doesn't necessarily mean vaccines cause these disorders."
+  },
+  {
+    "id": "causal_20",
+    "category": "Causal Reasoning",
+    "problem": "In a remote village, a new telecommunications tower was installed. Shortly after, several villagers developed headaches. The villagers blame the tower's radiation. Evaluate this causal claim and suggest how it could be properly investigated."
+  },
+  {
+    "id": "causal_21",
+    "category": "Causal Reasoning",
+    "problem": "Countries with higher education spending tend to have citizens with longer lifespans. A politician argues that increasing education funding will make people live longer. What causal reasoning errors might be present in this argument?"
+  },
+  {
+    "id": "causal_22",
+    "category": "Causal Reasoning",
+    "problem": "A professor notices that students who sit in the front row earn higher grades. She concludes that sitting in the front causes better academic performance. What alternative causal explanations exist for this observation?"
+  },
+  {
+    "id": "causal_23",
+    "category": "Causal Reasoning",
+    "problem": "Every time a rooster crows, the sun rises shortly after. A child concludes that the rooster's crow causes the sun to rise. Using this example, explain the difference between correlation and causation."
+  },
+  {
+    "id": "causal_24",
+    "category": "Causal Reasoning",
+    "problem": "A company's stock price drops after a negative news report is published. What factors would you need to consider before concluding that the news report caused the stock price drop?"
+  },
+  {
+    "id": "causal_25",
+    "category": "Causal Reasoning",
+    "problem": "After a river is cleaned up, local fish populations increase. Simultaneously, new fishing regulations are implemented. How would you determine which intervention had the greater causal effect on fish population recovery?"
+  },
+  {
+    "id": "causal_26",
+    "category": "Causal Reasoning",
+    "problem": "A social media platform changes its algorithm, and user engagement decreases. At the same time, a competitor launches a new feature. How could the platform determine whether its algorithm change caused the engagement drop?"
+  },
+  {
+    "id": "causal_27",
+    "category": "Causal Reasoning",
+    "problem": "A pharmaceutical company finds that patients taking their pain medication report more side effects than those taking a competitor's drug. What needs to be considered before concluding their medication causes more side effects?"
+  },
+  {
+    "id": "causal_28",
+    "category": "Causal Reasoning",
+    "problem": "Global temperatures and pirate population have both changed over the past 300 years. As pirate numbers decreased, global temperatures increased. Using this absurd correlation, explain why identifying spurious correlations is important for proper causal reasoning."
+  },
+  {
+    "id": "causal_29",
+    "category": "Causal Reasoning",
+    "problem": "After implementing a four-day work week, a company observes improved employee satisfaction and productivity. The CEO wants to know if the four-day week caused these improvements. Design a study that would better establish causality in this scenario."
+  }
+]

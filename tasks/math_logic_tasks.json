@@ -1,0 +1,152 @@
+[
+  {
+    "id": "math_logic_0",
+    "category": "Mathematical Logic",
+    "problem": "Prove by induction that for all positive integers n, the sum of the first n positive integers equals n(n+1)/2."
+  },
+  {
+    "id": "math_logic_1",
+    "category": "Mathematical Logic",
+    "problem": "If p \u2192 q is true, and q \u2192 r is true, what can be concluded about p \u2192 r? Prove your answer."
+  },
+  {
+    "id": "math_logic_2",
+    "category": "Mathematical Logic",
+    "problem": "Consider the statement: 'If it is raining, then the ground is wet.' Write the contrapositive, converse, and inverse of this statement, and determine which ones are logically equivalent to the original statement."
+  },
+  {
+    "id": "math_logic_3",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A, B, and C, we have (A \u2229 B) \u222a (A \u2229 C) = A \u2229 (B \u222a C)."
+  },
+  {
+    "id": "math_logic_4",
+    "category": "Mathematical Logic",
+    "problem": "Using proof by contradiction, prove that \u221a2 is irrational."
+  },
+  {
+    "id": "math_logic_5",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if n\u00b2 is even, then n is even."
+  },
+  {
+    "id": "math_logic_6",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following argument is valid: 'If I study, I will pass the exam. I passed the exam. Therefore, I studied.'"
+  },
+  {
+    "id": "math_logic_7",
+    "category": "Mathematical Logic",
+    "problem": "Construct a truth table for the statement (p \u2192 q) \u2227 (\u00acq \u2192 \u00acp) and determine if it is a tautology."
+  },
+  {
+    "id": "math_logic_8",
+    "category": "Mathematical Logic",
+    "problem": "Prove by direct proof that the sum of two consecutive integers is odd."
+  },
+  {
+    "id": "math_logic_9",
+    "category": "Mathematical Logic",
+    "problem": "Let P(n) be the statement that 1\u00b3 + 2\u00b3 + ... + n\u00b3 = (n(n+1)/2)\u00b2 for the positive integer n. Prove that P(n) is true for all positive integers n."
+  },
+  {
+    "id": "math_logic_10",
+    "category": "Mathematical Logic",
+    "problem": "If \u00ac(p \u2227 q) is true, what can you conclude about p and q? Justify your answer using logical equivalences."
+  },
+  {
+    "id": "math_logic_11",
+    "category": "Mathematical Logic",
+    "problem": "Use mathematical induction to prove that n! > 2\u207f for all integers n \u2265 4."
+  },
+  {
+    "id": "math_logic_12",
+    "category": "Mathematical Logic",
+    "problem": "Prove or disprove: For all sets A, B, and C, if A \u2286 B and B \u2286 C, then A \u2286 C."
+  },
+  {
+    "id": "math_logic_13",
+    "category": "Mathematical Logic",
+    "problem": "Express the following statement using quantifiers and logical symbols: 'Some integers are both even and greater than 10.'"
+  },
+  {
+    "id": "math_logic_14",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the square of any odd integer is of the form 8k + 1 for some integer k."
+  },
+  {
+    "id": "math_logic_15",
+    "category": "Mathematical Logic",
+    "problem": "Find the negation of the statement: 'For all real numbers x, if x\u00b2 > 4, then x > 2 or x < -2.'"
+  },
+  {
+    "id": "math_logic_16",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A and B, (A \u222a B)' = A' \u2229 B' using the laws of logic (where X' represents the complement of set X)."
+  },
+  {
+    "id": "math_logic_17",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following argument is valid: 'If x is divisible by 6, then x is divisible by 2 and x is divisible by 3. x is divisible by 2 and x is divisible by 3. Therefore, x is divisible by 6.'"
+  },
+  {
+    "id": "math_logic_18",
+    "category": "Mathematical Logic",
+    "problem": "Prove by cases: For any integer n, the value of n\u00b2 - n + 41 is never divisible by 41."
+  },
+  {
+    "id": "math_logic_19",
+    "category": "Mathematical Logic",
+    "problem": "Show that the statement p \u2192 (q \u2192 r) is logically equivalent to (p \u2227 q) \u2192 r."
+  },
+  {
+    "id": "math_logic_20",
+    "category": "Mathematical Logic",
+    "problem": "Prove by contradiction: There are infinitely many prime numbers."
+  },
+  {
+    "id": "math_logic_21",
+    "category": "Mathematical Logic",
+    "problem": "Use the principle of mathematical induction to prove that for all positive integers n, 2\u207f > n."
+  },
+  {
+    "id": "math_logic_22",
+    "category": "Mathematical Logic",
+    "problem": "Determine the truth value of the statement: 'For all positive integers n, n\u00b2 \u2265 n.'"
+  },
+  {
+    "id": "math_logic_23",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the statement (p \u2192 q) \u2192 p is not a tautology."
+  },
+  {
+    "id": "math_logic_24",
+    "category": "Mathematical Logic",
+    "problem": "Examine the following argument: 'If it is sunny, then we go to the beach. If we go to the beach, then we swim. We did not swim. Therefore, it was not sunny.' Is this argument valid? Explain."
+  },
+  {
+    "id": "math_logic_25",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any integers a and b, if a\u00b2 + b\u00b2 is odd, then exactly one of a or b is odd."
+  },
+  {
+    "id": "math_logic_26",
+    "category": "Mathematical Logic",
+    "problem": "Use the well-ordering principle to prove that every positive integer can be expressed as a product of prime numbers."
+  },
+  {
+    "id": "math_logic_27",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A, B, and C, we have A - (B \u2229 C) = (A - B) \u222a (A - C)."
+  },
+  {
+    "id": "math_logic_28",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following is a valid argument by constructing a truth table: 'If p, then q. If not p, then r. If q, then s. Therefore, if not r, then s.'"
+  },
+  {
+    "id": "math_logic_29",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if n is a positive integer, then n is a perfect square if and only if the number of its divisors is odd."
+  }
+]

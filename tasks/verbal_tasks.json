@@ -1,0 +1,152 @@
+[
+  {
+    "id": "verbal_0",
+    "category": "Verbal Logic",
+    "problem": "If all brontles are climpets, and no climpets are dorqs, which of the following must be true? A) Some brontles are dorqs B) No brontles are dorqs C) All dorqs are brontles D) Some dorqs are brontles"
+  },
+  {
+    "id": "verbal_1",
+    "category": "Verbal Logic",
+    "problem": "Consider the statements: 'If Rose wins the competition, then either Sam or Terry will be upset.' 'Sam is not upset.' What can be logically concluded?"
+  },
+  {
+    "id": "verbal_2",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Glacier is to Ice as Forest is to ____"
+  },
+  {
+    "id": "verbal_3",
+    "category": "Verbal Logic",
+    "problem": "Statement 1: All lawyers are logical thinkers. Statement 2: Some doctors are lawyers. What can you conclude with certainty?"
+  },
+  {
+    "id": "verbal_4",
+    "category": "Verbal Logic",
+    "problem": "If 'No heroes are cowards' and 'All soldiers are heroes' are both true, what must be true about the relationship between soldiers and cowards?"
+  },
+  {
+    "id": "verbal_5",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Democracy is to Monarchy as Many is to ____"
+  },
+  {
+    "id": "verbal_6",
+    "category": "Verbal Logic",
+    "problem": "If it is false that 'Either John is not present or Mary is late', what must be true?"
+  },
+  {
+    "id": "verbal_7",
+    "category": "Verbal Logic",
+    "problem": "Consider these statements: 'If I study, I pass the exam.' 'I did not pass the exam.' What can you conclude?"
+  },
+  {
+    "id": "verbal_8",
+    "category": "Verbal Logic",
+    "problem": "Complete the sequence: Calf is to Cow as Fawn is to ____"
+  },
+  {
+    "id": "verbal_9",
+    "category": "Verbal Logic",
+    "problem": "If 'All A are B' and 'Some C are not B', which conclusion is valid? A) Some A are C B) Some C are not A C) No C are A D) Some A are not C"
+  },
+  {
+    "id": "verbal_10",
+    "category": "Verbal Logic",
+    "problem": "If the statement 'If it rains, then the game is canceled' is true, which of the following must also be true? A) If it doesn't rain, then the game isn't canceled B) If the game is canceled, then it rained C) If the game isn't canceled, then it didn't rain D) None of the above"
+  },
+  {
+    "id": "verbal_11",
+    "category": "Verbal Logic",
+    "problem": "Frame is to Picture as ____ is to Story"
+  },
+  {
+    "id": "verbal_12",
+    "category": "Verbal Logic",
+    "problem": "Given: 'No mammals are cold-blooded.' 'Some aquatic animals are cold-blooded.' What can you conclude about the relationship between mammals and aquatic animals?"
+  },
+  {
+    "id": "verbal_13",
+    "category": "Verbal Logic",
+    "problem": "If 'Only creative people are successful artists' is true, which statement must also be true? A) All creative people are successful artists B) Some creative people are successful artists C) All successful artists are creative people D) Some successful artists are not creative people"
+  },
+  {
+    "id": "verbal_14",
+    "category": "Verbal Logic",
+    "problem": "Enigma is to Mystery as Euphoria is to ____"
+  },
+  {
+    "id": "verbal_15",
+    "category": "Verbal Logic",
+    "problem": "Given: 'If the temperature rises, the snow will melt.' 'The snow did not melt.' What can you conclude?"
+  },
+  {
+    "id": "verbal_16",
+    "category": "Verbal Logic",
+    "problem": "Either Jennifer or Michael is telling the truth, but not both. If Jennifer says, 'Michael is lying,' what is the truth status of Michael's statement?"
+  },
+  {
+    "id": "verbal_17",
+    "category": "Verbal Logic",
+    "problem": "Sycophant is to Flattery as Misanthrope is to ____"
+  },
+  {
+    "id": "verbal_18",
+    "category": "Verbal Logic",
+    "problem": "If all X are Y, and some Z are not Y, which of the following must be true? A) All X are Z B) No X are Z C) Some Z are not X D) Some X are Z"
+  },
+  {
+    "id": "verbal_19",
+    "category": "Verbal Logic",
+    "problem": "Consider: 'All authors are readers.' 'Some critics are not readers.' What can you conclude about the relationship between authors and critics?"
+  },
+  {
+    "id": "verbal_20",
+    "category": "Verbal Logic",
+    "problem": "Kangaroo is to Joey as Eagle is to ____"
+  },
+  {
+    "id": "verbal_21",
+    "category": "Verbal Logic",
+    "problem": "Which statement is logically equivalent to 'If I am not tired, then I will go running'? A) If I am tired, then I will not go running B) If I go running, then I am not tired C) If I don't go running, then I am tired D) If I am tired, then I will go running"
+  },
+  {
+    "id": "verbal_22",
+    "category": "Verbal Logic",
+    "problem": "If I state, 'It is not the case that either I own a car or I don't use public transportation,' what must be true?"
+  },
+  {
+    "id": "verbal_23",
+    "category": "Verbal Logic",
+    "problem": "Audacious is to Timid as Garrulous is to ____"
+  },
+  {
+    "id": "verbal_24",
+    "category": "Verbal Logic",
+    "problem": "Given these premises: 'All birds have feathers.' 'No reptiles have feathers.' What can you conclude about birds and reptiles?"
+  },
+  {
+    "id": "verbal_25",
+    "category": "Verbal Logic",
+    "problem": "If 'Some athletes are not swimmers' and 'All swimmers are fit,' which conclusion is valid? A) Some athletes are fit B) All fit people are athletes C) Some fit people are not athletes D) Some athletes are not fit"
+  },
+  {
+    "id": "verbal_26",
+    "category": "Verbal Logic",
+    "problem": "Consider this statement: 'If it is raining, then the streets are wet.' If the streets are not wet, what can you conclude?"
+  },
+  {
+    "id": "verbal_27",
+    "category": "Verbal Logic",
+    "problem": "Pandemic is to Disease as Tsunami is to ____"
+  },
+  {
+    "id": "verbal_28",
+    "category": "Verbal Logic",
+    "problem": "If 'No honest people are thieves' and 'Some politicians are honest,' what can you conclude about the relationship between politicians and thieves?"
+  },
+  {
+    "id": "verbal_29",
+    "category": "Verbal Logic",
+    "problem": "Three people (Alex, Blake, and Casey) each make one statement: Alex: 'Blake is lying.' Blake: 'Casey is lying.' Casey: 'Alex and Blake are both lying.' If exactly one person is telling the truth, who is it?"
+  }
+]
