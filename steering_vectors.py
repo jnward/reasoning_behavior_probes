@@ -1,274 +1,232 @@
+# %%
 import json
-import os
-import time
-import argparse
-from openai import OpenAI
-from tqdm import tqdm
+import torch
+from nnsight import LanguageModel
 
-# Constants
-REASONING_CHAINS_DIR = "reasoning_chains"
-ANNOTATED_CHAINS_DIR = "annotated_chains"
-
-# Create output directory
-os.makedirs(ANNOTATED_CHAINS_DIR, exist_ok=True)
-
-# Initialize OpenAI client
-client = OpenAI()
-
-def load_reasoning_chains(file_path):
-    """Load reasoning chains from a JSON file"""
+# %%
+def load_annotated_chain(file_path):
+    """Load annotated chains from a JSON file"""
     with open(file_path, 'r') as f:
         return json.load(f)
 
-def annotate_chain(thinking_process):
-    """Annotate a reasoning chain using GPT-4o"""
-    # Format prompt according to paper
-    prompt = f"""Please split the following reasoning chain of an LLM into
-annotated parts using labels and the following format ["label"]...["end-section"]. A sentence should be split into multiple
-parts if it incorporates multiple behaviours indicated by the labels.
-
-Available labels:
-0. initializing -> The model is rephrasing the given task and states initial thoughts.
-1. deduction -> The model is performing a deduction step based on its current approach and assumptions.
-2. adding-knowledge -> The model is enriching the current approach with recalled facts.
-3. example-testing -> The model generates examples to test its current approach.
-4. uncertainty-estimation -> The model is stating its own uncertainty.
-5. backtracking -> The model decides to change its approach.
-
-The reasoning chain to analyze:
-{thinking_process}
-
-Answer only with the annotated text. Only use the labels outlined above. If there is a tail that has no annotation leave it out."""
-
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.0,
-        )
-        return response.choices[0].message.content.strip()
-    except Exception as e:
-        print(f"Error during annotation: {str(e)}")
-        return None
-
-def debug_annotation(annotated_chain):
-    """Debug function to analyze annotation format issues"""
-    print("\n=== ANNOTATION DEBUG INFO ===")
-    print(f"Total length: {len(annotated_chain)} characters")
+def extract_annotations(annotated_text):
+    """Extract all annotations and their text from an annotated chain"""
+    annotations = []
     
-    # Count opening and closing tags
-    opening_tags = annotated_chain.count('["')
-    closing_tags = annotated_chain.count('["end-section"]')
-    
-    print(f"Found {opening_tags} opening tags and {closing_tags} closing tags")
-    
-    # Count category instances
-    categories = ["initializing", "deduction", "adding-knowledge", 
-                  "example-testing", "uncertainty-estimation", "backtracking"]
-    
-    for cat in categories:
-        count = annotated_chain.count(f'["{cat}"]')
-        print(f"Category '{cat}' appears {count} times")
-    
-    print("=== END DEBUG INFO ===\n")
-
-def process_category_file(file_path):
-    """Process a category file and annotate all reasoning chains"""
-    # Extract category name from file path
-    category_name = os.path.basename(file_path).replace("_reasoning_chains.json", "")
-    print(f"Processing category: {category_name}")
-    
-    # Load reasoning chains
-    chains = load_reasoning_chains(file_path)
-    
-    # Prepare output data structure
-    annotated_chains = []
-    
-    # Process each reasoning chain
-    for chain_data in tqdm(chains, desc=f"Annotating {category_name}"):
-        task_id = chain_data["task_id"]
-        problem = chain_data["problem"]
-        reasoning_chain = chain_data["reasoning_chain"]
-        
-        # Clean the reasoning chain - remove <think> tag if present
-        if reasoning_chain.startswith("<think>"):
-            reasoning_chain = reasoning_chain[7:]
-        if reasoning_chain.endswith("</think>"):
-            reasoning_chain = reasoning_chain[:-8]
-        
-        # Annotate the reasoning chain
-        annotated_chain = annotate_chain(reasoning_chain)
-        
-        if annotated_chain:
-            # Create annotated data
-            annotated_data = {
-                "task_id": task_id,
-                "problem": problem,
-                "reasoning_chain": reasoning_chain,
-                "annotated_chain": annotated_chain
-            }
+    # Find all annotation segments
+    current_pos = 0
+    while True:
+        # Find the next category tag
+        start_tag_pos = annotated_text.find('[\"', current_pos)
+        if start_tag_pos == -1:
+            break
             
-            annotated_chains.append(annotated_data)
+        end_tag_pos = annotated_text.find('\"]', start_tag_pos)
+        if end_tag_pos == -1:
+            break
             
-            # Print a sample and debug information for the first chain
-            if len(annotated_chains) == 1:
-                print("\nSample Annotation:")
-                print(f"Problem: {problem}")
-                print(f"Annotated Chain (excerpt): {annotated_chain[:200]}...\n")
-                
-                # Add debugging for first chain
-                debug_annotation(annotated_chain)
+        # Extract the category
+        category = annotated_text[start_tag_pos+2:end_tag_pos]
         
-        # Rate limit to avoid API throttling
-        time.sleep(0.5)
-        # break
-    
-    # Save annotated chains
-    output_file = os.path.join(ANNOTATED_CHAINS_DIR, f"{category_name}_annotated_chains.json")
-    with open(output_file, 'w') as f:
-        json.dump(annotated_chains, f, indent=2)
-    
-    print(f"Saved {len(annotated_chains)} annotated chains to {output_file}")
-    
-    return annotated_chains
-
-def analyze_annotations(annotated_chains):
-    """Analyze annotated chains to get token distribution for each behavioral category"""
-    # Define the categories we're looking for
-    categories = ["initializing", "deduction", "adding-knowledge", 
-                  "example-testing", "uncertainty-estimation", "backtracking"]
-    
-    # Initialize counters
-    category_counts = {cat: 0 for cat in categories}
-    total_tokens = 0
-    
-    # Process each chain
-    for chain_data in annotated_chains:
-        annotated_chain = chain_data["annotated_chain"]
-        
-        # Process each category in this chain
-        for category in categories:
-            # Split the annotated chain on the category tag
-            parts = annotated_chain.split(f'["{category}"]')
+        # Skip if this is an end-section tag
+        if category == "end-section":
+            current_pos = end_tag_pos + 2
+            continue
             
-            # Skip the first part (comes before the first occurrence of this category)
-            for i in range(1, len(parts)):
-                part = parts[i]
-                # Extract the text up to the end-section tag
-                if '["end-section"]' in part:
-                    text = part.split('["end-section"]')[0].strip()
-                    # Count tokens (simple whitespace splitting)
-                    tokens = len(text.split())
-                    category_counts[category] += tokens
-                    total_tokens += tokens
-    
-    # Calculate percentages
-    category_percentages = {cat: (count / total_tokens * 100 if total_tokens > 0 else 0) 
-                           for cat, count in category_counts.items()}
-    
-    return category_percentages, category_counts
-
-def print_category_distribution(category_percentages, category_counts=None):
-    """Print a detailed summary of category distribution"""
-    print("\n=== Behavioral Category Distribution ===")
-    
-    # Sort categories by percentage for better visualization
-    sorted_categories = sorted(
-        category_percentages.items(), 
-        key=lambda x: x[1], 
-        reverse=True
-    )
-    
-    # Calculate total tokens if counts are provided
-    total_tokens = sum(category_counts.values()) if category_counts else None
-    
-    print(f"{'Category':<25} {'Percentage':<10} {'Token Count':<12}")
-    print("-" * 47)
-    
-    for cat, percentage in sorted_categories:
-        count = category_counts[cat] if category_counts else "N/A"
-        print(f"{cat:<25} {percentage:>8.2f}%  {count:>10}")
-    
-    if total_tokens:
-        print("-" * 47)
-        print(f"{'TOTAL':<25} {100:>8.2f}%  {total_tokens:>10}")
-    
-    print("=" * 47)
-
-def main():
-    parser = argparse.ArgumentParser(description='Annotate reasoning chains with GPT-4o')
-    parser.add_argument('--category', type=str, help='Specific category to process (e.g., "lateral")', default=None)
-    parser.add_argument('--all', action='store_true', help='Process all categories')
-    parser.add_argument('--test', action='store_true', help='Run in test mode to verify parsing')
-    args = parser.parse_args()
-    
-    if args.test:
-        # Run in test mode - analyze existing annotations to verify parsing
-        annotated_dirs = [ANNOTATED_CHAINS_DIR]
+        # Find the corresponding end-section tag
+        start_text_pos = end_tag_pos + 2
+        end_section_tag = annotated_text.find('[\"end-section\"]', start_text_pos)
         
-        # Try to load existing files
-        found_files = False
-        for directory in annotated_dirs:
-            if os.path.exists(directory):
-                files = [f for f in os.listdir(directory) if f.endswith("_annotated_chains.json")]
-                if files:
-                    found_files = True
-                    for file_name in files:
-                        file_path = os.path.join(directory, file_name)
-                        print(f"\nAnalyzing: {file_path}")
-                        
-                        # Load annotated chains
-                        with open(file_path, 'r') as f:
-                            annotated_chains = json.load(f)
-                        
-                        # Analyze distributions
-                        category_percentages, category_counts = analyze_annotations(annotated_chains)
-                        
-                        # Print summary
-                        print(f"Successfully analyzed {len(annotated_chains)} chains")
-                        print_category_distribution(category_percentages, category_counts)
-                        
-        if not found_files:
-            print("No existing annotated files found for analysis.")
-            print("Please run the script first to generate annotations.")
-    
-    elif args.all:
-        # Process all categories
-        all_files = [f for f in os.listdir(REASONING_CHAINS_DIR) 
-                     if f.endswith("_reasoning_chains.json") and not f.startswith("all_")]
-        
-        all_annotated_chains = []
-        for file_name in all_files:
-            file_path = os.path.join(REASONING_CHAINS_DIR, file_name)
-            annotated_chains = process_category_file(file_path)
-            all_annotated_chains.extend(annotated_chains)
-            
-        # Save combined annotated chains
-        combined_output_file = os.path.join(ANNOTATED_CHAINS_DIR, "all_annotated_chains.json")
-        with open(combined_output_file, 'w') as f:
-            json.dump(all_annotated_chains, f, indent=2)
-        
-        # Analyze annotations
-        category_percentages, category_counts = analyze_annotations(all_annotated_chains)
-        
-        # Print analysis
-        print_category_distribution(category_percentages, category_counts)
-            
-    elif args.category:
-        # Process specific category
-        file_path = os.path.join(REASONING_CHAINS_DIR, f"{args.category}_reasoning_chains.json")
-        if os.path.exists(file_path):
-            annotated_chains = process_category_file(file_path)
-            
-            # Analyze annotations
-            category_percentages, category_counts = analyze_annotations(annotated_chains)
-            
-            # Print analysis
-            print_category_distribution(category_percentages, category_counts)
+        # Extract the text between category tag and end-section tag
+        if end_section_tag != -1:
+            text = annotated_text[start_text_pos:end_section_tag].strip()
+            annotations.append((category, text))
+            current_pos = end_section_tag + 15  # Length of "[\"end-section\"]"
         else:
-            print(f"Error: File not found - {file_path}")
-    else:
-        print("Please specify either --category, --all, or --test")
+            # If no end-section tag, move to the next position
+            current_pos = end_tag_pos + 2
+    
+    return annotations
 
-if __name__ == "__main__":
-    main() 
+def process_chain(model, chain):
+    """
+    Process a chain to format it with user/assistant tags and track annotation indices.
+    
+    Args:
+        model: Language model with tokenizer
+        chain: Dictionary containing problem and annotated_chain
+        
+    Returns:
+        tuple: (tokenized_full_text, annotation_indices)
+            where annotation_indices is a dict mapping categories to lists of (start, end) token pairs
+    """
+    # Format problem with user/assistant tags
+    problem = chain["problem"]
+    formatted_problem = f"<｜User｜>{problem}<｜Assistant｜><think>\n"
+    
+    # Tokenize the formatted problem
+    tokenized_problem = model.tokenizer.encode(formatted_problem, return_tensors="pt")[0]
+    
+    # Extract all annotations from the annotated chain
+    annotations = extract_annotations(chain["annotated_chain"])
+    
+    # Track token indices for each category
+    annotation_indices = {}
+    
+    # Current token position
+    current_token_pos = len(tokenized_problem)
+    
+    # Full tokenized text (starting with the tokenized problem)
+    full_tokens = tokenized_problem.tolist()
+    
+    # Process each annotation
+    for i, (category, text) in enumerate(annotations):
+        if i > 0:
+            text = " " + text
+        # Tokenize this text segment
+        segment_tokens = model.tokenizer.encode(text, add_special_tokens=False)
+        
+        # Record start and end token indices
+        start_idx = current_token_pos
+        end_idx = start_idx + len(segment_tokens) - 1
+        
+        # Add to annotation indices for this category
+        if category not in annotation_indices:
+            annotation_indices[category] = []
+        annotation_indices[category].append((start_idx, end_idx))
+        
+        # Add segment tokens to full tokens
+        full_tokens.extend(segment_tokens)
+        
+        # Update current token position
+        current_token_pos += len(segment_tokens)
+    
+    # Convert full tokens back to tensor
+    tokenized_full_text = torch.tensor(full_tokens)
+    
+    return tokenized_full_text, annotation_indices
+
+# %%
+# Create an iterator for processing multiple chains
+def process_chains_iterator(model, chains):
+    """
+    Process multiple chains and yield tokenized text with annotation indices for each.
+    
+    Args:
+        model: Language model with tokenizer
+        chains: List of chain dictionaries containing problem and annotated_chain
+        
+    Yields:
+        tuple: (chain_id, tokenized_full_text, annotation_indices)
+            where annotation_indices is a dict mapping categories to lists of (start, end) token pairs
+    """
+    for i, chain in enumerate(chains):
+        # Process this chain
+        tokenized_text, annotation_indices = process_chain(model, chain)
+        
+        # Yield the results along with chain identifier (task_id if available, otherwise index)
+        chain_id = chain.get('task_id', f'chain_{i}')
+        yield tokenized_text, annotation_indices
+
+# %%
+chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
+model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+
+processed_chains = process_chains_iterator(model, chains)
+
+# test the iterator, it should return a tokenized text and a dictionary of annotation indices
+tokens, indices = next(processed_chains)
+
+for category, index_tuples in indices.items():
+    print(category)
+    for start, end in index_tuples:
+        token_segment = tokens[start-1:end+1]
+        print("\t" + model.tokenizer.decode(token_segment))
+# %%
+from collections import defaultdict
+from tqdm import tqdm
+
+processed_chains = process_chains_iterator(model, chains)
+
+layer_of_interest = 10
+activations = defaultdict(list)
+
+acc = 0
+for tokens, indices in tqdm(processed_chains):
+    # need to decode tokens back to text, so we can use model.trace
+    text = model.tokenizer.decode(tokens)
+    tokens2 = model.tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")[0]
+    assert torch.equal(tokens, tokens2)
+    with model.trace(text) as tracer:
+        layer_activations = model.model.layers[layer_of_interest].output[0].save()
+    print(layer_activations.shape)
+    for category, index_tuples in indices.items():
+        for start, end in index_tuples:
+            # token_segment = tokens[start-1:end+1]
+            activations[category].append(layer_activations[0, start-1:end+1])
+    
+    # my kernel crashes if I run it for more than 28 prompts... I don't know wny :()
+    acc += 1
+    if acc > 28:
+        break
+
+# %%
+overall_mean = 0
+num_activations = 0
+for _, layer_activations in activations.items():
+    for la in layer_activations:
+        overall_mean += la.sum(dim=0)
+        num_activations += la.shape[0]
+overall_mean /= num_activations
+print(overall_mean.shape)
+
+# %%
+# calculate mean vectors for each category
+mean_vectors = {}
+for category, layer_activations in activations.items():
+    print(category)
+    means = [la.mean(dim=0) for la in layer_activations]
+    mean = torch.stack(means, dim=0).mean(dim=0)
+    mean_vectors[category] = mean
+print(mean_vectors["backtracking"].shape)
+
+# %%
+# compute difference-of-means vectors for each category
+steering_vectors = {}
+for category, mean_vector in mean_vectors.items():
+    steering_vectors[category] = mean_vectors[category] - overall_mean
+
+# %%
+test_prompt = "What is 2 + 2?"
+text = f"<｜User｜>{test_prompt}<｜Assistant｜><think>\nOkay, so the user is asking what 2 + 2 is."
+# %%
+with model.generate(text, max_new_tokens=32) as tracer:
+    out = model.generator.output.save()
+# %%
+print(model.tokenizer.decode(out[0]))
+
+# %%
+# apply 5x backtracking steering vector
+with model.generate(text, max_new_tokens=64) as tracer:
+    with model.model.layers.all():
+        model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+# %%
+# apply 10x uncertainty-estimation steering vector
+with model.generate(text, max_new_tokens=64) as tracer:
+    with model.model.layers.all():
+        model.model.layers[layer_of_interest].output[0][:] += 10 * steering_vectors["uncertainty-estimation"].detach()
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+# %%
+# apply 5x initializing steering vector
+with model.generate(text, max_new_tokens=64) as tracer:
+    with model.model.layers.all():
+        model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["initializing"].detach()
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+# %%
