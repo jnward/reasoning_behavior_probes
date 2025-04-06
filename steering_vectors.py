@@ -200,7 +200,7 @@ for category, mean_vector in mean_vectors.items():
 test_prompt = "What is 2 + 2?"
 text = f"<｜User｜>{test_prompt}<｜Assistant｜><think>\nOkay, so the user is asking what 2 + 2 is."
 # %%
-with model.generate(text, max_new_tokens=32) as tracer:
+with model.generate(text, max_new_tokens=64) as tracer:
     out = model.generator.output.save()
 # %%
 print(model.tokenizer.decode(out[0]))
@@ -229,4 +229,127 @@ with model.generate(text, max_new_tokens=64) as tracer:
         out = model.generator.output.save()
 
 print(model.tokenizer.decode(out[0]))
+# %%
+import random
+
+# get random chain from dataset
+with open("reasoning_chains/all_reasoning_chains.json", "r") as f:
+    original_chains = json.load(f)
+
+random_chain = random.choice(original_chains)
+
+# %%
+print(random_chain)
+
+# %%
+# get activations for random chain
+text = f"Problem: {random_chain['problem']} 
+Reasoning: {random_chain['reasoning_chain']}"
+print(text)
+# %%
+with model.trace(text) as tracer:
+    layer_activations = model.model.layers[layer_of_interest].output[0].squeeze().save()
+
+print(layer_activations.shape)
+
+# %%
+# get cosine similarity between activations and steering vectors
+cosine_similarities = {}
+
+for category, steering_vector in steering_vectors.items():
+    cosine_similarities[category] = torch.nn.functional.cosine_similarity(layer_activations, steering_vector, dim=1).detach()
+
+# %%
+import plotly.express as px
+import pandas as pd
+# plot each category's cosine similarity as a multi-line plot
+# print tokens on the x-axis
+tokens = model.tokenizer.encode(text)
+token_text = [model.tokenizer.decode(t) for t in tokens]
+print(len(token_text))
+
+# create a dataframe with the cosine similarities
+df = pd.DataFrame(cosine_similarities)
+df["token"] = token_text
+df["position"] = range(len(token_text))  # Add position column
+
+# Use position for x-axis but display token text as labels
+fig = px.line(df, x="position", y=list(cosine_similarities.keys()), hover_data=["token"])
+fig.update_xaxes(
+    tickmode='array',
+    tickvals=list(range(len(token_text))),
+    ticktext=token_text
+)
+fig.show()
+# %%
+
+# %%
+def create_token_visualization(token_text, similarities, category="backtracking", threshold=0.25, color="blue"):
+    """
+    Create HTML visualization of tokens highlighted based on cosine similarity.
+    
+    Args:
+        token_text: List of tokens
+        similarities: Dictionary of cosine similarities
+        category: Which similarity category to use for highlighting
+        threshold: Values below this threshold will be set to zero
+        color: Color for highlighting ("blue", "orange", "red", "green")
+    
+    Returns:
+        HTML string with highlighted tokens
+    """
+    # Get the specific category's similarities
+    similarity_values = similarities[category]
+    
+    # Find maximum similarity for normalization
+    max_sim = float(max(similarity_values))
+    
+    # Define color RGB values
+    color_map = {
+        "blue": "0,0,255",
+        "orange": "255,165,0",
+        "red": "255,0,0",
+        "green": "0,128,0"
+    }
+    rgb = color_map.get(color, "0,0,255")  # Default to blue if color not found
+    
+    # Create HTML with token highlighting - white background and black text for dark mode
+    html = "<div style='font-family:monospace; line-height:1.5; background-color:white; color:black; padding:10px;'>"
+    
+    for i, token in enumerate(token_text):
+        # Get similarity value (between -1 and 1)
+        sim = float(similarity_values[i])
+        
+        # Apply threshold - values below threshold are set to zero
+        if sim < threshold:
+            sim = 0
+        else:
+            # Normalize only non-zero values
+            if max_sim > 0:
+                sim = sim / max_sim
+        
+        # Create span with background color
+        html += f"<span style='background-color:rgba({rgb},{max(0, sim):.3f})'>{token}</span>"
+    
+    html += "</div>"
+    
+    return html
+
+# Test the visualization function
+from IPython.display import display, HTML
+
+# Save to file
+html_viz = create_token_visualization(
+    token_text,
+    cosine_similarities,
+    category="uncertainty-estimation",
+    threshold=0.05,
+    color="orange"
+)
+with open("token_visualization.html", "w") as f:
+    f.write(html_viz)
+
+# Display in the interactive window
+display(HTML(html_viz))
+
 # %%
