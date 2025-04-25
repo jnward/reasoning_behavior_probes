@@ -1,0 +1,502 @@
+[
+  {
+    "id": "creative_0",
+    "category": "Creative Problem Solving",
+    "problem": "A city wants to increase library usage among teenagers. Traditional approaches like advertising campaigns and extended hours haven't worked. Develop three unconventional strategies that might encourage teens to visit libraries more frequently."
+  },
+  {
+    "id": "creative_1",
+    "category": "Creative Problem Solving",
+    "problem": "You have a glass of water and a glass of wine, each containing equal volumes. You take a teaspoon of wine and put it in the water. Then you take a teaspoon of this mixture and put it back into the wine glass. Is there now more wine in the water glass or more water in the wine glass? Explain your reasoning."
+  },
+  {
+    "id": "creative_2",
+    "category": "Creative Problem Solving",
+    "problem": "Design a classroom desk that would better serve students with ADHD without disrupting other students or drawing attention to those using it."
+  },
+  {
+    "id": "creative_3",
+    "category": "Creative Problem Solving",
+    "problem": "A shipping company needs to transport fragile items using minimal packaging material while ensuring the items arrive intact. Propose a solution inspired by structures found in nature."
+  },
+  {
+    "id": "creative_4",
+    "category": "Creative Problem Solving",
+    "problem": "You're trapped in a circular room with no windows and only one door, which is locked. The walls are painted completely white with no markings. In the center of the room is a wooden table and a wooden chair. Nothing else is in the room. How might you escape?"
+  },
+  {
+    "id": "creative_5",
+    "category": "Creative Problem Solving",
+    "problem": "A restaurant has a problem: during peak hours, customers have to wait too long for their food. However, hiring more staff or expanding the kitchen isn't financially viable. Propose three innovative solutions that don't involve significant expense."
+  },
+  {
+    "id": "creative_6",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a game that can be played using only a standard deck of playing cards that would help children practice multiplication tables in an engaging way."
+  },
+  {
+    "id": "creative_7",
+    "category": "Creative Problem Solving",
+    "problem": "Design a system to remind elderly people to take their medications that doesn't rely on smartphones, complicated technology, or constant human supervision."
+  },
+  {
+    "id": "creative_8",
+    "category": "Creative Problem Solving",
+    "problem": "A city has a problem with littering in its parks. Traditional approaches like fines and adding more trash bins haven't been effective. Propose three unconventional solutions that might change people's behavior."
+  },
+  {
+    "id": "creative_9",
+    "category": "Creative Problem Solving",
+    "problem": "You need to move a heavy piano up three flights of stairs without using modern equipment like elevators or professional movers. What creative approaches might you take to solve this problem?"
+  },
+  {
+    "id": "creative_10",
+    "category": "Creative Problem Solving",
+    "problem": "Create a new board game that teaches the principles of sustainable living without being preachy or boring."
+  },
+  {
+    "id": "creative_11",
+    "category": "Creative Problem Solving",
+    "problem": "You have a jar full of white marbles and a jar full of black marbles. How would you use these to explain the concept of probability to a group of 10-year-olds in a hands-on, memorable way?"
+  },
+  {
+    "id": "creative_12",
+    "category": "Creative Problem Solving",
+    "problem": "Design a water filter that could be constructed from materials commonly found in household trash and would be effective enough to make untreated water safer to drink in emergency situations."
+  },
+  {
+    "id": "creative_13",
+    "category": "Creative Problem Solving",
+    "problem": "A small coffee shop wants to increase its customer base but has very limited floorspace and cannot physically expand. Propose three innovative approaches that could allow them to serve more customers without making the space feel crowded."
+  },
+  {
+    "id": "creative_14",
+    "category": "Creative Problem Solving",
+    "problem": "Create a method for a person with no smartphone or computer to securely keep track of multiple complex passwords for various accounts."
+  },
+  {
+    "id": "creative_15",
+    "category": "Creative Problem Solving",
+    "problem": "Design a system that would allow a person with limited mobility to retrieve items from high kitchen cabinets without requiring expensive home renovations."
+  },
+  {
+    "id": "creative_16",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a concept for a children's toy that teaches the basics of coding without using screens or electricity."
+  },
+  {
+    "id": "creative_17",
+    "category": "Creative Problem Solving",
+    "problem": "A small town has limited resources for snow removal, leading to dangerous roads during winter. The town cannot afford more equipment or staff. Propose three unconventional solutions to improve winter road safety without significant expense."
+  },
+  {
+    "id": "creative_18",
+    "category": "Creative Problem Solving",
+    "problem": "You're camping and realize you've forgotten matches or a lighter. It's getting dark and cold. Using only items typically found in a backpack (clothes, water bottle, first aid kit, etc.), how might you start a fire?"
+  },
+  {
+    "id": "creative_19",
+    "category": "Creative Problem Solving",
+    "problem": "Design a communication system that would allow two people who speak different languages and have no common language to collaborate effectively on assembling a piece of furniture."
+  },
+  {
+    "id": "creative_20",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a way to teach the concept of momentum in physics to middle school students using only household items and without relying on mathematical equations."
+  },
+  {
+    "id": "creative_21",
+    "category": "Creative Problem Solving",
+    "problem": "Create a business model for a restaurant where customers don't know what they'll be eating until the food arrives, while ensuring the restaurant remains financially viable and attractive to customers."
+  },
+  {
+    "id": "creative_22",
+    "category": "Creative Problem Solving",
+    "problem": "You need to divide a cake among seven people fairly, but you don't have a knife or any other cutting implement. How might you ensure everyone gets an equal portion?"
+  },
+  {
+    "id": "creative_23",
+    "category": "Creative Problem Solving",
+    "problem": "Design a way for a teacher to quickly and effectively assess whether 30 students understand a concept without using written tests or requiring students to speak in front of the class."
+  },
+  {
+    "id": "creative_24",
+    "category": "Creative Problem Solving",
+    "problem": "Create a musical instrument that can be played by someone who has the use of only one hand and produces at least three distinct notes."
+  },
+  {
+    "id": "creative_25",
+    "category": "Creative Problem Solving",
+    "problem": "A remote village has no reliable electricity but needs to refrigerate medicines. Propose a cooling solution that doesn't require consistent power and can be made primarily from locally available materials."
+  },
+  {
+    "id": "creative_26",
+    "category": "Creative Problem Solving",
+    "problem": "Design a non-digital, low-cost system that would help a busy family coordinate their schedules and responsibilities without requiring constant verbal communication."
+  },
+  {
+    "id": "creative_27",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for teaching abstract mathematical concepts like algebra to students who are primarily tactile learners and struggle with traditional instruction methods."
+  },
+  {
+    "id": "creative_28",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a restaurant that employs only individuals with no previous cooking experience while still producing high-quality food."
+  },
+  {
+    "id": "creative_29",
+    "category": "Creative Problem Solving",
+    "problem": "Design a sustainable alternative to traditional gift wrapping that is attractive, reusable, and would appeal to consumers accustomed to disposable wrapping paper."
+  },
+  {
+    "id": "creative_30",
+    "category": "Creative Problem Solving",
+    "problem": "You're in charge of organizing a team-building event for 50 colleagues with vastly different physical abilities and interests. How would you design an activity that everyone can meaningfully participate in and enjoy?"
+  },
+  {
+    "id": "creative_31",
+    "category": "Creative Problem Solving",
+    "problem": "Design a method for teaching a foreign language to adults that doesn't require memorization of vocabulary lists or grammar rules."
+  },
+  {
+    "id": "creative_32",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a children's playground that would be equally engaging for children with and without physical disabilities without having separate equipment for different abilities."
+  },
+  {
+    "id": "creative_33",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a way to measure rainfall accurately without using any electronic devices or traditional rain gauges."
+  },
+  {
+    "id": "creative_34",
+    "category": "Creative Problem Solving",
+    "problem": "Design a bicycle for two people that would allow a person with no use of their legs to ride together with a person who has full mobility, with both contributing to powering the bicycle."
+  },
+  {
+    "id": "creative_35",
+    "category": "Creative Problem Solving",
+    "problem": "Create a method for teaching color theory to someone who has been blind since birth."
+  },
+  {
+    "id": "creative_36",
+    "category": "Creative Problem Solving",
+    "problem": "Design a packaging solution for eggs that uses less material than traditional cartons but provides equal or better protection."
+  },
+  {
+    "id": "creative_37",
+    "category": "Creative Problem Solving",
+    "problem": "A hospital waiting room is consistently described as anxiety-inducing by patients. Redesign the experience without making major architectural changes or increasing staffing."
+  },
+  {
+    "id": "creative_38",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a restaurant menu that would be equally accessible to people who are sighted, blind, or have limited vision without requiring different menus for different customers."
+  },
+  {
+    "id": "creative_39",
+    "category": "Creative Problem Solving",
+    "problem": "Design a voting system for a group of 20 people that ensures no single person's vote counts more than others, prevents strategic voting, and doesn't reveal how individuals voted."
+  },
+  {
+    "id": "creative_40",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for teaching young children (ages 4-6) about personal finance and saving money in a way that's engaging and builds lasting habits."
+  },
+  {
+    "id": "creative_41",
+    "category": "Creative Problem Solving",
+    "problem": "You're stranded on a small island with abundant coconut trees, but no tools. How would you access the coconuts that are high up in the trees?"
+  },
+  {
+    "id": "creative_42",
+    "category": "Creative Problem Solving",
+    "problem": "Design a workflow system for a restaurant kitchen that prevents cross-contamination of allergens while not significantly slowing down food preparation."
+  },
+  {
+    "id": "creative_43",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for public transportation in a very hilly city that's accessible to people with mobility issues but doesn't require massive infrastructure investments."
+  },
+  {
+    "id": "creative_44",
+    "category": "Creative Problem Solving",
+    "problem": "Design a system for a grocery store that would reduce the amount of food wasted due to expiration without requiring electronic monitoring systems."
+  },
+  {
+    "id": "creative_45",
+    "category": "Creative Problem Solving",
+    "problem": "Create a method for a person who lives alone to determine if they've accidentally left their stove on after leaving home, without using smart home technology."
+  },
+  {
+    "id": "creative_46",
+    "category": "Creative Problem Solving",
+    "problem": "Design a non-technological solution to help people maintain regular sleep schedules despite working rotating shifts."
+  },
+  {
+    "id": "creative_47",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a system that would allow apartment dwellers to grow a meaningful amount of their own food without using much space or requiring significant time commitment."
+  },
+  {
+    "id": "creative_48",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a children's book that effectively explains climate change to 8-year-olds without causing anxiety or using scientific terminology they wouldn't understand."
+  },
+  {
+    "id": "creative_49",
+    "category": "Creative Problem Solving",
+    "problem": "Design a physical exercise routine that could be performed entirely within an airplane seat during a long flight to reduce the risk of deep vein thrombosis."
+  },
+  {
+    "id": "creative_50",
+    "category": "Creative Problem Solving",
+    "problem": "Create a new sport that can be played competitively by people of vastly different physical abilities on the same team without giving advantages to any particular body type."
+  },
+  {
+    "id": "creative_51",
+    "category": "Creative Problem Solving",
+    "problem": "Design a method for individuals to keep track of multiple medications throughout the day without using electronic reminders or requiring literacy."
+  },
+  {
+    "id": "creative_52",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a children's museum exhibit that teaches the principles of electricity without using actual electricity."
+  },
+  {
+    "id": "creative_53",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for a small local business to compete with large online retailers without significantly increasing costs or requiring technological expertise."
+  },
+  {
+    "id": "creative_54",
+    "category": "Creative Problem Solving",
+    "problem": "Design a system that would allow someone to find small items they frequently misplace (like keys or glasses) without using electronic tracking devices."
+  },
+  {
+    "id": "creative_55",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a productive meeting format that prevents a few dominant personalities from controlling the conversation without putting shy participants on the spot."
+  },
+  {
+    "id": "creative_56",
+    "category": "Creative Problem Solving",
+    "problem": "Design a cup or mug that would be equally usable by someone with tremors or limited hand strength as it would be for someone with full dexterity, without looking like an adaptive device."
+  },
+  {
+    "id": "creative_57",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for teaching basic geometry concepts to elementary school students without using traditional worksheets or requiring them to remain seated at desks."
+  },
+  {
+    "id": "creative_58",
+    "category": "Creative Problem Solving",
+    "problem": "Create a game that could be played by four people where one player is deaf, one is blind, one has limited mobility in their hands, and one has no disabilities, with all players having equally important roles."
+  },
+  {
+    "id": "creative_59",
+    "category": "Creative Problem Solving",
+    "problem": "Design a way to make grocery shopping more efficient for customers while also reducing the store's staffing needs and improving product organization."
+  },
+  {
+    "id": "creative_60",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for a person who's terrible at remembering names to better recall people they've met without obviously using memory aids in social situations."
+  },
+  {
+    "id": "creative_61",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a restaurant where customers with very different dietary restrictions (vegan, celiac disease, kosher, etc.) can dine together with equal enjoyment."
+  },
+  {
+    "id": "creative_62",
+    "category": "Creative Problem Solving",
+    "problem": "Design a public park that would encourage intergenerational interaction while still providing appropriate spaces for different age groups."
+  },
+  {
+    "id": "creative_63",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a non-digital method to help people with attention difficulties to stay focused during long meetings or lectures."
+  },
+  {
+    "id": "creative_64",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a clothing line that would adapt to significantly different body shapes while still looking tailored and stylish."
+  },
+  {
+    "id": "creative_65",
+    "category": "Creative Problem Solving",
+    "problem": "Design a way for people who live in apartments without balconies or outdoor space to safely and effectively dry laundry without using electric dryers."
+  },
+  {
+    "id": "creative_66",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for teaching adolescents about responsible social media use that they would actually find engaging rather than preachy."
+  },
+  {
+    "id": "creative_67",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a classroom seating arrangement that accommodates students with ADHD, anxiety, and autism spectrum disorders while still maintaining a cohesive class environment."
+  },
+  {
+    "id": "creative_68",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for restaurants to reduce food waste while also helping address food insecurity in their local communities."
+  },
+  {
+    "id": "creative_69",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for making academic research papers more accessible and useful to the general public without oversimplifying the content."
+  },
+  {
+    "id": "creative_70",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a grocery store designed specifically for elderly shoppers that addresses common challenges they face without segregating them from other shoppers."
+  },
+  {
+    "id": "creative_71",
+    "category": "Creative Problem Solving",
+    "problem": "Design a method for helping young children learn to tie their shoelaces that doesn't require adult assistance after the initial instruction."
+  },
+  {
+    "id": "creative_72",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a way to make public restrooms more hygienic without requiring users to touch surfaces or significantly increasing maintenance costs."
+  },
+  {
+    "id": "creative_73",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a newspaper or news source that effectively presents multiple perspectives on controversial issues without reinforcing polarization."
+  },
+  {
+    "id": "creative_74",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for communities with water scarcity to effectively clean clothes without using large amounts of fresh water."
+  },
+  {
+    "id": "creative_75",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for reducing noise pollution in urban environments without requiring significant changes to infrastructure or transportation systems."
+  },
+  {
+    "id": "creative_76",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a hotel room that would accommodate the needs of business travelers, families with young children, and elderly guests without feeling like it was designed for someone else."
+  },
+  {
+    "id": "creative_77",
+    "category": "Creative Problem Solving",
+    "problem": "Design a way for students to receive personalized feedback on their work in large classes where the teacher doesn't have time to provide detailed individual comments."
+  },
+  {
+    "id": "creative_78",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for teaching empathy to young children that goes beyond simply telling them to consider others' feelings."
+  },
+  {
+    "id": "creative_79",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a restaurant menu that would make it easier for people with dietary restrictions to order without having to ask multiple questions or make special requests."
+  },
+  {
+    "id": "creative_80",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for sharing tools or appliances among apartment dwellers that doesn't require technological expertise or significant initial investment."
+  },
+  {
+    "id": "creative_81",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for reducing food packaging waste without compromising food safety or significantly increasing costs for consumers or producers."
+  },
+  {
+    "id": "creative_82",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a public space that would encourage strangers to interact positively with each other in our increasingly isolated society."
+  },
+  {
+    "id": "creative_83",
+    "category": "Creative Problem Solving",
+    "problem": "Design a way to make historical sites more engaging for teenage visitors without relying on smartphones or electronic devices."
+  },
+  {
+    "id": "creative_84",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for helping people overcome their fear of public speaking that doesn't involve repeatedly facing their fear directly."
+  },
+  {
+    "id": "creative_85",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a children's playground that would naturally encourage cooperation rather than competition without explicit rules requiring children to share or take turns."
+  },
+  {
+    "id": "creative_86",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for urban residents to compost food waste without attracting pests or requiring significant space."
+  },
+  {
+    "id": "creative_87",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for helping people break smartphone addiction without requiring them to give up their devices entirely."
+  },
+  {
+    "id": "creative_88",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a workplace that would accommodate both employees who thrive in collaborative environments and those who need quiet, private spaces to be productive."
+  },
+  {
+    "id": "creative_89",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for keeping track of which leftovers in a shared refrigerator belong to which person without requiring everyone to label their containers."
+  },
+  {
+    "id": "creative_90",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for teaching complex scientific concepts to middle school students that doesn't rely heavily on reading or require expensive laboratory equipment."
+  },
+  {
+    "id": "creative_91",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for a retail store layout that would make shopping efficient for people who know exactly what they want while still encouraging browsing for those who don't."
+  },
+  {
+    "id": "creative_92",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for reducing the environmental impact of product packaging without making the packaging less protective or significantly more expensive."
+  },
+  {
+    "id": "creative_93",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for a small town to attract tourists without losing its authentic character or pricing out local residents."
+  },
+  {
+    "id": "creative_94",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for making online education as engaging and effective as in-person learning without requiring expensive technology or constant internet access."
+  },
+  {
+    "id": "creative_95",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for encouraging children to eat a wider variety of nutritious foods without creating power struggles around mealtime."
+  },
+  {
+    "id": "creative_96",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a method for helping people build new habits that doesn't rely primarily on willpower or require them to make dramatic lifestyle changes all at once."
+  },
+  {
+    "id": "creative_97",
+    "category": "Creative Problem Solving",
+    "problem": "Create a concept for public transportation that would be equally convenient for commuters, families with young children, and elderly or disabled individuals."
+  },
+  {
+    "id": "creative_98",
+    "category": "Creative Problem Solving",
+    "problem": "Design a solution for making important medical information easily accessible to emergency responders without compromising privacy in non-emergency situations."
+  },
+  {
+    "id": "creative_99",
+    "category": "Creative Problem Solving",
+    "problem": "Develop a strategy for reducing plastic waste in schools without placing additional burdens on teachers or requiring significant changes to school operations."
+  }
+]

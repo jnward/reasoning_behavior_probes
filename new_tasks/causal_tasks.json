@@ -1,0 +1,502 @@
+[
+  {
+    "id": "causal_0",
+    "category": "Causal Reasoning",
+    "problem": "A farmer noticed that when she plays classical music in her greenhouse, her tomato plants produce 20% more fruit. She concludes that classical music causes tomato plants to be more productive. What alternative explanations might explain this correlation without classical music being the direct cause of increased productivity?"
+  },
+  {
+    "id": "causal_1",
+    "category": "Causal Reasoning",
+    "problem": "After a city installed more streetlights, crime rates decreased by 15%. City officials claimed that the streetlights deterred criminal activity. What are other possible explanations for this observed decrease in crime that might not involve the streetlights directly causing the reduction?"
+  },
+  {
+    "id": "causal_2",
+    "category": "Causal Reasoning",
+    "problem": "A pharmaceutical company conducted a study where 100 patients with headaches were given a new drug. 80% reported their headaches disappeared within 30 minutes. The company concludes their drug effectively treats headaches. What critical factors are missing in this analysis to establish causation?"
+  },
+  {
+    "id": "causal_3",
+    "category": "Causal Reasoning",
+    "problem": "Studies show that children who sleep with a night light are more likely to develop nearsightedness later in life. Does this mean night lights cause nearsightedness? What other causal explanation might account for this correlation?"
+  },
+  {
+    "id": "causal_4",
+    "category": "Causal Reasoning",
+    "problem": "A marketing team observes that ice cream sales and drowning deaths both increase during summer months. Explain why it would be fallacious to conclude that ice cream consumption causes drowning, and identify the likely common cause creating this correlation."
+  },
+  {
+    "id": "causal_5",
+    "category": "Causal Reasoning",
+    "problem": "In a controlled experiment, plants were divided into two groups. Group A was exposed to jazz music for 4 hours daily, while Group B received no music. After 6 weeks, Group A plants were 15% taller. Besides music directly affecting plant growth, what confounding variables might explain this difference?"
+  },
+  {
+    "id": "causal_6",
+    "category": "Causal Reasoning",
+    "problem": "A study finds that people who drink 1-2 glasses of wine daily live longer than non-drinkers. Some media outlets report 'Wine extends your lifespan.' What factors make it difficult to establish a causal relationship between wine consumption and longevity from this correlation alone?"
+  },
+  {
+    "id": "causal_7",
+    "category": "Causal Reasoning",
+    "problem": "When a new principal took over at Lincoln High School, test scores improved by 25% over three years. The school board attributes this improvement to the principal's leadership. What other factors might actually be responsible for the improved test scores?"
+  },
+  {
+    "id": "causal_8",
+    "category": "Causal Reasoning",
+    "problem": "Countries with higher chocolate consumption per capita have more Nobel Prize winners per 10 million population. Does this mean chocolate consumption increases scientific achievement? What's a more plausible explanation for this correlation?"
+  },
+  {
+    "id": "causal_9",
+    "category": "Causal Reasoning",
+    "problem": "After a company implemented a wellness program, employee sick days decreased by 30%. The HR director claims the program improved employee health. What alternative explanations might account for the decrease in reported sick days?"
+  },
+  {
+    "id": "causal_10",
+    "category": "Causal Reasoning",
+    "problem": "In a classroom experiment, a teacher gave one group of students positive reinforcement when they answered correctly, while another group received no special treatment. The first group showed significantly higher improvement. Besides the reinforcement itself, what other mechanisms might explain this difference?"
+  },
+  {
+    "id": "causal_11",
+    "category": "Causal Reasoning",
+    "problem": "A researcher observes that neighborhoods with more trees have lower crime rates. She concludes that planting trees reduces crime. What are some alternative explanations for this correlation that don't involve trees directly causing lower crime rates?"
+  },
+  {
+    "id": "causal_12",
+    "category": "Causal Reasoning",
+    "problem": "People who eat breakfast regularly tend to have lower BMIs than those who skip breakfast. Some nutritionists claim eating breakfast causes weight control. Identify possible confounding variables that might explain this relationship without breakfast directly causing lower BMIs."
+  },
+  {
+    "id": "causal_13",
+    "category": "Causal Reasoning",
+    "problem": "When an airline started charging for checked baggage, passenger complaints about delayed flights increased. The airline's management concluded the baggage fees were causing customer dissatisfaction. What's a more complex causal chain that might explain this relationship?"
+  },
+  {
+    "id": "causal_14",
+    "category": "Causal Reasoning",
+    "problem": "As online streaming services grew in popularity, physical media sales (CDs, DVDs) declined. While streaming seems to have caused the decline in physical media, what specific causal mechanisms might be at work in this industry transformation?"
+  },
+  {
+    "id": "causal_15",
+    "category": "Causal Reasoning",
+    "problem": "After a coastal town banned plastic bags, the number of sea turtles nesting on nearby beaches increased by 40%. Environmental groups credited the bag ban for the increase. What other factors might explain the increase in turtle nesting activity?"
+  },
+  {
+    "id": "causal_16",
+    "category": "Causal Reasoning",
+    "problem": "A psychologist noted that children who play violent video games show more aggressive behavior. The psychologist concludes that violent games cause aggression. What reverse causal explanation might equally explain this observation?"
+  },
+  {
+    "id": "causal_17",
+    "category": "Causal Reasoning",
+    "problem": "Following a major earthquake, scientists observed unusual behavior in certain animals hours before the event. Some concluded that animals can sense impending earthquakes. What methodological problems exist in establishing this causal relationship?"
+  },
+  {
+    "id": "causal_18",
+    "category": "Causal Reasoning",
+    "problem": "Hospital data showed that patients who receive more nurse visits during their stay have longer recovery times. A hospital administrator concluded that frequent nurse visits slow recovery. What's the likely actual causal relationship here?"
+  },
+  {
+    "id": "causal_19",
+    "category": "Causal Reasoning",
+    "problem": "In a factory, workers who took regular 5-minute breaks every hour produced 7% more parts per day than those who took fewer breaks. The factory owner attributes the productivity increase to reduced mental fatigue. What different causal mechanisms might explain this productivity increase?"
+  },
+  {
+    "id": "causal_20",
+    "category": "Causal Reasoning",
+    "problem": "When a university made SAT scores optional for admission, the average SAT score of enrolled students increased. The admissions director claimed this proves the optional policy attracts stronger students. What selection bias might explain this outcome instead?"
+  },
+  {
+    "id": "causal_21",
+    "category": "Causal Reasoning",
+    "problem": "A study found that people who drink four or more cups of coffee daily have a lower risk of developing Parkinson's disease. Some media reports claimed coffee prevents Parkinson's. What genetic or lifestyle factors might create this correlation without coffee being protective?"
+  },
+  {
+    "id": "causal_22",
+    "category": "Causal Reasoning",
+    "problem": "After a city reduced highway speed limits from 70 mph to 55 mph, traffic fatalities decreased by 25%. The transportation department attributed this to lower speeds causing fewer deadly accidents. What other factors related to the speed limit change might contribute to this effect?"
+  },
+  {
+    "id": "causal_23",
+    "category": "Causal Reasoning",
+    "problem": "Countries with higher social media usage rates show higher rates of depression among teenagers. Many assume social media causes depression. What bidirectional causal relationship might better explain this correlation?"
+  },
+  {
+    "id": "causal_24",
+    "category": "Causal Reasoning",
+    "problem": "A restaurant changed its menu to include calorie counts and noticed that average order totals decreased by 15%. Management attributed this to customers choosing lower-calorie options. What other causal mechanisms might explain the decrease in order totals?"
+  },
+  {
+    "id": "causal_25",
+    "category": "Causal Reasoning",
+    "problem": "A meteorologist observes that when migrating birds fly at lower altitudes, rain typically follows within 24 hours. She concludes that low-flying birds predict rain. What's the likely common cause affecting both bird flight patterns and precipitation?"
+  },
+  {
+    "id": "causal_26",
+    "category": "Causal Reasoning",
+    "problem": "Students who study in groups earn higher grades than those who study alone. An education researcher concludes that group study causes improved academic performance. What selection effects might explain this correlation without group study directly causing better grades?"
+  },
+  {
+    "id": "causal_27",
+    "category": "Causal Reasoning",
+    "problem": "In an experiment, researchers found that participants who held a warm cup of coffee judged others as having 'warmer' personalities compared to participants who held iced coffee. While the researchers claimed that physical warmth influences social perception, what methodological issues might challenge this causal conclusion?"
+  },
+  {
+    "id": "causal_28",
+    "category": "Causal Reasoning",
+    "problem": "A gym found that members who attended early morning workout sessions were more likely to maintain their membership for over a year compared to afternoon attendees. The gym concluded morning workouts increase commitment. What personality or lifestyle factors might actually explain this correlation?"
+  },
+  {
+    "id": "causal_29",
+    "category": "Causal Reasoning",
+    "problem": "When a retail store played slower tempo music, customers spent more time shopping and purchases increased by 17%. The store manager concluded slow music causes increased sales. Beyond the direct effect of music, what mediating factors might explain this causal chain?"
+  },
+  {
+    "id": "causal_30",
+    "category": "Causal Reasoning",
+    "problem": "A town installed speed cameras on a stretch of highway and observed a 40% reduction in accidents in that area. The police chief attributed this to the cameras deterring speeding. What regression to the mean effect might partially explain these results?"
+  },
+  {
+    "id": "causal_31",
+    "category": "Causal Reasoning",
+    "problem": "Researchers found that married men have better health outcomes and live longer than single men. Some journalists reported that marriage causes improved male health. What self-selection bias might be at work in this correlation?"
+  },
+  {
+    "id": "causal_32",
+    "category": "Causal Reasoning",
+    "problem": "A company implemented a four-day work week and saw productivity increase by 20%. The CEO claimed the shortened week caused employees to work more efficiently. What Hawthorne effect might be influencing these results?"
+  },
+  {
+    "id": "causal_33",
+    "category": "Causal Reasoning",
+    "problem": "Heart attack rates in a community dropped significantly after a new cardiac care center opened. Hospital administrators attributed this to improved emergency treatment. What prevention measures implemented alongside the new center might actually be driving this change?"
+  },
+  {
+    "id": "causal_34",
+    "category": "Causal Reasoning",
+    "problem": "When a delivery service introduced a customer satisfaction guarantee, returns decreased by 25%. The company concluded the guarantee gave customers more confidence in their purchases. What changes in customer or employee behavior might actually explain the decrease in returns?"
+  },
+  {
+    "id": "causal_35",
+    "category": "Causal Reasoning",
+    "problem": "Researchers found that children with night lights in their bedrooms were more likely to develop myopia (nearsightedness). They initially concluded night lights caused myopia. Later research revealed what actual causal mechanism involving genetic factors?"
+  },
+  {
+    "id": "causal_36",
+    "category": "Causal Reasoning",
+    "problem": "A study found that cities with more bicycle lanes have fewer bicycle accidents. Urban planners concluded that building bike lanes reduces accidents. What intervening variable related to cyclist behavior might explain this effect?"
+  },
+  {
+    "id": "causal_37",
+    "category": "Causal Reasoning",
+    "problem": "When a school district increased physical education time by 30 minutes daily, standardized test scores improved. Administrators claimed exercise directly enhanced cognitive performance. What changes in school schedule or student engagement might mediate this relationship?"
+  },
+  {
+    "id": "causal_38",
+    "category": "Causal Reasoning",
+    "problem": "A large observational study found that people who take multivitamins live longer than those who don't. Supplement companies cited this as evidence for the life-extending benefits of vitamins. What lifestyle confounders likely explain this correlation?"
+  },
+  {
+    "id": "causal_39",
+    "category": "Causal Reasoning",
+    "problem": "After implementing stricter attendance policies, a university saw graduation rates increase by 12%. Administrators credited the policy with improving student outcomes. What self-selection effects might be occurring here instead?"
+  },
+  {
+    "id": "causal_40",
+    "category": "Causal Reasoning",
+    "problem": "Statistics show that hospitals with larger nursing staffs have lower patient mortality rates. Hospital administrators concluded that hiring more nurses directly saves lives. What hospital characteristics might be common causes of both higher staffing and better outcomes?"
+  },
+  {
+    "id": "causal_41",
+    "category": "Causal Reasoning",
+    "problem": "A social media platform changed its algorithm to show users more content from friends and family and less from businesses. User engagement increased by 15%. The company attributed this to users preferring personal content. What novelty effect might be confounding these results?"
+  },
+  {
+    "id": "causal_42",
+    "category": "Causal Reasoning",
+    "problem": "Neighborhoods with more ice cream shops have higher crime rates. A naive analysis might suggest ice cream shops cause crime. What environmental variable likely causes both increased ice cream consumption and higher crime rates in these areas?"
+  },
+  {
+    "id": "causal_43",
+    "category": "Causal Reasoning",
+    "problem": "A study found that students who receive merit scholarships have higher college GPAs than non-scholarship students. The scholarship foundation claimed their financial support causes academic excellence. What pre-existing differences likely explain this correlation?"
+  },
+  {
+    "id": "causal_44",
+    "category": "Causal Reasoning",
+    "problem": "When a store moved expensive items from high shelves to eye level, sales of those items increased by 35%. The store manager concluded shelf placement causes purchasing decisions. What cognitive mechanisms explain this causal relationship?"
+  },
+  {
+    "id": "causal_45",
+    "category": "Causal Reasoning",
+    "problem": "As organic food sales have increased over the past decade, so have autism diagnosis rates. Some alternative health sites claim organic food consumption causes autism. Explain why this represents the post hoc ergo propter hoc fallacy."
+  },
+  {
+    "id": "causal_46",
+    "category": "Causal Reasoning",
+    "problem": "Researchers found that people who regularly floss have better cardiovascular health than non-flossers. Dental associations suggested flossing improves heart health. What personal health habits likely serve as confounding variables in this relationship?"
+  },
+  {
+    "id": "causal_47",
+    "category": "Causal Reasoning",
+    "problem": "When a restaurant added healthier menu options, overall sales decreased by 8%. Management concluded that customers dislike healthy food. What more complex causal mechanisms might explain this sales decrease?"
+  },
+  {
+    "id": "causal_48",
+    "category": "Causal Reasoning",
+    "problem": "A city observed that neighborhoods with more trees had lower crime rates. The parks department proposed planting trees to reduce crime. What socioeconomic factors might explain both increased tree coverage and lower crime rates?"
+  },
+  {
+    "id": "causal_49",
+    "category": "Causal Reasoning",
+    "problem": "Taller people tend to earn higher salaries than shorter people. Some conclude height causes higher earning potential. What social perception factors might mediate this relationship rather than height directly causing higher pay?"
+  },
+  {
+    "id": "causal_50",
+    "category": "Causal Reasoning",
+    "problem": "After increasing the minimum wage, a state saw small business closures increase by 5%. Some economists blamed the wage increase for forcing businesses to close. What economic cycle factors might actually explain this timing coincidence?"
+  },
+  {
+    "id": "causal_51",
+    "category": "Causal Reasoning",
+    "problem": "Regions with higher cheese consumption per capita have more deaths from bedsheet entanglement. This odd correlation demonstrates what important principle about causation versus correlation?"
+  },
+  {
+    "id": "causal_52",
+    "category": "Causal Reasoning",
+    "problem": "A TV station that broadcasts more violent content has viewers who report higher levels of anxiety about crime. The station manager is accused of causing public fear. What viewer self-selection might be occurring instead of a causal relationship?"
+  },
+  {
+    "id": "causal_53",
+    "category": "Causal Reasoning",
+    "problem": "When a company implemented mandatory diversity training, reports of workplace discrimination initially increased. Some executives worried the training caused more discrimination. What reporting effect likely explains this counterintuitive result?"
+  },
+  {
+    "id": "causal_54",
+    "category": "Causal Reasoning",
+    "problem": "Studies show homeowners are more likely to vote than renters. Politicians concluded that owning property causes civic engagement. What stability and investment factors might be confounding variables in this relationship?"
+  },
+  {
+    "id": "causal_55",
+    "category": "Causal Reasoning",
+    "problem": "When a popular diet book recommended eliminating dairy, many readers reported feeling more energetic. The author claimed dairy elimination causes increased energy. What placebo and expectation effects might be operating here?"
+  },
+  {
+    "id": "causal_56",
+    "category": "Causal Reasoning",
+    "problem": "Areas with more mosquito activity report higher ice cream sales. Obviously, ice cream doesn't attract mosquitoes, and mosquitoes don't cause ice cream cravings. What third variable creates this spurious correlation?"
+  },
+  {
+    "id": "causal_57",
+    "category": "Causal Reasoning",
+    "problem": "A study found that children who received music lessons had higher math scores than those who didn't. Music educators claimed music training enhances mathematical ability. What parental investment factors might actually explain this correlation?"
+  },
+  {
+    "id": "causal_58",
+    "category": "Causal Reasoning",
+    "problem": "After implementing a zero-tolerance policy for tardiness, a school saw attendance rates decline by 7%. The principal worried the strict policy backfired. What student decision-making process might explain this causal chain?"
+  },
+  {
+    "id": "causal_59",
+    "category": "Causal Reasoning",
+    "problem": "Counties with more fast food restaurants have higher obesity rates. While fast food consumption likely contributes to obesity, what urban planning and food access issues might be common causes in this relationship?"
+  },
+  {
+    "id": "causal_60",
+    "category": "Causal Reasoning",
+    "problem": "Women who take hormone replacement therapy (HRT) were observed to have lower rates of heart disease than women who don't take HRT. Initially, doctors concluded HRT protects against heart disease. Later randomized controlled trials showed different results. What selection bias likely created the misleading initial correlation?"
+  },
+  {
+    "id": "causal_61",
+    "category": "Causal Reasoning",
+    "problem": "A software company that allowed remote work saw employee satisfaction scores increase by 22%. Leadership concluded that remote work causes higher job satisfaction. What selection effects might be occurring if only certain employees chose remote options?"
+  },
+  {
+    "id": "causal_62",
+    "category": "Causal Reasoning",
+    "problem": "Young adults who regularly attend religious services have lower rates of substance abuse than non-attendees. Religious leaders cite this as evidence that religious participation prevents substance abuse. What family and community factors might better explain this correlation?"
+  },
+  {
+    "id": "causal_63",
+    "category": "Causal Reasoning",
+    "problem": "A bakery that started opening at 6am instead of 7am saw a 25% increase in daily sales. The owner attributed this to capturing the early morning customer segment. What changes in product freshness and availability throughout the day might also contribute to this increase?"
+  },
+  {
+    "id": "causal_64",
+    "category": "Causal Reasoning",
+    "problem": "Researchers observed that children who watch more than 2 hours of television daily have lower reading scores. They concluded screen time reduces reading ability. What parental supervision factors might be the actual causal mechanism here?"
+  },
+  {
+    "id": "causal_65",
+    "category": "Causal Reasoning",
+    "problem": "A hospital noticed that patients admitted on weekends had worse outcomes than those admitted on weekdays. Administrators worried weekend care was substandard. What differences in case severity and staffing might explain this 'weekend effect'?"
+  },
+  {
+    "id": "causal_66",
+    "category": "Causal Reasoning",
+    "problem": "People who use fitness trackers tend to be more physically active than non-users. Device manufacturers claim their trackers motivate exercise. What selection bias makes it difficult to determine if trackers cause increased activity or if active people simply buy trackers?"
+  },
+  {
+    "id": "causal_67",
+    "category": "Causal Reasoning",
+    "problem": "Countries with higher chocolate consumption have more Nobel Prize winners per capita. While it's tempting to conclude chocolate enhances cognitive function, what economic development factors explain both variables?"
+  },
+  {
+    "id": "causal_68",
+    "category": "Causal Reasoning",
+    "problem": "A dating app found that users who post photos with dogs receive 30% more matches than those without dogs. The company concluded dogs make people appear more attractive. What personality traits might people be inferring from dog ownership that actually drive this effect?"
+  },
+  {
+    "id": "causal_69",
+    "category": "Causal Reasoning",
+    "problem": "When a tax was implemented on sugary drinks, consumption decreased by 20%. Health officials attributed this to the tax making sugary drinks less appealing. What price sensitivity and availability factors might better explain this causal relationship?"
+  },
+  {
+    "id": "causal_70",
+    "category": "Causal Reasoning",
+    "problem": "Children who sleep less than 9 hours per night show higher rates of behavioral problems at school. Sleep researchers concluded sleep deprivation causes behavior issues. What family environment factors might be causing both poor sleep and behavior problems?"
+  },
+  {
+    "id": "causal_71",
+    "category": "Causal Reasoning",
+    "problem": "A shipping company that implemented GPS tracking in delivery trucks saw fuel consumption decrease by 15%. Management concluded tracking caused drivers to take more efficient routes. What awareness and accountability factors might explain this causal mechanism?"
+  },
+  {
+    "id": "causal_72",
+    "category": "Causal Reasoning",
+    "problem": "People diagnosed with insomnia are more likely to develop depression later in life than those without sleep issues. Some researchers suggest insomnia causes depression. What bidirectional relationship likely exists between these conditions?"
+  },
+  {
+    "id": "causal_73",
+    "category": "Causal Reasoning",
+    "problem": "When a school district blocked social media sites on school networks, test scores increased by 5%. Administrators claimed reducing digital distractions improved learning outcomes. What implementation and measurement timing issues might affect this conclusion?"
+  },
+  {
+    "id": "causal_74",
+    "category": "Causal Reasoning",
+    "problem": "Heavy coffee drinkers have a lower risk of developing Type 2 diabetes than non-coffee drinkers. While some suggest coffee prevents diabetes, what lifestyle differences between heavy coffee drinkers and non-drinkers might explain this correlation?"
+  },
+  {
+    "id": "causal_75",
+    "category": "Causal Reasoning",
+    "problem": "Areas with more bars and liquor stores have higher crime rates. While alcohol consumption might contribute to crime, what neighborhood economic factors likely influence both alcohol outlet density and crime rates?"
+  },
+  {
+    "id": "causal_76",
+    "category": "Causal Reasoning",
+    "problem": "A website changed its font to be more readable and saw average time spent on site increase by 25%. The UX designer concluded font readability causes longer engagement. What content consumption patterns might actually explain this increase in time spent?"
+  },
+  {
+    "id": "causal_77",
+    "category": "Causal Reasoning",
+    "problem": "Smokers who use nicotine replacement therapy (NRT) are more likely to successfully quit than those who attempt to quit without aids. This suggests NRT causes higher quit success. What motivation and commitment differences might exist between those who seek NRT and those who don't?"
+  },
+  {
+    "id": "causal_78",
+    "category": "Causal Reasoning",
+    "problem": "A company found that employees who participated in their wellness program had fewer sick days than non-participants. HR concluded the wellness program improved health. What pre-existing health consciousness might explain both program participation and fewer sick days?"
+  },
+  {
+    "id": "causal_79",
+    "category": "Causal Reasoning",
+    "problem": "Students who eat breakfast before standardized tests score higher than those who don't. Nutritionists claim breakfast consumption improves cognitive performance. What socioeconomic factors might be common causes of both breakfast consumption and test performance?"
+  },
+  {
+    "id": "causal_80",
+    "category": "Causal Reasoning",
+    "problem": "Homeowners with programmable thermostats use less energy than those with manual thermostats. Energy companies concluded smart thermostats cause energy conservation. What homeowner characteristics might explain both the purchase of a programmable thermostat and energy-conscious behavior?"
+  },
+  {
+    "id": "causal_81",
+    "category": "Causal Reasoning",
+    "problem": "After introducing flexible work hours, a company saw employee turnover decrease by 28%. Management attributed this to the new policy improving work-life balance. What economic conditions in the job market might have coincidentally changed during this same period?"
+  },
+  {
+    "id": "causal_82",
+    "category": "Causal Reasoning",
+    "problem": "People who consume artificial sweeteners are more likely to be overweight than those who consume regular sugar. Some conclude artificial sweeteners cause weight gain. What reverse causality might better explain this relationship?"
+  },
+  {
+    "id": "causal_83",
+    "category": "Causal Reasoning",
+    "problem": "Countries with higher education spending per student show better academic performance on international tests. Education advocates cite this as proof that money improves educational outcomes. What cultural attitudes toward education might be confounding variables here?"
+  },
+  {
+    "id": "causal_84",
+    "category": "Causal Reasoning",
+    "problem": "Neighborhoods with more public parks have lower rates of childhood obesity. Urban planners concluded that parks cause increased physical activity and better health outcomes. What community wealth factors might explain both greater park access and lower obesity rates?"
+  },
+  {
+    "id": "causal_85",
+    "category": "Causal Reasoning",
+    "problem": "A restaurant that started displaying calorie counts on menus saw orders of high-calorie items decrease by 20%. Nutritionists concluded calorie information causes healthier food choices. What self-presentation effects might occur when people order food in the presence of others?"
+  },
+  {
+    "id": "causal_86",
+    "category": "Causal Reasoning",
+    "problem": "Cities with higher bicycle usage rates have fewer traffic fatalities per capita. Transportation officials concluded that cycling reduces deadly accidents. What urban design factors might cause both increased cycling and safer overall transportation systems?"
+  },
+  {
+    "id": "causal_87",
+    "category": "Causal Reasoning",
+    "problem": "A streaming service found that subscribers who watch documentaries are less likely to cancel their subscriptions than those who primarily watch reality TV. The company concluded documentary viewing causes subscriber loyalty. What viewer characteristics might explain both content preferences and subscription retention?"
+  },
+  {
+    "id": "causal_88",
+    "category": "Causal Reasoning",
+    "problem": "Houses with swimming pools sell for higher prices than comparable homes without pools. Real estate agents tell homeowners that adding a pool will increase their home's value. What neighborhood and economic factors might explain both pool installation and higher home values?"
+  },
+  {
+    "id": "causal_89",
+    "category": "Causal Reasoning",
+    "problem": "When airlines introduced checked baggage fees, the rate of carry-on luggage significantly increased and boarding times lengthened. While it seems baggage fees caused slower boarding, what passenger decision-making processes created this causal chain?"
+  },
+  {
+    "id": "causal_90",
+    "category": "Causal Reasoning",
+    "problem": "Plants grown under green light grow slower than plants grown under full-spectrum light. A botanist concluded green light inhibits plant growth. What property of chlorophyll and light absorption explains this causal relationship in terms of energy availability?"
+  },
+  {
+    "id": "causal_91",
+    "category": "Causal Reasoning",
+    "problem": "Children who participate in music programs have better language skills than non-participants. Music educators claim music training enhances language development. What parental involvement factors might influence both music participation and language skill development?"
+  },
+  {
+    "id": "causal_92",
+    "category": "Causal Reasoning",
+    "problem": "When a company moved from annual performance reviews to quarterly feedback sessions, employee performance ratings improved by 18%. HR concluded more frequent feedback causes better performance. What measurement and recency biases might affect this conclusion?"
+  },
+  {
+    "id": "causal_93",
+    "category": "Causal Reasoning",
+    "problem": "Older adults who engage in regular volunteer work report higher levels of life satisfaction than non-volunteers. Volunteer organizations claim helping others causes happiness. What health and mobility factors might explain who is able to volunteer in the first place?"
+  },
+  {
+    "id": "causal_94",
+    "category": "Causal Reasoning",
+    "problem": "A town that installed roundabouts to replace four-way stops saw a 35% reduction in intersection accidents. Traffic engineers concluded roundabouts cause safer driving. What changes in driver behavior and traffic flow explain this causal mechanism?"
+  },
+  {
+    "id": "causal_95",
+    "category": "Causal Reasoning",
+    "problem": "College graduates with higher GPAs tend to earn higher starting salaries. Academic advisors tell students that better grades cause better job opportunities. What underlying qualities might cause both academic success and workplace value?"
+  },
+  {
+    "id": "causal_96",
+    "category": "Causal Reasoning",
+    "problem": "A hotel that placed plants in guest rooms received higher satisfaction scores than before the renovation. Management attributed this to biophilic design enhancing guest experience. What overall renovation and modernization effects might be confounding this conclusion?"
+  },
+  {
+    "id": "causal_97",
+    "category": "Causal Reasoning",
+    "problem": "Children who are read to daily by parents develop larger vocabularies than those who aren't read to regularly. Literacy advocates claim reading to children causes vocabulary growth. What parent-child interaction factors beyond the actual reading might contribute to this language development?"
+  },
+  {
+    "id": "causal_98",
+    "category": "Causal Reasoning",
+    "problem": "After a social media platform changed its algorithm to prioritize posts with high engagement, users reported increased feelings of anxiety and inadequacy. Mental health researchers concluded the algorithm change caused psychological distress. What content selection and social comparison mechanisms explain this effect?"
+  },
+  {
+    "id": "causal_99",
+    "category": "Causal Reasoning",
+    "problem": "People who meditate regularly report lower stress levels than non-meditators. Meditation instructors claim meditation causes stress reduction. What self-selection factors might influence who chooses to establish a meditation practice in the first place?"
+  }
+]

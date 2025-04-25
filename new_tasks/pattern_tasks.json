@@ -1,0 +1,502 @@
+[
+  {
+    "id": "pattern_0",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number in the sequence: 2, 5, 10, 17, 26, 37, ?"
+  },
+  {
+    "id": "pattern_1",
+    "category": "Pattern Recognition",
+    "problem": "What letter should replace the question mark in this sequence? D, H, L, P, T, ?"
+  },
+  {
+    "id": "pattern_2",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 3, 6, 18, 72, 360, ?"
+  },
+  {
+    "id": "pattern_3",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbols in this sequence: \u25ef, \u25b3, \u25a1, \u25ef\u25ef, \u25b3\u25b3, \u25a1\u25a1, \u25ef\u25ef\u25ef, ?"
+  },
+  {
+    "id": "pattern_4",
+    "category": "Pattern Recognition",
+    "problem": "What number replaces the question mark? 1, 4, 9, 16, 25, 36, ?"
+  },
+  {
+    "id": "pattern_5",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term in this sequence: 1, 3, 6, 10, 15, 21, ?"
+  },
+  {
+    "id": "pattern_6",
+    "category": "Pattern Recognition",
+    "problem": "What comes next? AZCBYDXEWFV, ?"
+  },
+  {
+    "id": "pattern_7",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 2, 6, 12, 20, 30, 42, ?"
+  },
+  {
+    "id": "pattern_8",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 2, 3, 5, 7, 11, 13, 17, ?"
+  },
+  {
+    "id": "pattern_9",
+    "category": "Pattern Recognition",
+    "problem": "What is the next sequence in the pattern? 1, 11, 21, 1211, 111221, ?"
+  },
+  {
+    "id": "pattern_10",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 0, 1, 1, 2, 3, 5, 8, 13, ?"
+  },
+  {
+    "id": "pattern_11",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: J, F, M, A, M, J, J, ?"
+  },
+  {
+    "id": "pattern_12",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this pattern? 3, 5, 8, 13, 21, ?"
+  },
+  {
+    "id": "pattern_13",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 4, 5, 8, 13, 20, 29, ?"
+  },
+  {
+    "id": "pattern_14",
+    "category": "Pattern Recognition",
+    "problem": "What is the next symbol in this sequence? \u2605, \u25b2, \u25cf, \u2605\u2605, \u25b2\u25b2, \u25cf\u25cf, \u2605\u2605\u2605, ?"
+  },
+  {
+    "id": "pattern_15",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 1, 8, 27, 64, 125, ?"
+  },
+  {
+    "id": "pattern_16",
+    "category": "Pattern Recognition",
+    "problem": "Find the next letter group: AB, EF, IJ, MN, ?"
+  },
+  {
+    "id": "pattern_17",
+    "category": "Pattern Recognition",
+    "problem": "What number comes next? 1, 4, 9, 16, 25, 36, 49, ?"
+  },
+  {
+    "id": "pattern_18",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 31, 28, 31, 30, 31, 30, 31, ?"
+  },
+  {
+    "id": "pattern_19",
+    "category": "Pattern Recognition",
+    "problem": "What is the next term in this pattern? 1, 1, 2, 6, 24, 120, ?"
+  },
+  {
+    "id": "pattern_20",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 3, 7, 15, 31, 63, ?"
+  },
+  {
+    "id": "pattern_21",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 1, 2, 4, 7, 11, 16, ?"
+  },
+  {
+    "id": "pattern_22",
+    "category": "Pattern Recognition",
+    "problem": "What comes next? OTTFFSSE, ?"
+  },
+  {
+    "id": "pattern_23",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 2, 3, 5, 8, 13, 21, 34, ?"
+  },
+  {
+    "id": "pattern_24",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 4, 9, 25, 49, 121, ?"
+  },
+  {
+    "id": "pattern_25",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 1, 4, 16, 64, ?"
+  },
+  {
+    "id": "pattern_26",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol: \u25a2, \u25a3, \u25a4, \u25a5, \u25a6, ?"
+  },
+  {
+    "id": "pattern_27",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 2, 4, 8, 16, 32, ?"
+  },
+  {
+    "id": "pattern_28",
+    "category": "Pattern Recognition",
+    "problem": "What letter comes next in this sequence? A, C, F, J, O, ?"
+  },
+  {
+    "id": "pattern_29",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 5, 15, 30, 60, 120, ?"
+  },
+  {
+    "id": "pattern_30",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this pattern? 1, 4, 10, 22, 46, ?"
+  },
+  {
+    "id": "pattern_31",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: AEBFCGDH, ?"
+  },
+  {
+    "id": "pattern_32",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 2, 6, 18, 54, 162, ?"
+  },
+  {
+    "id": "pattern_33",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 1, 8, 27, 64, 125, ?"
+  },
+  {
+    "id": "pattern_34",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol in the sequence: \u25cf, \u25a0, \u25b2, \u25cf\u25cf, \u25a0\u25a0, \u25b2\u25b2, \u25cf\u25cf\u25cf, ?"
+  },
+  {
+    "id": "pattern_35",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 3, 6, 12, 24, 48, ?"
+  },
+  {
+    "id": "pattern_36",
+    "category": "Pattern Recognition",
+    "problem": "What comes next? ABACABADABACABA, ?"
+  },
+  {
+    "id": "pattern_37",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 1, 3, 7, 15, 31, 63, ?"
+  },
+  {
+    "id": "pattern_38",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 1, 5, 14, 30, 55, ?"
+  },
+  {
+    "id": "pattern_39",
+    "category": "Pattern Recognition",
+    "problem": "What is the next term in this pattern? 4, 7, 12, 19, 28, ?"
+  },
+  {
+    "id": "pattern_40",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 2, 6, 12, 20, 30, ?"
+  },
+  {
+    "id": "pattern_41",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 0, 5, 8, 17, 24, 37, ?"
+  },
+  {
+    "id": "pattern_42",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this sequence? 1, 4, 9, 16, 25, ?"
+  },
+  {
+    "id": "pattern_43",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: AB, ABD, ABDG, ABDGK, ?"
+  },
+  {
+    "id": "pattern_44",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 2, 5, 11, 23, 47, ?"
+  },
+  {
+    "id": "pattern_45",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 3, 6, 10, 15, 21, ?"
+  },
+  {
+    "id": "pattern_46",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol: \u25ef, \u25b3, \u25a1, \u25b3\u25b3, \u25a1\u25a1, \u25ef\u25ef, \u25b3\u25b3\u25b3, ?"
+  },
+  {
+    "id": "pattern_47",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 1, 2, 6, 15, 31, ?"
+  },
+  {
+    "id": "pattern_48",
+    "category": "Pattern Recognition",
+    "problem": "What letter comes next? A, E, I, M, Q, ?"
+  },
+  {
+    "id": "pattern_49",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 1, 4, 13, 40, 121, ?"
+  },
+  {
+    "id": "pattern_50",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this pattern? 1, 2, 3, 5, 8, 13, 21, 34, ?"
+  },
+  {
+    "id": "pattern_51",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: Z, Y, X, U, P, I, ?"
+  },
+  {
+    "id": "pattern_52",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 3, 5, 9, 17, 33, ?"
+  },
+  {
+    "id": "pattern_53",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 2, 7, 14, 23, 34, ?"
+  },
+  {
+    "id": "pattern_54",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol in this sequence: \u25af, \u25af\u25ae, \u25ae, \u25ae\u25af, \u25af, ?"
+  },
+  {
+    "id": "pattern_55",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 8, 6, 9, 23, 87, ?"
+  },
+  {
+    "id": "pattern_56",
+    "category": "Pattern Recognition",
+    "problem": "What comes next? 2, 10, 12, 16, 80, 82, 86, 88, 96, ?"
+  },
+  {
+    "id": "pattern_57",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 10, 11, 13, 17, 25, 41, ?"
+  },
+  {
+    "id": "pattern_58",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 3, 5, 10, 12, 24, 26, ?"
+  },
+  {
+    "id": "pattern_59",
+    "category": "Pattern Recognition",
+    "problem": "What is the next term in this pattern? 2, 1, 3, 4, 7, 11, ?"
+  },
+  {
+    "id": "pattern_60",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 5, 25, 125, 625, ?"
+  },
+  {
+    "id": "pattern_61",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: SUN, MON, TUE, WED, ?"
+  },
+  {
+    "id": "pattern_62",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this sequence? 3, 7, 11, 15, 19, ?"
+  },
+  {
+    "id": "pattern_63",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 1, 3, 4, 7, 11, 18, ?"
+  },
+  {
+    "id": "pattern_64",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 1, 3, 6, 10, 15, ?"
+  },
+  {
+    "id": "pattern_65",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 5, 6, 8, 11, 15, ?"
+  },
+  {
+    "id": "pattern_66",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol: \u2660, \u2665, \u2663, \u2666, \u2660\u2665, \u2665\u2663, ?"
+  },
+  {
+    "id": "pattern_67",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 2, 6, 14, 30, 62, ?"
+  },
+  {
+    "id": "pattern_68",
+    "category": "Pattern Recognition",
+    "problem": "What letter comes next? A, D, G, J, M, ?"
+  },
+  {
+    "id": "pattern_69",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 1/2, 2/3, 3/4, 4/5, ?"
+  },
+  {
+    "id": "pattern_70",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this pattern? 1000, 500, 100, 50, 10, ?"
+  },
+  {
+    "id": "pattern_71",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: O, T, T, F, F, S, S, E, ?"
+  },
+  {
+    "id": "pattern_72",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 27, 9, 3, 1, 1/3, ?"
+  },
+  {
+    "id": "pattern_73",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 3, 5, 9, 15, 23, ?"
+  },
+  {
+    "id": "pattern_74",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol in this sequence: \u25d0, \u25d3, \u25d2, \u25d1, ?"
+  },
+  {
+    "id": "pattern_75",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 2, 3, 6, 18, 108, ?"
+  },
+  {
+    "id": "pattern_76",
+    "category": "Pattern Recognition",
+    "problem": "What comes next? 0, 3, 8, 15, 24, 35, ?"
+  },
+  {
+    "id": "pattern_77",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 1, 1, 4, 8, 9, 27, 16, ?"
+  },
+  {
+    "id": "pattern_78",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 1, 8, 27, 64, ?"
+  },
+  {
+    "id": "pattern_79",
+    "category": "Pattern Recognition",
+    "problem": "What is the next term in this pattern? 2, 4, 12, 48, 240, ?"
+  },
+  {
+    "id": "pattern_80",
+    "category": "Pattern Recognition",
+    "problem": "Find the missing number: 0, 1, 4, 9, 16, 25, 36, ?"
+  },
+  {
+    "id": "pattern_81",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: ABCABCDABCDE, ?"
+  },
+  {
+    "id": "pattern_82",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this sequence? 3, 1, 4, 1, 5, 9, ?"
+  },
+  {
+    "id": "pattern_83",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 4, 8, 16, 32, 64, ?"
+  },
+  {
+    "id": "pattern_84",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 0, 2, 6, 12, 20, ?"
+  },
+  {
+    "id": "pattern_85",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 13, 17, 19, 23, 29, ?"
+  },
+  {
+    "id": "pattern_86",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol: \u2b21, \u2b22, \u2b21\u2b22, \u2b22\u2b21, \u2b21\u2b22\u2b21, ?"
+  },
+  {
+    "id": "pattern_87",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 0, 6, 24, 60, 120, ?"
+  },
+  {
+    "id": "pattern_88",
+    "category": "Pattern Recognition",
+    "problem": "What letter comes next? B, D, H, P, ?"
+  },
+  {
+    "id": "pattern_89",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 2, 5, 9, 14, 20, ?"
+  },
+  {
+    "id": "pattern_90",
+    "category": "Pattern Recognition",
+    "problem": "What comes next in this pattern? 1, 2, 4, 8, 16, 32, ?"
+  },
+  {
+    "id": "pattern_91",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 1, 10, 100, 1000, ?"
+  },
+  {
+    "id": "pattern_92",
+    "category": "Pattern Recognition",
+    "problem": "Find the next term: 1, 2, 4, 7, 11, 16, 22, ?"
+  },
+  {
+    "id": "pattern_93",
+    "category": "Pattern Recognition",
+    "problem": "What number should replace the question mark? 12, 14, 18, 26, 42, ?"
+  },
+  {
+    "id": "pattern_94",
+    "category": "Pattern Recognition",
+    "problem": "Find the next symbol in this sequence: \u2295, \u2297, \u2296, \u2298, ?"
+  },
+  {
+    "id": "pattern_95",
+    "category": "Pattern Recognition",
+    "problem": "Complete the pattern: 2, 5, 11, 23, 47, 95, ?"
+  },
+  {
+    "id": "pattern_96",
+    "category": "Pattern Recognition",
+    "problem": "What comes next? A1, B3, C5, D7, ?"
+  },
+  {
+    "id": "pattern_97",
+    "category": "Pattern Recognition",
+    "problem": "Find the next number: 100, 90, 70, 40, 0, ?"
+  },
+  {
+    "id": "pattern_98",
+    "category": "Pattern Recognition",
+    "problem": "Complete the sequence: 5, 10, 20, 35, 55, ?"
+  },
+  {
+    "id": "pattern_99",
+    "category": "Pattern Recognition",
+    "problem": "What is the next term in this pattern? 2, 5, 26, 677, ?"
+  }
+]

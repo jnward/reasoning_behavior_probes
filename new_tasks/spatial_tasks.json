@@ -1,0 +1,502 @@
+[
+  {
+    "id": "spatial_0",
+    "category": "Spatial Reasoning",
+    "problem": "A cube is painted red on all faces, then cut into 27 equal smaller cubes. How many of these smaller cubes have exactly 2 red faces?"
+  },
+  {
+    "id": "spatial_1",
+    "category": "Spatial Reasoning",
+    "problem": "If you fold a square piece of paper in half vertically, then in half horizontally, then cut off the corner where all folds meet, what shape will be created when you unfold the paper?"
+  },
+  {
+    "id": "spatial_2",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular prism has dimensions 3\u00d74\u00d75. A plane passes through this prism, creating a cross-section. What is the maximum possible area of this cross-section?"
+  },
+  {
+    "id": "spatial_3",
+    "category": "Spatial Reasoning",
+    "problem": "Four identical cubes are arranged in a row. The resulting solid is viewed from the front, from the right, and from above. The front view is a square. The right view is a square. The top view is a rectangle with length 4 times its width. What is the arrangement of the cubes?"
+  },
+  {
+    "id": "spatial_4",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular box with no top has a square base with side length 10 cm and height 5 cm. If the box is constructed from a single flat piece of cardboard, what is the minimum area of cardboard needed?"
+  },
+  {
+    "id": "spatial_5",
+    "category": "Spatial Reasoning",
+    "problem": "A cylindrical hole of radius 2 cm is drilled straight through the center of a solid sphere of radius 5 cm. What is the volume of the remaining solid?"
+  },
+  {
+    "id": "spatial_6",
+    "category": "Spatial Reasoning",
+    "problem": "If you start with a cube and slice off all 8 corners by cutting along planes that pass through the points that divide each edge in a 1:2 ratio, what shape do you get and how many faces does it have?"
+  },
+  {
+    "id": "spatial_7",
+    "category": "Spatial Reasoning",
+    "problem": "A right circular cone has height 12 cm and base radius 5 cm. A plane parallel to the base cuts the cone at a height of 8 cm from the base. What is the radius of the resulting circular cross-section?"
+  },
+  {
+    "id": "spatial_8",
+    "category": "Spatial Reasoning",
+    "problem": "A cube of side length 10 cm has a circular hole drilled through it, centered on a line connecting the centers of opposite faces. If the hole has a radius of 2 cm, what is the volume of the remaining solid?"
+  },
+  {
+    "id": "spatial_9",
+    "category": "Spatial Reasoning",
+    "problem": "A triangular pyramid has an equilateral triangle with side length 6 cm as its base. Each of the other three faces is an isosceles triangle with two sides of length 8 cm. What is the height of the pyramid?"
+  },
+  {
+    "id": "spatial_10",
+    "category": "Spatial Reasoning",
+    "problem": "Two circular cylinders with radius 1 intersect at right angles such that their axes meet. What is the volume of their intersection?"
+  },
+  {
+    "id": "spatial_11",
+    "category": "Spatial Reasoning",
+    "problem": "In a 3\u00d73\u00d73 cube made up of 27 unit cubes, what is the minimum number of unit cubes that must be removed so that there is a straight-line path from any remaining cube to any other remaining cube without passing through any removed cube?"
+  },
+  {
+    "id": "spatial_12",
+    "category": "Spatial Reasoning",
+    "problem": "A tetrahedron has four congruent equilateral triangular faces with side length 6. What is the distance from any vertex to the center of the tetrahedron?"
+  },
+  {
+    "id": "spatial_13",
+    "category": "Spatial Reasoning",
+    "problem": "A square with side length 6 is rotated around one of its diagonals. What is the volume of the resulting solid?"
+  },
+  {
+    "id": "spatial_14",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with side length 1 has a corner at the origin (0,0,0) and three edges along the positive x, y, and z axes. A plane passes through the points (0.5,0,0), (0,0.5,0), and (0,0,0.5). What is the area of the cross-section formed by this plane and the cube?"
+  },
+  {
+    "id": "spatial_15",
+    "category": "Spatial Reasoning",
+    "problem": "Which net cannot be folded to form a regular tetrahedron? A) Four equilateral triangles arranged in a line B) Four equilateral triangles arranged in a triangle with one triangle attached to each side C) Four equilateral triangles arranged in a windmill pattern D) Four equilateral triangles arranged in a rhombus pattern"
+  },
+  {
+    "id": "spatial_16",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular prism has dimensions 2\u00d73\u00d74. A point is chosen randomly inside the prism. What is the probability that the point is closer to the center of the prism than to any face of the prism?"
+  },
+  {
+    "id": "spatial_17",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with edge length 10 cm has a corner cut off by a plane such that the plane creates an equilateral triangle on the cube. What is the volume of the remaining solid?"
+  },
+  {
+    "id": "spatial_18",
+    "category": "Spatial Reasoning",
+    "problem": "A regular octahedron has 8 faces that are equilateral triangles. If the distance from any vertex to the center of the octahedron is 5 units, what is the surface area of the octahedron?"
+  },
+  {
+    "id": "spatial_19",
+    "category": "Spatial Reasoning",
+    "problem": "Consider a sequence of folding a square paper: 1) Fold in half along a diagonal 2) Fold in half again along the other diagonal 3) Cut off the pointed end with a straight cut perpendicular to the fold line. When unfolded, what shape will the paper have?"
+  },
+  {
+    "id": "spatial_20",
+    "category": "Spatial Reasoning",
+    "problem": "A cube has each face painted a different color. The cube is then cut into 64 identical smaller cubes. How many of these smaller cubes have exactly two faces painted?"
+  },
+  {
+    "id": "spatial_21",
+    "category": "Spatial Reasoning",
+    "problem": "A solid consists of a hemisphere attached to a cone along their circular faces. The radius of the circular base is 5 cm, and the height of the cone is 12 cm. What is the volume of the solid?"
+  },
+  {
+    "id": "spatial_22",
+    "category": "Spatial Reasoning",
+    "problem": "A small cube with side length 2 cm is placed inside a larger hollow cube with side length 8 cm, such that corresponding faces are parallel and the small cube's center coincides with the large cube's center. If the space between the cubes is filled with water, what is the volume of water needed?"
+  },
+  {
+    "id": "spatial_23",
+    "category": "Spatial Reasoning",
+    "problem": "Which of the following three-dimensional shapes has the largest ratio of surface area to volume? A) Cube B) Sphere C) Regular tetrahedron D) Regular octahedron (all with the same volume)"
+  },
+  {
+    "id": "spatial_24",
+    "category": "Spatial Reasoning",
+    "problem": "A square pyramid has a square base with side length 10 cm. The height of the pyramid is 12 cm. What is the angle between any lateral face and the base?"
+  },
+  {
+    "id": "spatial_25",
+    "category": "Spatial Reasoning",
+    "problem": "A cylinder with radius 3 cm and height 8 cm is inscribed in a sphere such that both circular bases of the cylinder touch the sphere. What is the radius of the sphere?"
+  },
+  {
+    "id": "spatial_26",
+    "category": "Spatial Reasoning",
+    "problem": "Consider a 4\u00d74\u00d74 cube made up of 64 unit cubes. If we remove all unit cubes that have at least one face on the exterior of the large cube, how many unit cubes remain?"
+  },
+  {
+    "id": "spatial_27",
+    "category": "Spatial Reasoning",
+    "problem": "A line segment connects the centers of two opposite faces of a cube with side length 1. A second line segment connects the centers of two other opposite faces. What is the shortest distance between these two line segments?"
+  },
+  {
+    "id": "spatial_28",
+    "category": "Spatial Reasoning",
+    "problem": "In a regular dodecahedron (with 12 pentagonal faces), how many different planes of symmetry does it have?"
+  },
+  {
+    "id": "spatial_29",
+    "category": "Spatial Reasoning",
+    "problem": "A semicircle with radius 5 cm is rotated 360\u00b0 around its diameter. What is the volume of the resulting solid?"
+  },
+  {
+    "id": "spatial_30",
+    "category": "Spatial Reasoning",
+    "problem": "Four identical spheres, each with radius r, are placed so that each sphere touches the other three. What is the ratio of the distance between the centers of any two spheres to r?"
+  },
+  {
+    "id": "spatial_31",
+    "category": "Spatial Reasoning",
+    "problem": "A triangular prism has equilateral triangular bases with side length 4 cm and rectangular sides with length 10 cm. What is the angle between any rectangular side and a triangular base?"
+  },
+  {
+    "id": "spatial_32",
+    "category": "Spatial Reasoning",
+    "problem": "A square with side length 4 cm is folded along one of its diagonals so that the two triangular halves form a dihedral angle of 60\u00b0. What is the distance between the two corners that were originally opposite each other?"
+  },
+  {
+    "id": "spatial_33",
+    "category": "Spatial Reasoning",
+    "problem": "A regular hexagonal prism has regular hexagonal bases with side length 5 cm and height 12 cm. What is the total surface area of the prism?"
+  },
+  {
+    "id": "spatial_34",
+    "category": "Spatial Reasoning",
+    "problem": "A sphere of radius 5 cm has a cylindrical hole drilled through its center. The axis of the cylinder passes through the center of the sphere, and the cylinder has radius 3 cm. What is the volume of the remaining solid?"
+  },
+  {
+    "id": "spatial_35",
+    "category": "Spatial Reasoning",
+    "problem": "Three identical spheres each with radius 2 cm are placed on a horizontal surface so that each sphere touches the other two and the surface. What is the height of the center of the third sphere above the horizontal surface?"
+  },
+  {
+    "id": "spatial_36",
+    "category": "Spatial Reasoning",
+    "problem": "A truncated cone has lower base radius 6 cm, upper base radius 3 cm, and height 8 cm. What is the surface area of the truncated cone, including both circular bases?"
+  },
+  {
+    "id": "spatial_37",
+    "category": "Spatial Reasoning",
+    "problem": "A regular tetrahedron with edge length 4 cm is sliced by a plane that passes through the midpoints of three edges that share a common vertex. What is the area of the resulting triangular cross-section?"
+  },
+  {
+    "id": "spatial_38",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with side length 6 cm has a square hole cut through it. The hole passes through the centers of two opposite faces and has sides parallel to the cube edges. If the area of the hole is 4 cm\u00b2, what is the volume of the remaining solid?"
+  },
+  {
+    "id": "spatial_39",
+    "category": "Spatial Reasoning",
+    "problem": "Which of the following solids has exactly 32 edges? A) Truncated cube B) Rhombicuboctahedron C) Truncated octahedron D) Snub dodecahedron"
+  },
+  {
+    "id": "spatial_40",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular box with dimensions 3\u00d74\u00d75 is placed so that one corner is at the origin and edges extend along the positive x, y, and z axes. What is the equation of the plane that passes through the corner at the origin and the two corners farthest from it?"
+  },
+  {
+    "id": "spatial_41",
+    "category": "Spatial Reasoning",
+    "problem": "Eight identical spheres are arranged in a cubic pattern so that each sphere touches exactly three others. If each sphere has radius 2 cm, what is the volume of the convex hull of the eight sphere centers?"
+  },
+  {
+    "id": "spatial_42",
+    "category": "Spatial Reasoning",
+    "problem": "A pyramid has a rectangular base measuring 6 cm by 8 cm and four identical triangular faces. If the height of the pyramid is 5 cm, what is the total surface area of the pyramid?"
+  },
+  {
+    "id": "spatial_43",
+    "category": "Spatial Reasoning",
+    "problem": "Three cubes with edge lengths 3 cm, 4 cm, and 5 cm are put together to form an L-shaped solid, with one corner of each cube meeting at a point. What is the minimum amount of wrapping paper needed to completely cover this solid?"
+  },
+  {
+    "id": "spatial_44",
+    "category": "Spatial Reasoning",
+    "problem": "Two regular hexagonal prisms, each with side length 2 cm and height 8 cm, intersect so that their axes are perpendicular and they pass through each other's centers. What is the volume of their intersection?"
+  },
+  {
+    "id": "spatial_45",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with edge length 1 is cut by a plane that passes through two opposite edges. What is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_46",
+    "category": "Spatial Reasoning",
+    "problem": "A regular octahedron is inscribed in a sphere of radius 4 cm. What is the edge length of the octahedron?"
+  },
+  {
+    "id": "spatial_47",
+    "category": "Spatial Reasoning",
+    "problem": "Which of these cannot be a valid projection of a cube? A) Regular hexagon B) Equilateral triangle C) Regular pentagon D) Rhombus"
+  },
+  {
+    "id": "spatial_48",
+    "category": "Spatial Reasoning",
+    "problem": "A right circular cone has base radius 3 cm and height 4 cm. What is the angle between the axis of the cone and any slant height line?"
+  },
+  {
+    "id": "spatial_49",
+    "category": "Spatial Reasoning",
+    "problem": "If you connect the centers of adjacent faces of a regular icosahedron (20 triangular faces), what polyhedron do you get?"
+  },
+  {
+    "id": "spatial_50",
+    "category": "Spatial Reasoning",
+    "problem": "A diagonal of a cube has length 6\u221a3 cm. What is the total surface area of the cube?"
+  },
+  {
+    "id": "spatial_51",
+    "category": "Spatial Reasoning",
+    "problem": "A regular tetrahedron has edge length 6 cm. What is the radius of the sphere that passes through all four vertices of the tetrahedron?"
+  },
+  {
+    "id": "spatial_52",
+    "category": "Spatial Reasoning",
+    "problem": "A regular hexagon is folded to form a 3D shape where opposite vertices meet. What 3D shape is formed?"
+  },
+  {
+    "id": "spatial_53",
+    "category": "Spatial Reasoning",
+    "problem": "What is the volume of the solid formed by rotating an equilateral triangle with side length 4 around one of its sides?"
+  },
+  {
+    "id": "spatial_54",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular piece of paper has dimensions 6\u00d78. It is folded so that one corner touches the opposite corner. What is the length of the crease formed?"
+  },
+  {
+    "id": "spatial_55",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with edge length 1 is sliced by a plane that passes through the midpoints of three edges that form a right angle. What is the area of the resulting triangular cross-section?"
+  },
+  {
+    "id": "spatial_56",
+    "category": "Spatial Reasoning",
+    "problem": "A sphere with radius 5 is inscribed in a right circular cone. If the cone has the minimum possible volume, what is the ratio of the height of the cone to the radius of its base?"
+  },
+  {
+    "id": "spatial_57",
+    "category": "Spatial Reasoning",
+    "problem": "A cuboctahedron is formed by truncating all 8 corners of a cube, cutting at each corner to the midpoints of the adjacent edges. If the original cube has edge length 4, what is the surface area of the cuboctahedron?"
+  },
+  {
+    "id": "spatial_58",
+    "category": "Spatial Reasoning",
+    "problem": "A tetrahedral dice has its faces numbered 1, 2, 3, and 4. When the dice is placed on a flat surface, it rests on one face with the other three faces visible. If face 1 is on the table, what is the sum of the numbers on the visible faces?"
+  },
+  {
+    "id": "spatial_59",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular box with dimensions 2\u00d73\u00d74 is placed with one corner at the origin and sides along the coordinate axes. What is the distance from the origin to the farthest point on the box?"
+  },
+  {
+    "id": "spatial_60",
+    "category": "Spatial Reasoning",
+    "problem": "Four spheres with radius 2 cm are arranged so that each sphere touches exactly three others. What is the volume of the tetrahedron formed by connecting the centers of the four spheres?"
+  },
+  {
+    "id": "spatial_61",
+    "category": "Spatial Reasoning",
+    "problem": "A cube of edge length 10 cm is truncated by cutting off each corner through the points that are 2 cm from the respective corner along each edge. How many faces does the resulting solid have?"
+  },
+  {
+    "id": "spatial_62",
+    "category": "Spatial Reasoning",
+    "problem": "A cylinder with radius 4 cm and height 10 cm is cut by a plane that is parallel to the axis and passes through the center of the cylinder. What is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_63",
+    "category": "Spatial Reasoning",
+    "problem": "Three identical cubes are stacked in a triangular pyramid (one on top of two). If each cube has edge length 2 cm, what is the height of the center of the top cube from the ground?"
+  },
+  {
+    "id": "spatial_64",
+    "category": "Spatial Reasoning",
+    "problem": "A square pyramid has a square base with side length 8 cm and four identical isosceles triangular faces. If the height of the pyramid is 6 cm, what is the slant height of the pyramid (the distance from the apex to the middle of any side of the base)?"
+  },
+  {
+    "id": "spatial_65",
+    "category": "Spatial Reasoning",
+    "problem": "A regular pentagon with side length 10 cm is rotated around one of its sides. What is the volume of the resulting 3D solid?"
+  },
+  {
+    "id": "spatial_66",
+    "category": "Spatial Reasoning",
+    "problem": "Two planes intersect at an angle of 45\u00b0. A third plane intersects both of these planes along parallel lines. What is the angle between the third plane and each of the original planes?"
+  },
+  {
+    "id": "spatial_67",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with side length 10 cm has a cylindrical hole drilled from the center of one face to the center of the opposite face. If the cylinder has radius 2 cm, what is the volume of the remaining solid?"
+  },
+  {
+    "id": "spatial_68",
+    "category": "Spatial Reasoning",
+    "problem": "A square with side length 2 cm is rotated around an axis that passes through the midpoints of two opposite sides. What is the surface area of the resulting solid?"
+  },
+  {
+    "id": "spatial_69",
+    "category": "Spatial Reasoning",
+    "problem": "Which of the following cannot be obtained as a cross-section of a cube? A) Regular hexagon B) Square C) Equilateral triangle D) Regular pentagon"
+  },
+  {
+    "id": "spatial_70",
+    "category": "Spatial Reasoning",
+    "problem": "A regular tetrahedron with edge length 4 cm is cut by a plane that is parallel to one face and passes through the midpoints of the three edges meeting at the opposite vertex. What is the area of the resulting triangular cross-section?"
+  },
+  {
+    "id": "spatial_71",
+    "category": "Spatial Reasoning",
+    "problem": "Six equal spheres, each with radius 1 cm, are placed so that each sphere touches exactly four others. What is the volume of the convex hull of the centers of the six spheres?"
+  },
+  {
+    "id": "spatial_72",
+    "category": "Spatial Reasoning",
+    "problem": "A torus is formed by rotating a circle of radius 3 cm around an axis that is 7 cm from the center of the circle. What is the volume of the torus?"
+  },
+  {
+    "id": "spatial_73",
+    "category": "Spatial Reasoning",
+    "problem": "A pyramid has a regular hexagonal base with side length 4 cm and six identical triangular faces. If the height of the pyramid is 8 cm, what is the total surface area of the pyramid?"
+  },
+  {
+    "id": "spatial_74",
+    "category": "Spatial Reasoning",
+    "problem": "In a 5\u00d75\u00d75 cube composed of 125 unit cubes, what is the maximum number of unit cubes that can be seen from any single viewpoint outside the cube?"
+  },
+  {
+    "id": "spatial_75",
+    "category": "Spatial Reasoning",
+    "problem": "A regular dodecahedron (12 pentagonal faces) is dual to which Platonic solid? A) Cube B) Icosahedron C) Tetrahedron D) Octahedron"
+  },
+  {
+    "id": "spatial_76",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with side length 6 cm has a vertex at the origin and three edges along the positive x, y, and z axes. What is the equation of the plane that contains the face opposite to the origin?"
+  },
+  {
+    "id": "spatial_77",
+    "category": "Spatial Reasoning",
+    "problem": "A triangular prism has an equilateral triangular base with side length 4 cm and a height of 10 cm. What is the total length of all edges of the prism?"
+  },
+  {
+    "id": "spatial_78",
+    "category": "Spatial Reasoning",
+    "problem": "A cone with base radius 4 cm and height 3 cm is placed on a plane. What is the angle between the plane and the slant surface of the cone?"
+  },
+  {
+    "id": "spatial_79",
+    "category": "Spatial Reasoning",
+    "problem": "Eight identical cubes are arranged to form a larger cube. The larger cube is painted blue on all exterior faces, then disassembled into the original eight cubes. How many of the original cubes have exactly three blue faces?"
+  },
+  {
+    "id": "spatial_80",
+    "category": "Spatial Reasoning",
+    "problem": "A sphere with radius 5 cm has a circular hole cut through it. The axis of the hole passes through the center of the sphere, and the hole has radius 3 cm. What is the surface area of the remaining solid (including the inner surface of the hole)?"
+  },
+  {
+    "id": "spatial_81",
+    "category": "Spatial Reasoning",
+    "problem": "A frustum of a right circular cone has lower base radius 8 cm, upper base radius 3 cm, and slant height 13 cm. What is the height of the frustum?"
+  },
+  {
+    "id": "spatial_82",
+    "category": "Spatial Reasoning",
+    "problem": "A regular tetrahedron with edge length 6 cm is placed on a horizontal surface so that exactly one face is on the surface. What is the height of the top vertex from the surface?"
+  },
+  {
+    "id": "spatial_83",
+    "category": "Spatial Reasoning",
+    "problem": "If the six faces of a cube are labeled 1 through 6, and opposite faces sum to 7, which number is on the face opposite to the face labeled 3?"
+  },
+  {
+    "id": "spatial_84",
+    "category": "Spatial Reasoning",
+    "problem": "A 3\u00d73\u00d73 cube is built using 27 unit cubes. If the large cube is painted red on all faces and then disassembled, how many unit cubes have exactly one red face?"
+  },
+  {
+    "id": "spatial_85",
+    "category": "Spatial Reasoning",
+    "problem": "A square with side length 2 cm is rotated 360\u00b0 around an axis that passes through one of its vertices and is perpendicular to the diagonal through that vertex. What is the volume of the resulting solid?"
+  },
+  {
+    "id": "spatial_86",
+    "category": "Spatial Reasoning",
+    "problem": "Three spheres with radii 3 cm, 4 cm, and 5 cm are placed so that each sphere touches the other two. What is the volume of the smallest convex solid that contains all three spheres?"
+  },
+  {
+    "id": "spatial_87",
+    "category": "Spatial Reasoning",
+    "problem": "A cube has edge length 4 cm. What is the area of the cross-section formed when the cube is cut by a plane passing through two diagonally opposite vertices and the midpoint of an edge that doesn't contain either of these vertices?"
+  },
+  {
+    "id": "spatial_88",
+    "category": "Spatial Reasoning",
+    "problem": "A rectangular sheet of paper measuring 8 cm \u00d7 12 cm is folded so that one corner touches the opposite corner. What is the area of the quadrilateral formed by the fold line and the three remaining edges of the paper?"
+  },
+  {
+    "id": "spatial_89",
+    "category": "Spatial Reasoning",
+    "problem": "A pyramid has a square base with side length 6 cm. Each lateral edge of the pyramid has length 10 cm. What is the height of the pyramid?"
+  },
+  {
+    "id": "spatial_90",
+    "category": "Spatial Reasoning",
+    "problem": "A cylinder with radius 5 cm and height 12 cm is cut by a plane that passes through a diameter of the top base and is tangent to the bottom base. What is the volume of the larger of the two resulting pieces?"
+  },
+  {
+    "id": "spatial_91",
+    "category": "Spatial Reasoning",
+    "problem": "Four spheres, each with radius 3 cm, are placed so that each sphere touches exactly three others. What is the distance between the centers of any two touching spheres?"
+  },
+  {
+    "id": "spatial_92",
+    "category": "Spatial Reasoning",
+    "problem": "A rhombic dodecahedron has 12 congruent rhombic faces. If the rhombic dodecahedron has edge length 2 cm, what is its volume?"
+  },
+  {
+    "id": "spatial_93",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with edge length 6 cm has a vertex at the origin and three edges along the positive x, y, and z axes. What is the distance from the origin to the center of the face that is parallel to the xy-plane?"
+  },
+  {
+    "id": "spatial_94",
+    "category": "Spatial Reasoning",
+    "problem": "A solid consists of a hemisphere attached to a cylinder along the circular base of the hemisphere. If the radius of the circular base is 5 cm and the height of the cylinder is 8 cm, what is the total surface area of the solid?"
+  },
+  {
+    "id": "spatial_95",
+    "category": "Spatial Reasoning",
+    "problem": "A regular icosahedron (20 triangular faces) has edge length 3 cm. What is the distance from the center of the icosahedron to any of its vertices?"
+  },
+  {
+    "id": "spatial_96",
+    "category": "Spatial Reasoning",
+    "problem": "A unit cube is positioned with one vertex at the origin and three edges along the positive coordinate axes. The cube is sliced by the plane x + y + z = 2. What is the area of the resulting cross-section?"
+  },
+  {
+    "id": "spatial_97",
+    "category": "Spatial Reasoning",
+    "problem": "A triangular pyramid has an equilateral triangle with side length 8 cm as its base. Each of the other three faces is an isosceles triangle with the unequal side being one of the sides of the base triangle. If each of the equal sides has length 10 cm, what is the volume of the pyramid?"
+  },
+  {
+    "id": "spatial_98",
+    "category": "Spatial Reasoning",
+    "problem": "A cube with edge length 4 cm has its corners cut off by planes passing through the points that divide each edge in a 1:3 ratio (starting from each vertex). How many faces does the resulting solid have?"
+  },
+  {
+    "id": "spatial_99",
+    "category": "Spatial Reasoning",
+    "problem": "A square with side length 2 units is rotated about an axis that lies in the same plane as the square and passes through two opposite vertices. What is the volume of the resulting solid?"
+  }
+]

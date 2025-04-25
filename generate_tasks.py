@@ -73,7 +73,7 @@ categories = [
 
 # Template for task generation prompt
 prompt_template = """
-Generate exactly 30 challenging problems for the category of {category_name}.
+Generate exactly 100 challenging problems for the category of {category_name}.
 
 Category Description: {category_description}
 
@@ -112,7 +112,7 @@ def generate_tasks_for_category(category):
         with client.messages.stream(
             model="claude-3-7-sonnet-20250219",
             # model="claude-3-5-sonnet-20240620",
-            max_tokens=4000,
+            max_tokens=16000,
             messages=[{"role": "user", "content": formatted_prompt}]
         ) as stream:
             for text in stream.text_stream:

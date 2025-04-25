@@ -1,0 +1,502 @@
+[
+  {
+    "id": "math_logic_0",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if n is an integer and n\u00b2 is odd, then n is odd."
+  },
+  {
+    "id": "math_logic_1",
+    "category": "Mathematical Logic",
+    "problem": "If P \u2192 Q is true and P is false, determine the truth value of Q."
+  },
+  {
+    "id": "math_logic_2",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the square root of 2 is irrational using a proof by contradiction."
+  },
+  {
+    "id": "math_logic_3",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following statement is a tautology, contradiction, or neither: (P \u2192 Q) \u2194 (~Q \u2192 ~P)."
+  },
+  {
+    "id": "math_logic_4",
+    "category": "Mathematical Logic",
+    "problem": "Construct a truth table for the logical statement: (P \u2227 Q) \u2192 (~P \u2228 Q)."
+  },
+  {
+    "id": "math_logic_5",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A, B, and C, if A \u2286 B and B \u2286 C, then A \u2286 C."
+  },
+  {
+    "id": "math_logic_6",
+    "category": "Mathematical Logic",
+    "problem": "Use mathematical induction to prove that 1 + 4 + 7 + ... + (3n-2) = n(3n-1)/2 for all positive integers n."
+  },
+  {
+    "id": "math_logic_7",
+    "category": "Mathematical Logic",
+    "problem": "Convert the following statement to symbolic form using logical operators and quantifiers: 'There exists a real number x such that for all real numbers y, x is less than or equal to y.'"
+  },
+  {
+    "id": "math_logic_8",
+    "category": "Mathematical Logic",
+    "problem": "Prove or disprove: For all sets A and B, P(A \u2229 B) = P(A) \u2229 P(B), where P(X) represents the power set of X."
+  },
+  {
+    "id": "math_logic_9",
+    "category": "Mathematical Logic",
+    "problem": "Using the rules of inference, derive the conclusion from the following premises: (1) If it is raining, then the streets are wet. (2) The streets are not wet. What can you conclude?"
+  },
+  {
+    "id": "math_logic_10",
+    "category": "Mathematical Logic",
+    "problem": "Prove by contrapositive that if n\u00b2 is even, then n is even."
+  },
+  {
+    "id": "math_logic_11",
+    "category": "Mathematical Logic",
+    "problem": "Show that the statement \u2200x\u2203y(P(x,y)) and \u2203y\u2200x(P(x,y)) are not logically equivalent by providing a counterexample."
+  },
+  {
+    "id": "math_logic_12",
+    "category": "Mathematical Logic",
+    "problem": "Use mathematical induction to prove that n\u00b3 - n is divisible by 3 for all positive integers n."
+  },
+  {
+    "id": "math_logic_13",
+    "category": "Mathematical Logic",
+    "problem": "Prove or disprove the statement: For all sets A, B, and C, (A - B) - C = A - (B - C)."
+  },
+  {
+    "id": "math_logic_14",
+    "category": "Mathematical Logic",
+    "problem": "Determine if the following argument is valid: If I study, I will pass the exam. If I pass the exam, I will graduate. I did not graduate. Therefore, I did not study."
+  },
+  {
+    "id": "math_logic_15",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the sum of two irrational numbers can be rational. Provide specific examples."
+  },
+  {
+    "id": "math_logic_16",
+    "category": "Mathematical Logic",
+    "problem": "Express the negation of the following statement in simplified form: '\u2200x\u2203y(P(x) \u2192 Q(y))'."
+  },
+  {
+    "id": "math_logic_17",
+    "category": "Mathematical Logic",
+    "problem": "Prove that there are infinitely many prime numbers using a proof by contradiction."
+  },
+  {
+    "id": "math_logic_18",
+    "category": "Mathematical Logic",
+    "problem": "Construct a formal proof for the following: If P \u2192 Q and Q \u2192 R, then P \u2192 R."
+  },
+  {
+    "id": "math_logic_19",
+    "category": "Mathematical Logic",
+    "problem": "Prove or disprove: For all sets A and B, (A \u222a B)' = A' \u2229 B', where X' represents the complement of set X."
+  },
+  {
+    "id": "math_logic_20",
+    "category": "Mathematical Logic",
+    "problem": "Use the principle of mathematical induction to prove that 2\u207f > n\u00b2 for all integers n \u2265 5."
+  },
+  {
+    "id": "math_logic_21",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following two statements are logically equivalent: (1) ~(P \u2227 Q) and (2) ~P \u2228 ~Q."
+  },
+  {
+    "id": "math_logic_22",
+    "category": "Mathematical Logic",
+    "problem": "Prove that between any two distinct rational numbers, there exists an irrational number."
+  },
+  {
+    "id": "math_logic_23",
+    "category": "Mathematical Logic",
+    "problem": "Create a formal proof showing that if \u2200x(P(x) \u2192 Q(x)) and \u2200x(Q(x) \u2192 R(x)), then \u2200x(P(x) \u2192 R(x))."
+  },
+  {
+    "id": "math_logic_24",
+    "category": "Mathematical Logic",
+    "problem": "Construct a direct proof for the statement: 'The sum of an odd integer and an even integer is odd.'"
+  },
+  {
+    "id": "math_logic_25",
+    "category": "Mathematical Logic",
+    "problem": "Given that A = {1, 2, 3}, B = {2, 3, 4}, and C = {3, 4, 5}, verify the associative law for sets: (A \u222a B) \u222a C = A \u222a (B \u222a C)."
+  },
+  {
+    "id": "math_logic_26",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the product of a non-zero rational number and an irrational number is irrational."
+  },
+  {
+    "id": "math_logic_27",
+    "category": "Mathematical Logic",
+    "problem": "Show that the set of all functions from a finite set X to a two-element set {0, 1} has 2^n elements, where n is the number of elements in X."
+  },
+  {
+    "id": "math_logic_28",
+    "category": "Mathematical Logic",
+    "problem": "Using the laws of logic, simplify the following expression: (P \u2192 Q) \u2227 (P \u2227 ~Q)."
+  },
+  {
+    "id": "math_logic_29",
+    "category": "Mathematical Logic",
+    "problem": "Prove by induction that the Fibonacci sequence defined by F\u2081 = 1, F\u2082 = 1, and F\u2099 = F\u2099\u208b\u2081 + F\u2099\u208b\u2082 for n > 2 satisfies the identity: F\u2081 + F\u2082 + ... + F\u2099 = F\u2099\u208a\u2082 - 1 for all n \u2265 1."
+  },
+  {
+    "id": "math_logic_30",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the statement (P \u2192 Q) \u2192 P is not a tautology by constructing a truth table or providing a counterexample."
+  },
+  {
+    "id": "math_logic_31",
+    "category": "Mathematical Logic",
+    "problem": "Construct a proof by cases to show that max(a,b) + min(a,b) = a + b for all real numbers a and b."
+  },
+  {
+    "id": "math_logic_32",
+    "category": "Mathematical Logic",
+    "problem": "Find the negation of the statement '\u2200x\u2203y\u2200z(P(x,y,z) \u2194 Q(x,y))', and express it in the simplest possible form."
+  },
+  {
+    "id": "math_logic_33",
+    "category": "Mathematical Logic",
+    "problem": "Prove or disprove: If A and B are countable sets, then A \u00d7 B is countable, where A \u00d7 B is the Cartesian product of A and B."
+  },
+  {
+    "id": "math_logic_34",
+    "category": "Mathematical Logic",
+    "problem": "Establish the logical equivalence of (P \u2192 Q) and (~P \u2228 Q) using a truth table or logical laws."
+  },
+  {
+    "id": "math_logic_35",
+    "category": "Mathematical Logic",
+    "problem": "Prove using the Well-Ordering Principle that every positive integer can be expressed as a product of prime numbers."
+  },
+  {
+    "id": "math_logic_36",
+    "category": "Mathematical Logic",
+    "problem": "Show that the statement \u2203x\u2200y(P(x,y)) logically implies \u2200y\u2203x(P(x,y))."
+  },
+  {
+    "id": "math_logic_37",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any non-empty set S with n elements, the number of proper subsets of S is 2^n - 1."
+  },
+  {
+    "id": "math_logic_38",
+    "category": "Mathematical Logic",
+    "problem": "Use mathematical induction to prove that 1 + 2 + 2\u00b2 + ... + 2^(n-1) = 2^n - 1 for all positive integers n."
+  },
+  {
+    "id": "math_logic_39",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the statement (P \u2192 Q) \u2227 (Q \u2192 R) \u2192 (P \u2192 R) is a tautology."
+  },
+  {
+    "id": "math_logic_40",
+    "category": "Mathematical Logic",
+    "problem": "Given sets A, B, and C, prove or disprove the distributive property: A \u2229 (B \u222a C) = (A \u2229 B) \u222a (A \u2229 C)."
+  },
+  {
+    "id": "math_logic_41",
+    "category": "Mathematical Logic",
+    "problem": "Show that the set of all rational numbers is countable using a diagonal argument or another appropriate method."
+  },
+  {
+    "id": "math_logic_42",
+    "category": "Mathematical Logic",
+    "problem": "Translate the following argument into symbolic logic and determine if it is valid: 'All mathematicians are logical. Some philosophers are mathematicians. Therefore, some philosophers are logical.'"
+  },
+  {
+    "id": "math_logic_43",
+    "category": "Mathematical Logic",
+    "problem": "Prove by induction that for all positive integers n, 6 divides n\u00b3 - n if n is odd."
+  },
+  {
+    "id": "math_logic_44",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following statement is satisfiable, valid, or unsatisfiable: (P \u2228 Q) \u2227 (~P \u2227 ~Q)."
+  },
+  {
+    "id": "math_logic_45",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A and B, |A \u222a B| = |A| + |B| - |A \u2229 B|, where |X| represents the cardinality of set X."
+  },
+  {
+    "id": "math_logic_46",
+    "category": "Mathematical Logic",
+    "problem": "Construct a formal proof to show that \u00ac(P \u2227 Q) \u2194 (\u00acP \u2228 \u00acQ) is a tautology (one of De Morgan's laws)."
+  },
+  {
+    "id": "math_logic_47",
+    "category": "Mathematical Logic",
+    "problem": "Prove that between any two real numbers there exists a rational number."
+  },
+  {
+    "id": "math_logic_48",
+    "category": "Mathematical Logic",
+    "problem": "Use the principle of mathematical induction to prove that n! > 2^n for all integers n \u2265 4."
+  },
+  {
+    "id": "math_logic_49",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if A \u2286 B, then P(A) \u2286 P(B), where P(X) represents the power set of X."
+  },
+  {
+    "id": "math_logic_50",
+    "category": "Mathematical Logic",
+    "problem": "Formulate the contrapositive, converse, and inverse of the statement 'If it rains, then the ground is wet.' Determine the logical relationships between these statements."
+  },
+  {
+    "id": "math_logic_51",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for all positive integers n, if n is divisible by 3, then n\u00b2 is divisible by 3."
+  },
+  {
+    "id": "math_logic_52",
+    "category": "Mathematical Logic",
+    "problem": "Determine if the following argument is valid using rules of inference: If I go to the mall, I buy new shoes. I did not buy new shoes. Therefore, I did not go to the mall."
+  },
+  {
+    "id": "math_logic_53",
+    "category": "Mathematical Logic",
+    "problem": "Construct a proof showing that the set of real numbers is uncountable."
+  },
+  {
+    "id": "math_logic_54",
+    "category": "Mathematical Logic",
+    "problem": "Create a truth table for the logical expression: (P \u2192 Q) \u2192 (\u00acP \u2192 \u00acQ)."
+  },
+  {
+    "id": "math_logic_55",
+    "category": "Mathematical Logic",
+    "problem": "Prove by contradiction that there is no largest prime number."
+  },
+  {
+    "id": "math_logic_56",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if n is a positive integer, then n is either even or odd, but not both."
+  },
+  {
+    "id": "math_logic_57",
+    "category": "Mathematical Logic",
+    "problem": "Use the laws of logic to simplify the expression ((P \u2192 Q) \u2227 P) \u2192 Q."
+  },
+  {
+    "id": "math_logic_58",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if A, B, and C are sets, then A - (B \u222a C) = (A - B) \u2229 (A - C)."
+  },
+  {
+    "id": "math_logic_59",
+    "category": "Mathematical Logic",
+    "problem": "Show that if n is a positive integer, then n\u00b2 + n is always even."
+  },
+  {
+    "id": "math_logic_60",
+    "category": "Mathematical Logic",
+    "problem": "Translate the following statement into first-order logic: 'Every real number has an additive inverse.'"
+  },
+  {
+    "id": "math_logic_61",
+    "category": "Mathematical Logic",
+    "problem": "Prove using mathematical induction that 1\u00b2 + 2\u00b2 + ... + n\u00b2 = n(n+1)(2n+1)/6 for all positive integers n."
+  },
+  {
+    "id": "math_logic_62",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following is a valid argument: 'If I do not study, then I will fail the exam. I study. Therefore, I will not fail the exam.'"
+  },
+  {
+    "id": "math_logic_63",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the product of two consecutive integers is always even."
+  },
+  {
+    "id": "math_logic_64",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A and B, if A \u2286 B, then A \u2229 B = A."
+  },
+  {
+    "id": "math_logic_65",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following is a tautology: ((P \u2192 Q) \u2227 (Q \u2192 R)) \u2192 (P \u2192 R)."
+  },
+  {
+    "id": "math_logic_66",
+    "category": "Mathematical Logic",
+    "problem": "Show that \u2203x(P(x) \u2228 Q(x)) is logically equivalent to \u2203xP(x) \u2228 \u2203xQ(x)."
+  },
+  {
+    "id": "math_logic_67",
+    "category": "Mathematical Logic",
+    "problem": "Prove by induction that for all positive integers n, the quantity 4^n - 1 is divisible by 3."
+  },
+  {
+    "id": "math_logic_68",
+    "category": "Mathematical Logic",
+    "problem": "Show that the set of natural numbers has the same cardinality as the set of even natural numbers."
+  },
+  {
+    "id": "math_logic_69",
+    "category": "Mathematical Logic",
+    "problem": "Provide a formal proof of the logical equivalence: P \u2192 (Q \u2192 R) \u27fa (P \u2227 Q) \u2192 R."
+  },
+  {
+    "id": "math_logic_70",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if n is a positive integer and n\u00b2 is divisible by 4, then n is divisible by 2."
+  },
+  {
+    "id": "math_logic_71",
+    "category": "Mathematical Logic",
+    "problem": "Use mathematical induction to prove that the sum of the first n odd natural numbers is n\u00b2."
+  },
+  {
+    "id": "math_logic_72",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the square of any odd integer is of the form 8k + 1 for some integer k."
+  },
+  {
+    "id": "math_logic_73",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the statement \u2200x\u2203y(P(x) \u2192 Q(y)) is logically equivalent to \u2203y\u2200x(P(x) \u2192 Q(y))."
+  },
+  {
+    "id": "math_logic_74",
+    "category": "Mathematical Logic",
+    "problem": "Prove by contradiction that \u221a3 is irrational."
+  },
+  {
+    "id": "math_logic_75",
+    "category": "Mathematical Logic",
+    "problem": "Show that for any set A, A \u222a \u2205 = A and A \u2229 \u2205 = \u2205."
+  },
+  {
+    "id": "math_logic_76",
+    "category": "Mathematical Logic",
+    "problem": "Use the principle of mathematical induction to prove that for all n \u2265 1, 1/1\u00b72 + 1/2\u00b73 + 1/3\u00b74 + ... + 1/(n(n+1)) = n/(n+1)."
+  },
+  {
+    "id": "math_logic_77",
+    "category": "Mathematical Logic",
+    "problem": "Prove or disprove the following statement: 'If n\u00b2 is divisible by 3, then n is divisible by 3.'"
+  },
+  {
+    "id": "math_logic_78",
+    "category": "Mathematical Logic",
+    "problem": "Transform the following statement into prenex normal form: \u2200x(P(x) \u2192 \u2203yQ(x,y))."
+  },
+  {
+    "id": "math_logic_79",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A, B, and C, (A - B) \u2229 C = (A \u2229 C) - (B \u2229 C)."
+  },
+  {
+    "id": "math_logic_80",
+    "category": "Mathematical Logic",
+    "problem": "Show that the relation 'is divisible by' on the set of integers is transitive but not symmetric."
+  },
+  {
+    "id": "math_logic_81",
+    "category": "Mathematical Logic",
+    "problem": "Prove the logical equivalence of ~(P \u2192 Q) and P \u2227 ~Q using a truth table or logical laws."
+  },
+  {
+    "id": "math_logic_82",
+    "category": "Mathematical Logic",
+    "problem": "Use strong induction to prove that every integer greater than 1 can be written as a product of prime numbers."
+  },
+  {
+    "id": "math_logic_83",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A, B, and C, if A \u2286 B and B \u2286 C, then A \u2286 C."
+  },
+  {
+    "id": "math_logic_84",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the argument is valid: 'If I do not wake up early, I will be late for work. If I am late for work, I will get fired. I did not get fired. Therefore, I woke up early.'"
+  },
+  {
+    "id": "math_logic_85",
+    "category": "Mathematical Logic",
+    "problem": "Prove by contradiction that there is no rational number r such that r\u00b2 = 3."
+  },
+  {
+    "id": "math_logic_86",
+    "category": "Mathematical Logic",
+    "problem": "Show that the proposition (P \u2192 Q) \u2227 (P \u2192 ~Q) is logically equivalent to ~P."
+  },
+  {
+    "id": "math_logic_87",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the sum of the first n positive integers is n(n+1)/2 using the principle of mathematical induction."
+  },
+  {
+    "id": "math_logic_88",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following set of premises is consistent: P \u2192 Q, Q \u2192 R, R \u2192 ~P."
+  },
+  {
+    "id": "math_logic_89",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A and B, (A \u2229 B)' = A' \u222a B', where X' represents the complement of set X."
+  },
+  {
+    "id": "math_logic_90",
+    "category": "Mathematical Logic",
+    "problem": "Show that for all integers n, if n\u00b2 is even, then n is even."
+  },
+  {
+    "id": "math_logic_91",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following is a valid argument form: ((P \u2192 Q) \u2227 (R \u2192 S) \u2227 (P \u2228 R)) \u2192 (Q \u2228 S)."
+  },
+  {
+    "id": "math_logic_92",
+    "category": "Mathematical Logic",
+    "problem": "Prove that if the sum of two integers a and b is odd, then exactly one of a and b is odd."
+  },
+  {
+    "id": "math_logic_93",
+    "category": "Mathematical Logic",
+    "problem": "Express the negation of the statement '\u2200x\u2200y\u2203z(P(x,y) \u2192 Q(y,z))' in simplified form."
+  },
+  {
+    "id": "math_logic_94",
+    "category": "Mathematical Logic",
+    "problem": "Use mathematical induction to prove that for all positive integers n, 3 divides 4^n - 1."
+  },
+  {
+    "id": "math_logic_95",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for any sets A and B, if A \u2286 B, then P(A) \u2286 P(B), where P(X) represents the power set of X."
+  },
+  {
+    "id": "math_logic_96",
+    "category": "Mathematical Logic",
+    "problem": "Determine whether the following statement is a tautology, contradiction, or neither: (P \u2227 (P \u2192 Q)) \u2192 Q."
+  },
+  {
+    "id": "math_logic_97",
+    "category": "Mathematical Logic",
+    "problem": "Prove that the sum of a rational number and an irrational number is irrational."
+  },
+  {
+    "id": "math_logic_98",
+    "category": "Mathematical Logic",
+    "problem": "Show that for any integer n, if n\u00b2 + 5 is even, then n is odd."
+  },
+  {
+    "id": "math_logic_99",
+    "category": "Mathematical Logic",
+    "problem": "Prove that for all positive integers n, the expression n\u00b3 + 2n is divisible by 3."
+  }
+]

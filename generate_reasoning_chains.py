@@ -42,12 +42,16 @@ def load_model_and_tokenizer():
 def generate_reasoning_chain(model, tokenizer, task_text, max_tokens=500):
     """Generate a reasoning chain for a given task"""
     # Create prompt with correct user/assistant tokens
-    prompt = f"<｜User｜>{task_text}<｜Assistant｜>"
+    # prompt = f"Task: {task_text}
+    # Reasoning Chain:"
+    messages = [
+        {"role": "user", "content": task_text},
+    ]
+    prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     print(prompt)
-    
-    # Tokenize
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    
+    print("*"*len(prompt))
+    inputs = tokenizer(prompt, return_tensors="pt", add_special_tokens=False).to(device)
+
     # Generate with greedy decoding
     with torch.no_grad():
         output = model.generate(
@@ -59,9 +63,8 @@ def generate_reasoning_chain(model, tokenizer, task_text, max_tokens=500):
         )
     
     # Decode and extract only the generated text (without the prompt)
-    full_output = tokenizer.decode(output[0], skip_special_tokens=True)
+    full_output = tokenizer.decode(output[0], skip_special_tokens=False)
     generated_text = full_output[len(prompt):]
-    
     return generated_text.strip()
 
 def process_category(category_file, model, tokenizer):
@@ -80,30 +83,27 @@ def process_category(category_file, model, tokenizer):
         task_id = task["id"]
         problem = task["problem"]
         
-        try:
-            # Generate reasoning chain
-            reasoning_chain = generate_reasoning_chain(model, tokenizer, problem)
+        # Generate reasoning chain
+        reasoning_chain = generate_reasoning_chain(model, tokenizer, problem)
+        
+        # Display the task and reasoning chain
+        print("\n" + "="*80)
+        print(f"Task ID: {task_id}")
+        print(f"Problem: {problem}")
+        print("-"*40)
+        print("Reasoning Chain:")
+        print(reasoning_chain)
+        print("="*80)
+        
+        # Save output
+        output_data = {
+            "task_id": task_id,
+            "problem": problem,
+            "reasoning_chain": reasoning_chain
+        }
+        
+        outputs.append(output_data)
             
-            # Display the task and reasoning chain
-            print("\n" + "="*80)
-            print(f"Task ID: {task_id}")
-            print(f"Problem: {problem}")
-            print("-"*40)
-            print("Reasoning Chain:")
-            print(reasoning_chain)
-            print("="*80)
-            
-            # Save output
-            output_data = {
-                "task_id": task_id,
-                "problem": problem,
-                "reasoning_chain": reasoning_chain
-            }
-            
-            outputs.append(output_data)
-            
-        except Exception as e:
-            print(f"Error processing task {task_id}: {str(e)}")
     
     # Save outputs for this category
     output_file = os.path.join(OUTPUT_DIR, f"{category_name}_reasoning_chains.json")

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "verbal_0",
+    "category": "Verbal Logic",
+    "problem": "If a marathon is longer than a triathlon, and a triathlon is longer than a sprint, which of the following must be true? (A) A marathon is longer than a sprint (B) A sprint is shorter than a marathon (C) A triathlon is the shortest race (D) A and B only (E) A, B, and C"
+  },
+  {
+    "id": "verbal_1",
+    "category": "Verbal Logic",
+    "problem": "All writers are creative. Some creative people are painters. Based on these statements, which conclusion is valid? (A) All writers are painters (B) Some painters are writers (C) Some writers are painters (D) No painters are writers (E) None of the above"
+  },
+  {
+    "id": "verbal_2",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Brush is to Paint as Pen is to _____ (A) Paper (B) Write (C) Ink (D) Book (E) Author"
+  },
+  {
+    "id": "verbal_3",
+    "category": "Verbal Logic",
+    "problem": "If 'dorf' means 'brave' in a fictional language, 'plitz' means 'warrior', and 'stum dorf' means 'very brave', what does 'stum plitz dorf' most likely mean? (A) Very brave warrior (B) Warrior and brave (C) Extremely courageous fighter (D) Brave but not a warrior (E) Warrior who is not brave"
+  },
+  {
+    "id": "verbal_4",
+    "category": "Verbal Logic",
+    "problem": "No mammals can fly. Some flying creatures are predators. Which conclusion follows logically? (A) Some mammals are not predators (B) No predators are mammals (C) Some predators are not mammals (D) All flying creatures are predators (E) No flying predators are mammals"
+  },
+  {
+    "id": "verbal_5",
+    "category": "Verbal Logic",
+    "problem": "Find the word that does not belong in the group: (A) Symphony (B) Concerto (C) Sonata (D) Opera (E) Painting"
+  },
+  {
+    "id": "verbal_6",
+    "category": "Verbal Logic",
+    "problem": "All elephants have trunks. Dumbo is an elephant. Jumbo has a trunk. Based on these statements, which must be true? (A) Jumbo is an elephant (B) Dumbo has a trunk (C) If something has a trunk, it's an elephant (D) Dumbo and Jumbo are both elephants (E) Jumbo and Dumbo both have trunks"
+  },
+  {
+    "id": "verbal_7",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Whale is to Mammal as Eagle is to _____ (A) Bird (B) Predator (C) Sky (D) Wings (E) Nest"
+  },
+  {
+    "id": "verbal_8",
+    "category": "Verbal Logic",
+    "problem": "Either the butler or the maid is guilty. If the butler is guilty, then the cook is innocent. If the maid is guilty, then the gardener is innocent. The gardener is guilty. Who must be guilty? (A) Butler (B) Maid (C) Cook (D) Both Butler and Cook (E) Cannot be determined"
+  },
+  {
+    "id": "verbal_9",
+    "category": "Verbal Logic",
+    "problem": "Some A are B. All B are C. No C are D. What can be concluded? (A) Some A are C (B) Some A are not D (C) No A are D (D) Both A and B (E) Both A and C"
+  },
+  {
+    "id": "verbal_10",
+    "category": "Verbal Logic",
+    "problem": "If 'blip' means 'fast', 'drap' means 'car', and 'prok' means 'red', how would you say 'fast red car'? (A) blip drap prok (B) prok blip drap (C) drap prok blip (D) blip prok drap (E) Cannot be determined from given information"
+  },
+  {
+    "id": "verbal_11",
+    "category": "Verbal Logic",
+    "problem": "Identify the statement that is logically equivalent to 'If it rains, then the ground gets wet.' (A) If the ground is wet, then it rained (B) If it doesn't rain, then the ground doesn't get wet (C) If the ground doesn't get wet, then it didn't rain (D) The ground gets wet only if it rains (E) It rains if and only if the ground gets wet"
+  },
+  {
+    "id": "verbal_12",
+    "category": "Verbal Logic",
+    "problem": "Book is to Library as Painting is to _____ (A) Canvas (B) Artist (C) Gallery (D) Museum (E) Colors"
+  },
+  {
+    "id": "verbal_13",
+    "category": "Verbal Logic",
+    "problem": "Which word is most different from the others? (A) Triangle (B) Square (C) Circle (D) Cube (E) Rectangle"
+  },
+  {
+    "id": "verbal_14",
+    "category": "Verbal Logic",
+    "problem": "All scientists are logical. Some logical people are mathematicians. Which of the following must be true? (A) All mathematicians are scientists (B) Some scientists are mathematicians (C) All logical people are either scientists or mathematicians (D) No mathematicians are scientists (E) None of the above"
+  },
+  {
+    "id": "verbal_15",
+    "category": "Verbal Logic",
+    "problem": "If all Zorks are Yorks, and all Yorks are Morks, which statement must be true? (A) All Morks are Zorks (B) All Zorks are Morks (C) Some Morks are Zorks (D) No Zorks are Morks (E) Some Yorks are not Zorks"
+  },
+  {
+    "id": "verbal_16",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Scissors is to Cut as Hammer is to _____ (A) Nail (B) Tool (C) Build (D) Pound (E) Metal"
+  },
+  {
+    "id": "verbal_17",
+    "category": "Verbal Logic",
+    "problem": "In a foreign language: 'tik' means water, 'pul' means hot, 'kon' means cold, 'dem' means ice. Which expression would most likely mean 'hot ice'? (A) tik pul (B) pul dem (C) kon dem (D) This is a contradiction (E) pul tik kon"
+  },
+  {
+    "id": "verbal_18",
+    "category": "Verbal Logic",
+    "problem": "If no heroes are cowards, and some soldiers are heroes, which conclusion is valid? (A) All soldiers are heroes (B) No soldiers are cowards (C) Some soldiers are not cowards (D) Some cowards are not soldiers (E) All heroes are soldiers"
+  },
+  {
+    "id": "verbal_19",
+    "category": "Verbal Logic",
+    "problem": "Which statement is the contrapositive of 'If it's a mammal, then it has hair'? (A) If it has hair, then it's a mammal (B) If it's not a mammal, then it doesn't have hair (C) If it doesn't have hair, then it's not a mammal (D) If it has no hair, it might still be a mammal (E) It's a mammal if and only if it has hair"
+  },
+  {
+    "id": "verbal_20",
+    "category": "Verbal Logic",
+    "problem": "Light is to Dark as Noise is to _____ (A) Loud (B) Sound (C) Quiet (D) Silence (E) Ear"
+  },
+  {
+    "id": "verbal_21",
+    "category": "Verbal Logic",
+    "problem": "All A are B. Some C are not B. Which conclusion must be true? (A) Some C are not A (B) No C are A (C) Some A are not C (D) All B are A (E) None of the above"
+  },
+  {
+    "id": "verbal_22",
+    "category": "Verbal Logic",
+    "problem": "Find the statement that must be false if the following is true: 'Not all who wander are lost.' (A) Some who wander are lost (B) Some who wander are not lost (C) All who wander are lost (D) No wanderers are lost (E) None of the above"
+  },
+  {
+    "id": "verbal_23",
+    "category": "Verbal Logic",
+    "problem": "House is to Architect as Song is to _____ (A) Music (B) Singer (C) Composer (D) Lyrics (E) Band"
+  },
+  {
+    "id": "verbal_24",
+    "category": "Verbal Logic",
+    "problem": "If every student in the class passed the exam, and Lisa is in the class, which must be true? (A) Every student who passed is in the class (B) Lisa passed the exam (C) If someone passed the exam, they are in the class (D) If someone didn't pass, they aren't in the class (E) Lisa is the only student who passed"
+  },
+  {
+    "id": "verbal_25",
+    "category": "Verbal Logic",
+    "problem": "Which option best completes the sequence? Monday, Wednesday, Friday, _____ (A) Saturday (B) Thursday (C) Tuesday (D) Sunday (E) Wednesday"
+  },
+  {
+    "id": "verbal_26",
+    "category": "Verbal Logic",
+    "problem": "No felines can fly. Some mammals can fly. Which conclusion follows logically? (A) Some felines are not mammals (B) Some mammals are not felines (C) No mammals are felines (D) All mammals can fly (E) No mammals can fly"
+  },
+  {
+    "id": "verbal_27",
+    "category": "Verbal Logic",
+    "problem": "If all widgets are gadgets, and some gadgets are expensive, which statement must be true? (A) All widgets are expensive (B) Some widgets are expensive (C) No widgets are expensive (D) Some expensive items are widgets (E) None of the above"
+  },
+  {
+    "id": "verbal_28",
+    "category": "Verbal Logic",
+    "problem": "Identify the relationship: Odometer is to Distance as Clock is to _____ (A) Hands (B) Numbers (C) Time (D) Circle (E) Speed"
+  },
+  {
+    "id": "verbal_29",
+    "category": "Verbal Logic",
+    "problem": "All doctors are professionals. Some professionals are wealthy. No wealthy person is unhappy. Which conclusion can be drawn? (A) Some doctors are unhappy (B) No doctors are unhappy (C) Some doctors are not unhappy (D) All doctors are wealthy (E) No valid conclusion can be drawn"
+  },
+  {
+    "id": "verbal_30",
+    "category": "Verbal Logic",
+    "problem": "If 'All writers are readers' and 'Some readers are teachers,' which statement cannot be true? (A) Some writers are teachers (B) All writers are teachers (C) No writers are teachers (D) Some teachers are writers (E) Some readers are not writers"
+  },
+  {
+    "id": "verbal_31",
+    "category": "Verbal Logic",
+    "problem": "Which word does not belong with the others? (A) Apple (B) Orange (C) Banana (D) Grape (E) Carrot"
+  },
+  {
+    "id": "verbal_32",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Conductor is to Orchestra as Captain is to _____ (A) Army (B) Ship (C) Team (D) Airplane (E) Command"
+  },
+  {
+    "id": "verbal_33",
+    "category": "Verbal Logic",
+    "problem": "If no A are B, and all C are B, which statement must be true? (A) No A are C (B) All C are A (C) Some A are C (D) Some C are not A (E) All A are C"
+  },
+  {
+    "id": "verbal_34",
+    "category": "Verbal Logic",
+    "problem": "Find the statement that is logically equivalent to 'If I study, then I will pass the test.' (A) If I pass the test, then I studied (B) If I don't study, then I won't pass the test (C) If I don't pass the test, then I didn't study (D) I will pass the test only if I study (E) I study if and only if I pass the test"
+  },
+  {
+    "id": "verbal_35",
+    "category": "Verbal Logic",
+    "problem": "Leaf is to Tree as Page is to _____ (A) Paper (B) Book (C) Write (D) Read (E) Word"
+  },
+  {
+    "id": "verbal_36",
+    "category": "Verbal Logic",
+    "problem": "In a language where 'bik' means 'eat', 'tup' means 'quickly', and 'mor' means 'slowly', how would you say 'eat slowly'? (A) bik mor (B) mor bik (C) tup bik (D) bik tup (E) Cannot be determined"
+  },
+  {
+    "id": "verbal_37",
+    "category": "Verbal Logic",
+    "problem": "All tigers are felines. Some felines are domestic. Which statement must be false? (A) All tigers are domestic (B) No tigers are domestic (C) Some felines are not domestic (D) All domestic animals are tigers (E) Some domestic animals are felines"
+  },
+  {
+    "id": "verbal_38",
+    "category": "Verbal Logic",
+    "problem": "Given that 'No honest people are thieves' and 'Some politicians are honest,' which conclusion is valid? (A) All politicians are thieves (B) No politicians are thieves (C) Some politicians are not thieves (D) Some thieves are politicians (E) All honest people are politicians"
+  },
+  {
+    "id": "verbal_39",
+    "category": "Verbal Logic",
+    "problem": "Identify the odd one out: (A) Novel (B) Poem (C) Sculpture (D) Play (E) Essay"
+  },
+  {
+    "id": "verbal_40",
+    "category": "Verbal Logic",
+    "problem": "Complete the statement: Shoe is to Foot as Glove is to _____ (A) Finger (B) Hand (C) Arm (D) Cloth (E) Wear"
+  },
+  {
+    "id": "verbal_41",
+    "category": "Verbal Logic",
+    "problem": "All fish live in water. Sharks live in water. Based only on these statements, which conclusion is valid? (A) All sharks are fish (B) Some fish are sharks (C) Some sharks are fish (D) No sharks are fish (E) None of the above"
+  },
+  {
+    "id": "verbal_42",
+    "category": "Verbal Logic",
+    "problem": "Which sentence pattern differs from the others? (A) The cat chased the mouse (B) The dog bit the postman (C) The bird sang beautifully (D) The thief stole the jewels (E) The chef prepared the meal"
+  },
+  {
+    "id": "verbal_43",
+    "category": "Verbal Logic",
+    "problem": "If 'No A are B' is true, which statement must also be true? (A) No B are A (B) All B are A (C) Some A are B (D) Some B are A (E) All A are B"
+  },
+  {
+    "id": "verbal_44",
+    "category": "Verbal Logic",
+    "problem": "If Anya is taller than Bianca, and Bianca is taller than Carmen, who must be the shortest? (A) Anya (B) Bianca (C) Carmen (D) Cannot be determined (E) They are all the same height"
+  },
+  {
+    "id": "verbal_45",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Detective is to Clue as Scientist is to _____ (A) Laboratory (B) Research (C) Evidence (D) Hypothesis (E) Experiment"
+  },
+  {
+    "id": "verbal_46",
+    "category": "Verbal Logic",
+    "problem": "Given that 'All squares are rectangles' and 'Some rectangles are not squares,' which statement is true? (A) No squares are rectangles (B) All rectangles are squares (C) Some squares are not rectangles (D) Some rectangles are squares (E) No rectangles are squares"
+  },
+  {
+    "id": "verbal_47",
+    "category": "Verbal Logic",
+    "problem": "Which of these is not a proper syllogism? (A) All men are mortal. Socrates is a man. Therefore, Socrates is mortal. (B) All birds can fly. Penguins are birds. Therefore, penguins can fly. (C) No mammals lay eggs. Platypuses lay eggs. Therefore, platypuses are not mammals. (D) Some cats are black. This animal is black. Therefore, this animal might be a cat. (E) All of these are improper."
+  },
+  {
+    "id": "verbal_48",
+    "category": "Verbal Logic",
+    "problem": "Which option best completes the sequence? J, F, M, A, M, _____ (A) S (B) O (C) J (D) A (E) D"
+  },
+  {
+    "id": "verbal_49",
+    "category": "Verbal Logic",
+    "problem": "If it is false that 'All birds can fly,' which statement must be true? (A) No birds can fly (B) Some birds cannot fly (C) Most birds cannot fly (D) Few birds can fly (E) Birds never fly"
+  },
+  {
+    "id": "verbal_50",
+    "category": "Verbal Logic",
+    "problem": "Camera is to Photograph as Telescope is to _____ (A) Stars (B) Lens (C) Observation (D) Space (E) Magnification"
+  },
+  {
+    "id": "verbal_51",
+    "category": "Verbal Logic",
+    "problem": "Given the statements: 'If it's sunny, I'll go to the beach' and 'I did not go to the beach.' What can be concluded? (A) It was sunny (B) It was not sunny (C) I went somewhere else (D) It might have been sunny (E) I never go to the beach"
+  },
+  {
+    "id": "verbal_52",
+    "category": "Verbal Logic",
+    "problem": "If only the smartest students pass the exam, and Maria passed the exam, which statement must be true? (A) Maria is the smartest student (B) Maria is smart (C) Only Maria passed the exam (D) All smart students pass the exam (E) Some smart students don't pass the exam"
+  },
+  {
+    "id": "verbal_53",
+    "category": "Verbal Logic",
+    "problem": "In the word group CHAIR, TABLE, SOFA, DESK, which word would come first if arranged alphabetically? (A) CHAIR (B) TABLE (C) SOFA (D) DESK (E) None of these"
+  },
+  {
+    "id": "verbal_54",
+    "category": "Verbal Logic",
+    "problem": "Which sentence contains a different type of logical fallacy than the others? (A) Everyone loves ice cream, so you must love it too (B) No one has proven ghosts don't exist, so they must exist (C) That politician made a grammar mistake, so his policy ideas are wrong (D) This medicine is natural, so it must be safe (E) If we allow same-sex marriage, people will start marrying animals next"
+  },
+  {
+    "id": "verbal_55",
+    "category": "Verbal Logic",
+    "problem": "Identify the statement that must be true if 'Some athletes are not wealthy' is true. (A) Some wealthy people are not athletes (B) All athletes are wealthy (C) No athletes are wealthy (D) Some athletes are wealthy (E) None of the above"
+  },
+  {
+    "id": "verbal_56",
+    "category": "Verbal Logic",
+    "problem": "Choose the word that best completes the analogy: Pessimist is to Optimist as Miserly is to _____ (A) Wealthy (B) Generous (C) Greedy (D) Frugal (E) Thrifty"
+  },
+  {
+    "id": "verbal_57",
+    "category": "Verbal Logic",
+    "problem": "Given the statements: 'All philosophers are thinkers' and 'Some scientists are philosophers.' Which conclusion is valid? (A) All scientists are thinkers (B) Some thinkers are scientists (C) Some scientists are thinkers (D) All thinkers are philosophers (E) No scientists are thinkers"
+  },
+  {
+    "id": "verbal_58",
+    "category": "Verbal Logic",
+    "problem": "Which of these pairs shows a different logical relationship than the others? (A) Hot/Cold (B) Up/Down (C) Left/Right (D) Black/White (E) Happy/Content"
+  },
+  {
+    "id": "verbal_59",
+    "category": "Verbal Logic",
+    "problem": "If I state 'Either the moon is made of cheese or I am a rocket scientist,' and we know the moon is not made of cheese, what can be concluded? (A) I am definitely a rocket scientist (B) I am not a rocket scientist (C) The statement is invalid (D) The moon might be made of cheese (E) Nothing can be concluded"
+  },
+  {
+    "id": "verbal_60",
+    "category": "Verbal Logic",
+    "problem": "Complete the following: Hand is to Glove as Head is to _____ (A) Brain (B) Hair (C) Hat (D) Skull (E) Think"
+  },
+  {
+    "id": "verbal_61",
+    "category": "Verbal Logic",
+    "problem": "If it's not true that 'All Europeans speak French,' which must be true? (A) No Europeans speak French (B) Some Europeans speak French (C) Some Europeans do not speak French (D) Most Europeans do not speak French (E) Only Europeans speak French"
+  },
+  {
+    "id": "verbal_62",
+    "category": "Verbal Logic",
+    "problem": "All A are B. All B are C. All C are D. Which statement must be true? (A) All D are A (B) All A are D (C) No A are D (D) Some D are not A (E) None of the above"
+  },
+  {
+    "id": "verbal_63",
+    "category": "Verbal Logic",
+    "problem": "Which word is most different from the others? (A) Run (B) Sprint (C) Jog (D) Dash (E) Walk"
+  },
+  {
+    "id": "verbal_64",
+    "category": "Verbal Logic",
+    "problem": "No honest people tell lies. Some politicians tell lies. Which conclusion follows logically? (A) All politicians are dishonest (B) Some politicians are honest (C) Some politicians are not honest (D) No politicians are honest (E) Some honest people are politicians"
+  },
+  {
+    "id": "verbal_65",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Integer is to Number as France is to _____ (A) Paris (B) Europe (C) Country (D) French (E) Nation"
+  },
+  {
+    "id": "verbal_66",
+    "category": "Verbal Logic",
+    "problem": "Which sentence pattern is different from the others? (A) She baked a cake (B) They visited Paris (C) He seems happy (D) We painted the house (E) I bought a book"
+  },
+  {
+    "id": "verbal_67",
+    "category": "Verbal Logic",
+    "problem": "If the statement 'All books are boring' is false, which statement must be true? (A) No books are boring (B) Some books are boring (C) Some books are not boring (D) All books are interesting (E) Most books are interesting"
+  },
+  {
+    "id": "verbal_68",
+    "category": "Verbal Logic",
+    "problem": "Given that 'If it rains, the game will be canceled' and 'The game was not canceled,' what can be concluded? (A) It rained (B) It did not rain (C) The game was postponed (D) The game was played indoors (E) None of the above"
+  },
+  {
+    "id": "verbal_69",
+    "category": "Verbal Logic",
+    "problem": "Select the option that best completes the sequence: Rectangle, Square, Triangle, _____ (A) Pentagon (B) Circle (C) Octagon (D) Hexagon (E) Rhombus"
+  },
+  {
+    "id": "verbal_70",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Map is to Territory as Model is to _____ (A) Clay (B) Small (C) Reality (D) Replica (E) Toy"
+  },
+  {
+    "id": "verbal_71",
+    "category": "Verbal Logic",
+    "problem": "Given the premises: 'All dogs are mammals' and 'All mammals have hearts,' which conclusion is valid? (A) All hearts belong to mammals (B) Only dogs have hearts (C) All dogs have hearts (D) Some hearts are not in mammals (E) No dogs have hearts"
+  },
+  {
+    "id": "verbal_72",
+    "category": "Verbal Logic",
+    "problem": "Which statement is the negation of 'All students passed the exam'? (A) No students passed the exam (B) Some students passed the exam (C) Some students did not pass the exam (D) Not all students failed the exam (E) All students failed the exam"
+  },
+  {
+    "id": "verbal_73",
+    "category": "Verbal Logic",
+    "problem": "If 'No heroes are villains' and 'Some protagonists are heroes,' which statement must be true? (A) All protagonists are villains (B) Some protagonists are not villains (C) No protagonists are villains (D) Some villains are protagonists (E) All heroes are protagonists"
+  },
+  {
+    "id": "verbal_74",
+    "category": "Verbal Logic",
+    "problem": "Identify the odd one out: (A) Lion (B) Tiger (C) Leopard (D) Dolphin (E) Cheetah"
+  },
+  {
+    "id": "verbal_75",
+    "category": "Verbal Logic",
+    "problem": "If 'pir' means water, 'ner' means hot, and 'fos' means cold, what would 'ner pir' mean? (A) Cold water (B) Hot water (C) Very hot (D) Not cold (E) Cannot be determined"
+  },
+  {
+    "id": "verbal_76",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Sculptor is to Statue as Author is to _____ (A) Book (B) Story (C) Writing (D) Publisher (E) Character"
+  },
+  {
+    "id": "verbal_77",
+    "category": "Verbal Logic",
+    "problem": "Given that 'All roses are flowers' and 'Some flowers fade quickly,' which statement can be logically deduced? (A) All roses fade quickly (B) Some roses fade quickly (C) No roses fade quickly (D) Some roses do not fade quickly (E) None of the above"
+  },
+  {
+    "id": "verbal_78",
+    "category": "Verbal Logic",
+    "problem": "Which is the strongest logical conclusion from these statements? 'Most doctors work long hours. Dr. Smith is a doctor.' (A) Dr. Smith definitely works long hours (B) Dr. Smith probably works long hours (C) Dr. Smith might work long hours (D) Dr. Smith does not work long hours (E) No conclusion is possible"
+  },
+  {
+    "id": "verbal_79",
+    "category": "Verbal Logic",
+    "problem": "Identify the statement that is logically equivalent to: 'Not all metals are magnetic.' (A) All metals are not magnetic (B) No metals are magnetic (C) Some metals are not magnetic (D) Some metals are magnetic (E) All non-magnetic materials are metals"
+  },
+  {
+    "id": "verbal_80",
+    "category": "Verbal Logic",
+    "problem": "Select the pair that has a different relationship than the others: (A) Doctor/Patient (B) Teacher/Student (C) Lawyer/Client (D) Writer/Reader (E) Chef/Food"
+  },
+  {
+    "id": "verbal_81",
+    "category": "Verbal Logic",
+    "problem": "If I say 'Either I will go to the party or I will study for my exam,' and later you observe me studying, what can you conclude? (A) I went to the party (B) I did not go to the party (C) I might have gone to the party (D) I did both activities (E) The statement was false"
+  },
+  {
+    "id": "verbal_82",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Explore is to Discover as Search is to _____ (A) Look (B) Find (C) Seek (D) Hunt (E) Research"
+  },
+  {
+    "id": "verbal_83",
+    "category": "Verbal Logic",
+    "problem": "Given: 'If it is a fish, then it lives in water.' Which statement would disprove this claim? (A) An animal that isn't a fish and lives on land (B) A fish that lives in water (C) An animal that isn't a fish but lives in water (D) A fish that doesn't live in water (E) A land animal that occasionally swims"
+  },
+  {
+    "id": "verbal_84",
+    "category": "Verbal Logic",
+    "problem": "If Pablo is older than Quinn, and Quinn is older than Riley, which statement must be true? (A) Pablo is older than Riley (B) Riley is the youngest (C) Quinn is the youngest (D) Both A and B (E) None of the above"
+  },
+  {
+    "id": "verbal_85",
+    "category": "Verbal Logic",
+    "problem": "Select the word that doesn't belong: (A) Furious (B) Angry (C) Enraged (D) Irate (E) Peaceful"
+  },
+  {
+    "id": "verbal_86",
+    "category": "Verbal Logic",
+    "problem": "If 'Some artists are musicians' and 'No musicians are chefs,' which conclusion is valid? (A) Some artists are chefs (B) No artists are chefs (C) Some artists are not chefs (D) All chefs are artists (E) Some chefs are not artists"
+  },
+  {
+    "id": "verbal_87",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Flower is to Bouquet as Tree is to _____ (A) Leaf (B) Forest (C) Wood (D) Branch (E) Roots"
+  },
+  {
+    "id": "verbal_88",
+    "category": "Verbal Logic",
+    "problem": "Which statement is the contrapositive of 'If I am tired, then I sleep'? (A) If I sleep, then I am tired (B) If I am not tired, then I don't sleep (C) If I don't sleep, then I am not tired (D) If I am not sleeping, then I might be tired (E) I sleep if and only if I am tired"
+  },
+  {
+    "id": "verbal_89",
+    "category": "Verbal Logic",
+    "problem": "Given the premises: 'All cars have wheels' and 'Some vehicles don't have wheels,' which conclusion is valid? (A) Some vehicles are not cars (B) All vehicles have wheels (C) No cars are vehicles (D) Some cars don't have wheels (E) All vehicles are cars"
+  },
+  {
+    "id": "verbal_90",
+    "category": "Verbal Logic",
+    "problem": "Which option best completes the sequence? Calf, Puppy, Kitten, _____ (A) Dog (B) Foal (C) Adult (D) Baby (E) Animal"
+  },
+  {
+    "id": "verbal_91",
+    "category": "Verbal Logic",
+    "problem": "If the statement 'No fish can breathe air' is false, which must be true? (A) All fish can breathe air (B) Some fish can breathe air (C) Most fish can breathe air (D) Fish can only breathe air (E) Fish breathe both water and air"
+  },
+  {
+    "id": "verbal_92",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Canvas is to Painter as Keyboard is to _____ (A) Computer (B) Music (C) Pianist (D) Type (E) Piano"
+  },
+  {
+    "id": "verbal_93",
+    "category": "Verbal Logic",
+    "problem": "Which of these is an example of a tautology? (A) It will either rain tomorrow or it won't (B) If it rains, the ground will be wet (C) All birds have feathers (D) No square is a circle (E) Some politicians are honest"
+  },
+  {
+    "id": "verbal_94",
+    "category": "Verbal Logic",
+    "problem": "Which word is most different from the others? (A) Mutter (B) Whisper (C) Shout (D) Murmur (E) Mumble"
+  },
+  {
+    "id": "verbal_95",
+    "category": "Verbal Logic",
+    "problem": "Given: 'All lawyers are professionals' and 'Some professionals are wealthy.' Which statement must be false? (A) All lawyers are wealthy (B) No lawyers are wealthy (C) Some lawyers are wealthy (D) Some wealthy people are lawyers (E) None of the above"
+  },
+  {
+    "id": "verbal_96",
+    "category": "Verbal Logic",
+    "problem": "In a fictional language, if 'nik' means bird, 'polt' means flying, and 'serf' means singing, what would 'polt nik' mean? (A) Bird flying (B) Flying bird (C) Singing bird (D) Bird song (E) Cannot be determined"
+  },
+  {
+    "id": "verbal_97",
+    "category": "Verbal Logic",
+    "problem": "Complete the analogy: Composer is to Symphony as Playwright is to _____ (A) Actor (B) Theater (C) Drama (D) Stage (E) Performance"
+  },
+  {
+    "id": "verbal_98",
+    "category": "Verbal Logic",
+    "problem": "If 'No mammals are reptiles' and 'All snakes are reptiles,' which conclusion is valid? (A) Some mammals are snakes (B) No snakes are mammals (C) Some snakes are mammals (D) All reptiles are snakes (E) Some mammals are reptiles"
+  },
+  {
+    "id": "verbal_99",
+    "category": "Verbal Logic",
+    "problem": "Identify the statement that is logically equivalent to 'If you don't practice, you won't improve.' (A) If you practice, you will improve (B) If you improve, you must have practiced (C) You won't improve only if you don't practice (D) You will improve if and only if you practice (E) If you don't improve, you didn't practice"
+  }
+]

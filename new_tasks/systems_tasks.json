@@ -1,0 +1,502 @@
+[
+  {
+    "id": "systems_0",
+    "category": "Systems Thinking",
+    "problem": "In a predator-prey ecosystem, when the wolf population increases, what is likely to happen to the deer population in the short term? And what subsequent effect might this have on the wolf population?"
+  },
+  {
+    "id": "systems_1",
+    "category": "Systems Thinking",
+    "problem": "A city implements a congestion charge to reduce traffic in the downtown area. Besides reducing downtown traffic, what are two potential unintended consequences of this policy on surrounding neighborhoods?"
+  },
+  {
+    "id": "systems_2",
+    "category": "Systems Thinking",
+    "problem": "In a supply chain, if manufacturing capacity increases by 30% but distribution capacity remains the same, what system-wide bottleneck is likely to emerge, and how might it affect overall efficiency?"
+  },
+  {
+    "id": "systems_3",
+    "category": "Systems Thinking",
+    "problem": "A social media platform changes its algorithm to maximize user engagement. How might this change affect information diversity across the platform, and what feedback loops could emerge?"
+  },
+  {
+    "id": "systems_4",
+    "category": "Systems Thinking",
+    "problem": "In a healthcare system, if emergency room visits are prioritized for funding and resource allocation over preventive care, what long-term effects might emerge in overall population health outcomes?"
+  },
+  {
+    "id": "systems_5",
+    "category": "Systems Thinking",
+    "problem": "A company implements a bonus system that rewards individual performance. How might this affect collaboration and overall team productivity, and what balancing mechanism might be needed?"
+  },
+  {
+    "id": "systems_6",
+    "category": "Systems Thinking",
+    "problem": "When antibiotics are overused in a population, what systematic changes occur in the bacterial ecosystem, and how does this create future challenges for healthcare?"
+  },
+  {
+    "id": "systems_7",
+    "category": "Systems Thinking",
+    "problem": "In an urban water management system, what are the interconnected effects of replacing natural ground cover with impermeable surfaces like concrete and asphalt?"
+  },
+  {
+    "id": "systems_8",
+    "category": "Systems Thinking",
+    "problem": "A government offers subsidies for corn production. Beyond increasing corn supply, how might this policy affect other agricultural products, food prices, and land use patterns?"
+  },
+  {
+    "id": "systems_9",
+    "category": "Systems Thinking",
+    "problem": "In a software development team, if the focus shifts entirely to speed of delivery rather than code quality, what systemic problems might emerge over multiple release cycles?"
+  },
+  {
+    "id": "systems_10",
+    "category": "Systems Thinking",
+    "problem": "A school system decides to rank schools based solely on standardized test scores. What changes in teaching behavior might emerge, and how could this affect overall educational outcomes?"
+  },
+  {
+    "id": "systems_11",
+    "category": "Systems Thinking",
+    "problem": "In a forest ecosystem, how does the removal of a keystone predator like wolves create cascading effects through multiple trophic levels?"
+  },
+  {
+    "id": "systems_12",
+    "category": "Systems Thinking",
+    "problem": "A city experiences rapid population growth. Identify three interconnected systems (e.g., housing, transportation, infrastructure) that would be affected and describe the relationships between them."
+  },
+  {
+    "id": "systems_13",
+    "category": "Systems Thinking",
+    "problem": "In a just-in-time manufacturing system, what happens to the entire production line when one supplier experiences a one-week delay, and how does this demonstrate system vulnerability?"
+  },
+  {
+    "id": "systems_14",
+    "category": "Systems Thinking",
+    "problem": "How might a carbon tax intended to reduce emissions create both reinforcing and balancing feedback loops in an industrial economy?"
+  },
+  {
+    "id": "systems_15",
+    "category": "Systems Thinking",
+    "problem": "A hospital measures doctor performance based on patient satisfaction scores. What behavioral changes might this incentivize, and how could it affect healthcare quality?"
+  },
+  {
+    "id": "systems_16",
+    "category": "Systems Thinking",
+    "problem": "In a financial market, how do automated trading algorithms that react to each other's behaviors potentially create emergent patterns that weren't programmed into any individual algorithm?"
+  },
+  {
+    "id": "systems_17",
+    "category": "Systems Thinking",
+    "problem": "A city builds more highways to reduce traffic congestion. Explain the concept of 'induced demand' and how it demonstrates that this solution might be ineffective in the long term."
+  },
+  {
+    "id": "systems_18",
+    "category": "Systems Thinking",
+    "problem": "In an office environment, if meeting attendance becomes the primary metric for evaluating employee engagement, what system-wide behaviors might emerge that could reduce actual productivity?"
+  },
+  {
+    "id": "systems_19",
+    "category": "Systems Thinking",
+    "problem": "A community relies heavily on groundwater. Identify the key stocks and flows in this system, and explain how a drought might affect the resilience of this system."
+  },
+  {
+    "id": "systems_20",
+    "category": "Systems Thinking",
+    "problem": "In an electrical grid with increasing renewable energy sources, what systematic challenges emerge due to the intermittent nature of wind and solar power, and what buffers might address these challenges?"
+  },
+  {
+    "id": "systems_21",
+    "category": "Systems Thinking",
+    "problem": "How does the introduction of a non-native predator to an island ecosystem demonstrate the principle of unintended consequences in complex systems?"
+  },
+  {
+    "id": "systems_22",
+    "category": "Systems Thinking",
+    "problem": "A company implements a strict cost-cutting policy across all departments. How might this create tensions between short-term financial goals and long-term growth objectives?"
+  },
+  {
+    "id": "systems_23",
+    "category": "Systems Thinking",
+    "problem": "In a social welfare system, what potential feedback loops might emerge from implementing or removing universal basic income?"
+  },
+  {
+    "id": "systems_24",
+    "category": "Systems Thinking",
+    "problem": "How do vaccine hesitancy and herd immunity interact as opposing forces in an epidemic control system?"
+  },
+  {
+    "id": "systems_25",
+    "category": "Systems Thinking",
+    "problem": "A streaming music service offers artists payment based solely on number of plays. How might this payment system affect musical diversity and artist behavior over time?"
+  },
+  {
+    "id": "systems_26",
+    "category": "Systems Thinking",
+    "problem": "In a watershed management system, how do upstream pollution sources create cumulative effects downstream, and why might this create challenges for governance?"
+  },
+  {
+    "id": "systems_27",
+    "category": "Systems Thinking",
+    "problem": "A restaurant chain centralizes all purchasing decisions to maximize efficiency. What information flows might be lost in this system, and how could it affect local customer satisfaction?"
+  },
+  {
+    "id": "systems_28",
+    "category": "Systems Thinking",
+    "problem": "How does the urban heat island effect demonstrate complex interactions between built environments, climate systems, and human behavior?"
+  },
+  {
+    "id": "systems_29",
+    "category": "Systems Thinking",
+    "problem": "In a public transit system, how does a 50% fare reduction potentially create both virtuous and vicious cycles affecting ridership, revenue, and service quality?"
+  },
+  {
+    "id": "systems_30",
+    "category": "Systems Thinking",
+    "problem": "A fishing community imposes strict quotas on commercial fishing. Describe how this intervention might affect the marine ecosystem, local economy, and fishing practices over different time scales."
+  },
+  {
+    "id": "systems_31",
+    "category": "Systems Thinking",
+    "problem": "In a housing market, what feedback loops can lead to price bubbles, and what systemic indicators might suggest a bubble is forming?"
+  },
+  {
+    "id": "systems_32",
+    "category": "Systems Thinking",
+    "problem": "How does the principle of requisite variety suggest that environmental regulation systems need to match the complexity of the industries they regulate?"
+  },
+  {
+    "id": "systems_33",
+    "category": "Systems Thinking",
+    "problem": "A university decides to prioritize research output in faculty evaluations. How might this change the balance between teaching quality and research productivity throughout the institution?"
+  },
+  {
+    "id": "systems_34",
+    "category": "Systems Thinking",
+    "problem": "In a social media ecosystem, how do algorithmic recommendations create filter bubbles, and what system-level interventions might counteract this tendency?"
+  },
+  {
+    "id": "systems_35",
+    "category": "Systems Thinking",
+    "problem": "An airline rewards pilots for on-time departures. What potential safety implications might emerge from this incentive structure, and what balancing metrics would create a more robust system?"
+  },
+  {
+    "id": "systems_36",
+    "category": "Systems Thinking",
+    "problem": "How might increasing automation in manufacturing create ripple effects through employment, education, and social support systems in a regional economy?"
+  },
+  {
+    "id": "systems_37",
+    "category": "Systems Thinking",
+    "problem": "In an emergency response system, what communication pathways and decision hierarchies would make the system most resilient to unexpected crisis scenarios?"
+  },
+  {
+    "id": "systems_38",
+    "category": "Systems Thinking",
+    "problem": "A retail platform gives preference to products with the highest ratings. What gaming behaviors might emerge from sellers, and how could these distort the information value of the rating system?"
+  },
+  {
+    "id": "systems_39",
+    "category": "Systems Thinking",
+    "problem": "In a river ecosystem, how do dams create both upstream and downstream effects that propagate through biological, hydrological, and human systems?"
+  },
+  {
+    "id": "systems_40",
+    "category": "Systems Thinking",
+    "problem": "A company introduces a 'zero-defect' quality policy with penalties for errors. What effects might this have on innovation, reporting, and organizational learning?"
+  },
+  {
+    "id": "systems_41",
+    "category": "Systems Thinking",
+    "problem": "How does the 'bullwhip effect' in supply chains demonstrate how small changes in consumer demand can create amplified fluctuations upstream in manufacturing and resource extraction?"
+  },
+  {
+    "id": "systems_42",
+    "category": "Systems Thinking",
+    "problem": "In a public health system, what interconnected factors might explain why increasing hospital capacity alone might not improve overall population health outcomes?"
+  },
+  {
+    "id": "systems_43",
+    "category": "Systems Thinking",
+    "problem": "A city implements rent control to keep housing affordable. What second and third-order effects might emerge in housing quality, development, and neighborhood demographics?"
+  },
+  {
+    "id": "systems_44",
+    "category": "Systems Thinking",
+    "problem": "How do composting systems demonstrate circular economy principles, and what feedback loops make them self-regulating if properly designed?"
+  },
+  {
+    "id": "systems_45",
+    "category": "Systems Thinking",
+    "problem": "In a democratic political system, what feedback mechanisms exist between public opinion, policy creation, and electoral outcomes? Identify one reinforcing and one balancing loop."
+  },
+  {
+    "id": "systems_46",
+    "category": "Systems Thinking",
+    "problem": "A video streaming platform optimizes for 'time spent watching.' How might this metric create content evolution over time that differs from a platform optimizing for 'viewer satisfaction'?"
+  },
+  {
+    "id": "systems_47",
+    "category": "Systems Thinking",
+    "problem": "In a coral reef ecosystem, explain how ocean acidification creates cascading effects through multiple species interactions and feedback loops."
+  },
+  {
+    "id": "systems_48",
+    "category": "Systems Thinking",
+    "problem": "A project management team focuses exclusively on meeting deadlines. What aspects of project health might be neglected in this approach, and what balanced scorecard would better reflect system health?"
+  },
+  {
+    "id": "systems_49",
+    "category": "Systems Thinking",
+    "problem": "In a telecommunications network experiencing congestion, why might adding more capacity not solve the problem long-term? What demand-side interventions could create more system resilience?"
+  },
+  {
+    "id": "systems_50",
+    "category": "Systems Thinking",
+    "problem": "How does the introduction of autonomous vehicles potentially change the relationships between transportation, urban planning, and energy systems in a city?"
+  },
+  {
+    "id": "systems_51",
+    "category": "Systems Thinking",
+    "problem": "A charitable organization measures success by percentage of donations spent directly on program activities rather than administration. What organizational behaviors might this incentivize, and how could it affect long-term impact?"
+  },
+  {
+    "id": "systems_52",
+    "category": "Systems Thinking",
+    "problem": "In a waste management system, what interconnected changes would be needed across manufacturing, retail, consumer behavior, and disposal infrastructure to significantly reduce landfill use?"
+  },
+  {
+    "id": "systems_53",
+    "category": "Systems Thinking",
+    "problem": "How does the spread of misinformation through social networks demonstrate properties of complex adaptive systems, including emergence and self-organization?"
+  },
+  {
+    "id": "systems_54",
+    "category": "Systems Thinking",
+    "problem": "A community uses groundwater for agriculture and drinking water. What signals might indicate that the system is approaching a critical threshold beyond which the aquifer cannot recover?"
+  },
+  {
+    "id": "systems_55",
+    "category": "Systems Thinking",
+    "problem": "In a software platform ecosystem, how does the relationship between core platform features and third-party applications create both innovation opportunities and system vulnerabilities?"
+  },
+  {
+    "id": "systems_56",
+    "category": "Systems Thinking",
+    "problem": "A healthcare insurer rewards doctors for minimizing costs per patient. What potential conflicts arise between this incentive and optimal patient care, and how might the system be redesigned?"
+  },
+  {
+    "id": "systems_57",
+    "category": "Systems Thinking",
+    "problem": "How does a traffic jam demonstrate emergent behavior in a complex system, and why are they difficult to predict at the individual vehicle level?"
+  },
+  {
+    "id": "systems_58",
+    "category": "Systems Thinking",
+    "problem": "In an educational system transitioning to personalized learning, what infrastructure elements besides technology need to change for the system transformation to be successful?"
+  },
+  {
+    "id": "systems_59",
+    "category": "Systems Thinking",
+    "problem": "A cryptocurrency creates financial incentives for 'mining' operations. What environmental and energy system impacts might emerge at scale, and how do these represent externalities of the system design?"
+  },
+  {
+    "id": "systems_60",
+    "category": "Systems Thinking",
+    "problem": "In the global climate system, what makes tipping points particularly concerning from a systems perspective, and why are they difficult to address with incremental policies?"
+  },
+  {
+    "id": "systems_61",
+    "category": "Systems Thinking",
+    "problem": "A food delivery app prioritizes delivery speed as its key metric. How might this affect restaurant operations, food quality, and driver behavior in ways that weren't intended by the platform designers?"
+  },
+  {
+    "id": "systems_62",
+    "category": "Systems Thinking",
+    "problem": "In a networked electricity grid with distributed generation, what new vulnerabilities and strengths emerge compared to a centralized power generation system?"
+  },
+  {
+    "id": "systems_63",
+    "category": "Systems Thinking",
+    "problem": "A government implements a child benefit payment to reduce poverty. Beyond immediate financial impacts, what social and economic feedback loops might develop over a 10-year period?"
+  },
+  {
+    "id": "systems_64",
+    "category": "Systems Thinking",
+    "problem": "How does the concept of antifragility suggest that some systems don't merely withstand stressors but actually improve because of them? Give an example of an antifragile system."
+  },
+  {
+    "id": "systems_65",
+    "category": "Systems Thinking",
+    "problem": "In an urban transportation system, how might the introduction of electric scooters create both complementary and competitive relationships with existing modes of transport?"
+  },
+  {
+    "id": "systems_66",
+    "category": "Systems Thinking",
+    "problem": "A product development organization measures engineers by lines of code written. What system behaviors might emerge, and how does this metric potentially misalign with creating quality software?"
+  },
+  {
+    "id": "systems_67",
+    "category": "Systems Thinking",
+    "problem": "How do invasive species demonstrate the principle that complex systems often have counterintuitive responses to interventions when we don't understand the full web of relationships?"
+  },
+  {
+    "id": "systems_68",
+    "category": "Systems Thinking",
+    "problem": "In a social service system helping homeless individuals, what factors beyond housing availability affect outcomes, and how do these factors interact with each other?"
+  },
+  {
+    "id": "systems_69",
+    "category": "Systems Thinking",
+    "problem": "A national economy shifts from manufacturing to service industries. What structural adjustments occur across educational systems, regional development, and international trade relationships?"
+  },
+  {
+    "id": "systems_70",
+    "category": "Systems Thinking",
+    "problem": "How does the 'tragedy of the commons' demonstrate system behavior that emerges from the interaction of rational individual decisions that collectively lead to suboptimal outcomes?"
+  },
+  {
+    "id": "systems_71",
+    "category": "Systems Thinking",
+    "problem": "In a hospital emergency department, what ripple effects throughout the entire hospital system might be caused by a policy requiring all patients to be moved from the ED within 4 hours?"
+  },
+  {
+    "id": "systems_72",
+    "category": "Systems Thinking",
+    "problem": "A ride-sharing platform uses surge pricing during high demand. How does this mechanism attempt to create system balance, and what potential unintended consequences might it have on driver behavior?"
+  },
+  {
+    "id": "systems_73",
+    "category": "Systems Thinking",
+    "problem": "In a workplace implementing flexible remote work policies, what communication and collaboration systems need to adapt, and how might power dynamics shift within the organization?"
+  },
+  {
+    "id": "systems_74",
+    "category": "Systems Thinking",
+    "problem": "How does the human immune system demonstrate properties of complex adaptive systems including memory, learning, and proportional response?"
+  },
+  {
+    "id": "systems_75",
+    "category": "Systems Thinking",
+    "problem": "A city wants to reduce crime rates. Comparing a systems approach versus a linear approach, what different interventions might each perspective suggest?"
+  },
+  {
+    "id": "systems_76",
+    "category": "Systems Thinking",
+    "problem": "In a competitive marketplace, how do the decisions of multiple companies responding to each other's actions sometimes lead to market outcomes that none of the individual companies intended or desired?"
+  },
+  {
+    "id": "systems_77",
+    "category": "Systems Thinking",
+    "problem": "An airline prioritizes maximizing aircraft utilization. How might this create both efficiencies and vulnerabilities in the overall flight network when disruptions occur?"
+  },
+  {
+    "id": "systems_78",
+    "category": "Systems Thinking",
+    "problem": "In a community attempting to address adolescent substance abuse, what systems (family, education, healthcare, law enforcement) need to be aligned, and what happens when they work at cross-purposes?"
+  },
+  {
+    "id": "systems_79",
+    "category": "Systems Thinking",
+    "problem": "How do ocean currents demonstrate properties of complex systems including energy transfer, feedback loops, and global influence from local conditions?"
+  },
+  {
+    "id": "systems_80",
+    "category": "Systems Thinking",
+    "problem": "A government implements a policy offering tax credits for home insulation to reduce energy use. Beyond direct energy savings, what second and third-order effects might emerge in construction, health, and property markets?"
+  },
+  {
+    "id": "systems_81",
+    "category": "Systems Thinking",
+    "problem": "In a team-based work environment, how do individual incentives and team-based incentives potentially create different system behaviors, and when might they conflict?"
+  },
+  {
+    "id": "systems_82",
+    "category": "Systems Thinking",
+    "problem": "How does the development of antibiotic resistance demonstrate the adaptive nature of complex systems and the challenges of maintaining effectiveness of interventions over time?"
+  },
+  {
+    "id": "systems_83",
+    "category": "Systems Thinking",
+    "problem": "A new technology promises to make carbon capture economically viable. From a systems perspective, what questions should be asked about energy inputs, waste products, and scale before assuming this will benefit climate goals?"
+  },
+  {
+    "id": "systems_84",
+    "category": "Systems Thinking",
+    "problem": "In a healthcare system, how do prevention, treatment, and palliative care subsystems interact, and what happens when funding heavily favors one component over others?"
+  },
+  {
+    "id": "systems_85",
+    "category": "Systems Thinking",
+    "problem": "How do urban food deserts demonstrate the interconnection between transportation systems, economic development, and public health outcomes?"
+  },
+  {
+    "id": "systems_86",
+    "category": "Systems Thinking",
+    "problem": "A dating app optimizes for number of matches rather than relationship formation. How might this design choice affect user behavior and satisfaction with the platform over time?"
+  },
+  {
+    "id": "systems_87",
+    "category": "Systems Thinking",
+    "problem": "In an agricultural system transitioning to regenerative practices, what time delays might occur between implementation and observable results, and how do these delays affect farmer adoption?"
+  },
+  {
+    "id": "systems_88",
+    "category": "Systems Thinking",
+    "problem": "How might the introduction of congestion pricing in a city center create different effects for various stakeholders (commuters, businesses, residents, tourists) over different time horizons?"
+  },
+  {
+    "id": "systems_89",
+    "category": "Systems Thinking",
+    "problem": "A software company measures developer productivity by number of features shipped. What system-wide effects might this create in terms of technical debt, maintenance costs, and product complexity?"
+  },
+  {
+    "id": "systems_90",
+    "category": "Systems Thinking",
+    "problem": "In a global supply chain for electronics, how do decisions about inventory levels, shipping methods, and production capacity work together as a system to determine product availability and cost?"
+  },
+  {
+    "id": "systems_91",
+    "category": "Systems Thinking",
+    "problem": "How does the relationship between pollinators and flowering plants demonstrate co-evolution and mutual dependence in a complex system?"
+  },
+  {
+    "id": "systems_92",
+    "category": "Systems Thinking",
+    "problem": "A university changes its admissions policy to be test-optional. Beyond the immediate applicant pool, what systemic effects might this create in high school education, testing agencies, and student preparation activities?"
+  },
+  {
+    "id": "systems_93",
+    "category": "Systems Thinking",
+    "problem": "In a digital advertising ecosystem, how do the incentives of platforms, advertisers, content creators, and users create both aligned and misaligned goals across the system?"
+  },
+  {
+    "id": "systems_94",
+    "category": "Systems Thinking",
+    "problem": "A community faces periodic flooding. Compare the systems implications of building higher levees versus creating upstream wetlands for water absorption."
+  },
+  {
+    "id": "systems_95",
+    "category": "Systems Thinking",
+    "problem": "How does the adoption of electric vehicles create ripple effects through electricity generation, materials mining, urban planning, and petroleum markets?"
+  },
+  {
+    "id": "systems_96",
+    "category": "Systems Thinking",
+    "problem": "An e-commerce platform prioritizes customer satisfaction above all other metrics. What potential tensions might this create with profitability, seller relationships, and environmental impacts?"
+  },
+  {
+    "id": "systems_97",
+    "category": "Systems Thinking",
+    "problem": "In a forest management system, how do fire suppression policies interact with underbrush accumulation, drought conditions, and human settlement patterns to affect wildfire risk over decades?"
+  },
+  {
+    "id": "systems_98",
+    "category": "Systems Thinking",
+    "problem": "A social network introduces a dislike button alongside its like button. How might this change information spread patterns, emotional expression, and content creation incentives on the platform?"
+  },
+  {
+    "id": "systems_99",
+    "category": "Systems Thinking",
+    "problem": "In a city experiencing water scarcity, what leverage points would create the most significant system-wide improvements in water sustainability, and why would addressing these be more effective than end-user conservation alone?"
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "scientific_0",
+    "category": "Scientific Reasoning",
+    "problem": "A biologist observes that plants grown in a greenhouse with blue light grow taller than identical plants grown with red light. What is the most appropriate next step to determine if light color affects plant growth?"
+  },
+  {
+    "id": "scientific_1",
+    "category": "Scientific Reasoning",
+    "problem": "Patients taking a new drug report sleeping better, but also report more headaches than before. What experimental design would best determine if the headaches are caused by the drug?"
+  },
+  {
+    "id": "scientific_2",
+    "category": "Scientific Reasoning",
+    "problem": "A factory notices that machine failures increase on hot days. What confounding variables should be controlled for before concluding that temperature directly causes the failures?"
+  },
+  {
+    "id": "scientific_3",
+    "category": "Scientific Reasoning",
+    "problem": "A study shows correlation between ice cream consumption and drowning deaths. Explain the most likely relationship between these variables."
+  },
+  {
+    "id": "scientific_4",
+    "category": "Scientific Reasoning",
+    "problem": "A researcher wants to test if a new teaching method improves test scores. The experimental group shows a 5% improvement. What information is needed to determine if this result is significant?"
+  },
+  {
+    "id": "scientific_5",
+    "category": "Scientific Reasoning",
+    "problem": "A geological sample contains 25% of the original carbon-14. If carbon-14 has a half-life of 5,730 years, approximately how old is the sample?"
+  },
+  {
+    "id": "scientific_6",
+    "category": "Scientific Reasoning",
+    "problem": "A conservation biologist tags 200 turtles in a lake. One month later, she recaptures 50 turtles, of which 10 are tagged. Estimate the total turtle population in the lake."
+  },
+  {
+    "id": "scientific_7",
+    "category": "Scientific Reasoning",
+    "problem": "Three groups of mice are given: no treatment, a placebo injection, and an experimental drug. What is the purpose of including both a placebo group and a no-treatment group?"
+  },
+  {
+    "id": "scientific_8",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist observes that a pendulum's period appears to change with amplitude, contradicting basic pendulum theory. What should the physicist do first?"
+  },
+  {
+    "id": "scientific_9",
+    "category": "Scientific Reasoning",
+    "problem": "In a drug trial, participants who know they're receiving the actual medication show improvement. What experimental approach would best control for this effect?"
+  },
+  {
+    "id": "scientific_10",
+    "category": "Scientific Reasoning",
+    "problem": "A meteorologist collects data showing the average global temperature has increased by 1\u00b0C over 100 years. What additional data would strengthen the conclusion that human activity caused this change?"
+  },
+  {
+    "id": "scientific_11",
+    "category": "Scientific Reasoning",
+    "problem": "A psychologist hypothesizes that classical music improves concentration. Design an experiment to test this hypothesis while controlling for potential confounding variables."
+  },
+  {
+    "id": "scientific_12",
+    "category": "Scientific Reasoning",
+    "problem": "In a study of 1000 people, researchers find 10% have a rare genetic marker. In a second study of 500 people with a certain disease, 30% have the marker. What can be reasonably concluded?"
+  },
+  {
+    "id": "scientific_13",
+    "category": "Scientific Reasoning",
+    "problem": "An ecologist studies bird populations in three forests: one near a city, one near farmland, and one in a remote area. What factors make this an effective or ineffective experimental design?"
+  },
+  {
+    "id": "scientific_14",
+    "category": "Scientific Reasoning",
+    "problem": "A medical study shows correlation between coffee consumption and lower risk of depression. Why is it incorrect to conclude that coffee prevents depression?"
+  },
+  {
+    "id": "scientific_15",
+    "category": "Scientific Reasoning",
+    "problem": "A chemist finds that reaction rate doubles when temperature increases by 10\u00b0C. If the reaction takes 30 minutes at 20\u00b0C, how long would it take at 40\u00b0C?"
+  },
+  {
+    "id": "scientific_16",
+    "category": "Scientific Reasoning",
+    "problem": "A nutritionist studies weight loss in 200 participants on different diets. After 6 months, the average weight loss is 5kg with a standard deviation of 3kg. What statistical test would be appropriate to compare the effectiveness of the diets?"
+  },
+  {
+    "id": "scientific_17",
+    "category": "Scientific Reasoning",
+    "problem": "A marine biologist observes that coral bleaching occurs when ocean temperature exceeds 30\u00b0C. What is a testable hypothesis based on this observation?"
+  },
+  {
+    "id": "scientific_18",
+    "category": "Scientific Reasoning",
+    "problem": "A material scientist develops a new metal alloy that appears to be stronger than standard alloys. Design an experiment to quantitatively test this property."
+  },
+  {
+    "id": "scientific_19",
+    "category": "Scientific Reasoning",
+    "problem": "A pharmaceutical company claims their pain medication works in 15 minutes. What experimental design would best test this claim?"
+  },
+  {
+    "id": "scientific_20",
+    "category": "Scientific Reasoning",
+    "problem": "A botanist crosses two plant varieties: one with red flowers (RR) and one with white flowers (rr). If red is dominant, what proportion of the F2 generation will have red flowers?"
+  },
+  {
+    "id": "scientific_21",
+    "category": "Scientific Reasoning",
+    "problem": "An astronomer observes a star's light dimming periodically. What are two competing hypotheses that could explain this observation, and what additional data would help distinguish between them?"
+  },
+  {
+    "id": "scientific_22",
+    "category": "Scientific Reasoning",
+    "problem": "A geologist studies rock formations that appear to have been created by ancient rivers. What evidence would support or refute this hypothesis?"
+  },
+  {
+    "id": "scientific_23",
+    "category": "Scientific Reasoning",
+    "problem": "A computer scientist develops an algorithm that appears to solve a complex problem faster than existing methods. What steps should be taken to validate this finding?"
+  },
+  {
+    "id": "scientific_24",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds that children who play violent video games show more aggressive behavior. Identify three potential confounding variables in this study."
+  },
+  {
+    "id": "scientific_25",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist observes that a moving object covers distances proportional to the square of the elapsed time. What acceleration is the object experiencing?"
+  },
+  {
+    "id": "scientific_26",
+    "category": "Scientific Reasoning",
+    "problem": "Two groups of patients with the same condition receive different treatments. Group A shows 70% improvement, Group B shows 65% improvement. What statistical information is needed to determine if the difference is significant?"
+  },
+  {
+    "id": "scientific_27",
+    "category": "Scientific Reasoning",
+    "problem": "An epidemiologist notices that cases of a rare disease cluster in areas with a certain industrial plant. What steps should be taken before concluding the plant causes the disease?"
+  },
+  {
+    "id": "scientific_28",
+    "category": "Scientific Reasoning",
+    "problem": "A new method of teaching reading is tested in a classroom. Students' reading scores improve by 15%. What controls are needed to attribute this improvement to the new method?"
+  },
+  {
+    "id": "scientific_29",
+    "category": "Scientific Reasoning",
+    "problem": "A biologist observes that a species of bird has different beak sizes on different islands. Formulate a hypothesis that could explain this observation."
+  },
+  {
+    "id": "scientific_30",
+    "category": "Scientific Reasoning",
+    "problem": "A chemical reaction proceeds twice as fast when the concentration of reactant A is doubled, but four times as fast when the concentration of reactant B is doubled. What is the overall reaction order?"
+  },
+  {
+    "id": "scientific_31",
+    "category": "Scientific Reasoning",
+    "problem": "A psychologist wants to study the effect of sleep on memory. Describe two different experimental designs that could address this question, and explain their relative strengths and weaknesses."
+  },
+  {
+    "id": "scientific_32",
+    "category": "Scientific Reasoning",
+    "problem": "A public health study shows that cities with more parks have lower obesity rates. Why isn't this sufficient to conclude that building parks reduces obesity?"
+  },
+  {
+    "id": "scientific_33",
+    "category": "Scientific Reasoning",
+    "problem": "A new drug is tested on 1000 patients and shows no serious side effects. What can be concluded about the safety of this drug if it will be used by millions of people?"
+  },
+  {
+    "id": "scientific_34",
+    "category": "Scientific Reasoning",
+    "problem": "A paleontologist discovers fossils of marine animals at the top of a mountain. What hypotheses could explain this observation?"
+  },
+  {
+    "id": "scientific_35",
+    "category": "Scientific Reasoning",
+    "problem": "A population of bacteria doubles every 20 minutes under ideal conditions. If a culture starts with 100 bacteria, how many will be present after 3 hours?"
+  },
+  {
+    "id": "scientific_36",
+    "category": "Scientific Reasoning",
+    "problem": "A study reports that people who eat chocolate five times per week have lower blood pressure than those who never eat chocolate. What additional variables should be controlled before concluding chocolate lowers blood pressure?"
+  },
+  {
+    "id": "scientific_37",
+    "category": "Scientific Reasoning",
+    "problem": "An economist notices that countries with higher education spending have higher GDP. Explain why this correlation does not necessarily mean education spending causes higher GDP."
+  },
+  {
+    "id": "scientific_38",
+    "category": "Scientific Reasoning",
+    "problem": "A car manufacturer claims their new model is more fuel-efficient than previous models. What kind of experimental data would provide the strongest test of this claim?"
+  },
+  {
+    "id": "scientific_39",
+    "category": "Scientific Reasoning",
+    "problem": "An anthropologist studies two isolated populations with different rates of a genetic disease. What factors must be considered before attributing this difference to genetics versus environment?"
+  },
+  {
+    "id": "scientific_40",
+    "category": "Scientific Reasoning",
+    "problem": "A radioactive isotope decays by 12% per hour. After how many hours will 50% of the original sample remain?"
+  },
+  {
+    "id": "scientific_41",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds that students who sleep 8 hours before an exam perform better than those who sleep 6 hours. What is a potential confounding variable in this study?"
+  },
+  {
+    "id": "scientific_42",
+    "category": "Scientific Reasoning",
+    "problem": "A geneticist crosses yellow pea plants (Yy) with yellow pea plants (Yy). If yellow (Y) is dominant to green (y), what percentage of offspring will be green?"
+  },
+  {
+    "id": "scientific_43",
+    "category": "Scientific Reasoning",
+    "problem": "A climate scientist has temperature data from 50 weather stations across a continent. What visualization method would best show both the geographic distribution and trends over time?"
+  },
+  {
+    "id": "scientific_44",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist develops a new theory that contradicts Einstein's relativity. What would be required for the scientific community to accept this new theory?"
+  },
+  {
+    "id": "scientific_45",
+    "category": "Scientific Reasoning",
+    "problem": "A study shows that students who listen to music while studying have poorer recall than those who study in silence. What additional experimental conditions would strengthen this finding?"
+  },
+  {
+    "id": "scientific_46",
+    "category": "Scientific Reasoning",
+    "problem": "An astronomer discovers a planet that appears to have liquid water. What additional information is needed to determine if life could exist there?"
+  },
+  {
+    "id": "scientific_47",
+    "category": "Scientific Reasoning",
+    "problem": "A neurologist observes that patients with damage to a specific brain region have difficulty recognizing faces. What can be concluded about the function of this brain region?"
+  },
+  {
+    "id": "scientific_48",
+    "category": "Scientific Reasoning",
+    "problem": "A new vaccine is reported to be 95% effective in preventing a disease. What information is needed to evaluate the practical significance of this finding?"
+  },
+  {
+    "id": "scientific_49",
+    "category": "Scientific Reasoning",
+    "problem": "A meteorologist collects data showing that barometric pressure drops before storms. How could this observation be developed into a predictive model?"
+  },
+  {
+    "id": "scientific_50",
+    "category": "Scientific Reasoning",
+    "problem": "An engineer tests a new bridge design using a scale model. What factors must be considered when extrapolating from the model to a full-sized bridge?"
+  },
+  {
+    "id": "scientific_51",
+    "category": "Scientific Reasoning",
+    "problem": "A zoologist observes that male birds with brighter plumage attract more mates. What evolutionary mechanism best explains this observation?"
+  },
+  {
+    "id": "scientific_52",
+    "category": "Scientific Reasoning",
+    "problem": "A clinical trial for a new drug shows promising results in a small sample. What steps should be taken before approving the drug for widespread use?"
+  },
+  {
+    "id": "scientific_53",
+    "category": "Scientific Reasoning",
+    "problem": "A sociologist finds that in a survey, 75% of respondents report being above-average drivers. What cognitive bias might explain this result?"
+  },
+  {
+    "id": "scientific_54",
+    "category": "Scientific Reasoning",
+    "problem": "An environmental scientist measures air pollution levels in 10 cities and finds they exceed safety standards. What sampling issues might affect the validity of these findings?"
+  },
+  {
+    "id": "scientific_55",
+    "category": "Scientific Reasoning",
+    "problem": "A linguist studies the acquisition of language in children. What experimental design would distinguish whether grammar is innate or learned?"
+  },
+  {
+    "id": "scientific_56",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist observes that a material's electrical resistance changes with temperature. How could this relationship be quantified mathematically?"
+  },
+  {
+    "id": "scientific_57",
+    "category": "Scientific Reasoning",
+    "problem": "A new pesticide is found to increase crop yields by 20% in laboratory tests. What field tests should be conducted before recommending its widespread use?"
+  },
+  {
+    "id": "scientific_58",
+    "category": "Scientific Reasoning",
+    "problem": "A study shows that meditation reduces self-reported stress levels. What physiological measurements could provide more objective evidence of stress reduction?"
+  },
+  {
+    "id": "scientific_59",
+    "category": "Scientific Reasoning",
+    "problem": "A geologist finds rocks with similar mineral composition in Africa and South America. What hypothesis could explain this observation?"
+  },
+  {
+    "id": "scientific_60",
+    "category": "Scientific Reasoning",
+    "problem": "A food scientist develops a new preservative that extends shelf life. What safety tests should be conducted before it is approved for human consumption?"
+  },
+  {
+    "id": "scientific_61",
+    "category": "Scientific Reasoning",
+    "problem": "A pediatrician observes that children in a certain region have higher rates of respiratory problems. What systematic investigation would identify potential causes?"
+  },
+  {
+    "id": "scientific_62",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds correlation between consumption of artificial sweeteners and obesity. Propose two competing hypotheses that could explain this correlation."
+  },
+  {
+    "id": "scientific_63",
+    "category": "Scientific Reasoning",
+    "problem": "An ecologist tracks the population of wolves and deer in a forest over 20 years. What mathematical model would best describe the relationship between predator and prey populations?"
+  },
+  {
+    "id": "scientific_64",
+    "category": "Scientific Reasoning",
+    "problem": "A psychologist wants to study the impact of social media on depression. What methodological challenges must be addressed in designing this study?"
+  },
+  {
+    "id": "scientific_65",
+    "category": "Scientific Reasoning",
+    "problem": "A new water purification method removes 99.9% of contaminants in tests. What factors should be considered before implementing this method in a developing country?"
+  },
+  {
+    "id": "scientific_66",
+    "category": "Scientific Reasoning",
+    "problem": "An astronomer observes that distant galaxies are moving away from Earth at speeds proportional to their distance. What does this suggest about the universe?"
+  },
+  {
+    "id": "scientific_67",
+    "category": "Scientific Reasoning",
+    "problem": "A seismologist records small tremors before major earthquakes. How could this information be used to develop an early warning system?"
+  },
+  {
+    "id": "scientific_68",
+    "category": "Scientific Reasoning",
+    "problem": "A nutritionist finds that mice fed a high-fat diet gain weight faster than those on a standard diet. What controls would strengthen the conclusion that fat content is the cause of weight gain?"
+  },
+  {
+    "id": "scientific_69",
+    "category": "Scientific Reasoning",
+    "problem": "A pharmaceutical company claims their pain reliever works twice as fast as competitors. What would constitute strong evidence for this claim?"
+  },
+  {
+    "id": "scientific_70",
+    "category": "Scientific Reasoning",
+    "problem": "A neuroscientist observes increased brain activity in a specific region when subjects solve mathematical problems. What can be concluded about the function of this brain region?"
+  },
+  {
+    "id": "scientific_71",
+    "category": "Scientific Reasoning",
+    "problem": "A company claims their app helps people learn languages 50% faster than traditional methods. Design a study to test this claim."
+  },
+  {
+    "id": "scientific_72",
+    "category": "Scientific Reasoning",
+    "problem": "A social experiment finds that people are more likely to return a lost wallet if it contains more money. What hypothesis about human behavior is supported by this finding?"
+  },
+  {
+    "id": "scientific_73",
+    "category": "Scientific Reasoning",
+    "problem": "An agricultural scientist develops a drought-resistant variety of wheat. What field trials would be necessary before recommending it to farmers?"
+  },
+  {
+    "id": "scientific_74",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds that exercise improves cognitive function in elderly subjects. What control groups should be included in this experiment?"
+  },
+  {
+    "id": "scientific_75",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist measures the half-life of a newly discovered isotope as 45 minutes. What percentage of the original sample will remain after 3 hours?"
+  },
+  {
+    "id": "scientific_76",
+    "category": "Scientific Reasoning",
+    "problem": "An ornithologist observes that birds of a certain species sing different songs in urban versus rural environments. Generate two competing hypotheses to explain this observation."
+  },
+  {
+    "id": "scientific_77",
+    "category": "Scientific Reasoning",
+    "problem": "A company develops a new battery that allegedly lasts 30% longer than standard batteries. Design an experiment to verify this claim."
+  },
+  {
+    "id": "scientific_78",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds that students who eat breakfast perform better on morning tests than those who don't. What confounding variables might affect this result?"
+  },
+  {
+    "id": "scientific_79",
+    "category": "Scientific Reasoning",
+    "problem": "An epidemiologist tracks the spread of a disease through a population. What mathematical model would best predict the rate of new infections over time?"
+  },
+  {
+    "id": "scientific_80",
+    "category": "Scientific Reasoning",
+    "problem": "A marine biologist observes that a particular species of fish is absent from waters where it was previously abundant. What systematic approach would identify potential causes?"
+  },
+  {
+    "id": "scientific_81",
+    "category": "Scientific Reasoning",
+    "problem": "A team of researchers wants to determine if a specific gene is linked to a particular disease. What study design would provide the strongest evidence for or against this link?"
+  },
+  {
+    "id": "scientific_82",
+    "category": "Scientific Reasoning",
+    "problem": "A plant biologist discovers that a certain chemical increases crop yields in laboratory tests. What considerations should guide field testing of this chemical?"
+  },
+  {
+    "id": "scientific_83",
+    "category": "Scientific Reasoning",
+    "problem": "A social media platform changes its algorithm and immediately sees increased user engagement. What additional information is needed to attribute this increase to the algorithm change?"
+  },
+  {
+    "id": "scientific_84",
+    "category": "Scientific Reasoning",
+    "problem": "A geologist discovers unusual rock formations that could be evidence of ancient flooding or volcanic activity. What observations would help distinguish between these hypotheses?"
+  },
+  {
+    "id": "scientific_85",
+    "category": "Scientific Reasoning",
+    "problem": "A criminologist finds that cities with more police officers have higher reported crime rates. Explain why this correlation does not necessarily mean that police presence increases crime."
+  },
+  {
+    "id": "scientific_86",
+    "category": "Scientific Reasoning",
+    "problem": "A study examining a potential cancer treatment shows promising results in cell cultures. What are the next logical steps in evaluating this treatment?"
+  },
+  {
+    "id": "scientific_87",
+    "category": "Scientific Reasoning",
+    "problem": "A hypothesis states that a specific protein is necessary for cell division. Design an experiment to test this hypothesis."
+  },
+  {
+    "id": "scientific_88",
+    "category": "Scientific Reasoning",
+    "problem": "An economist observes that countries with higher minimum wages have lower unemployment rates. What factors complicate drawing a causal conclusion from this observation?"
+  },
+  {
+    "id": "scientific_89",
+    "category": "Scientific Reasoning",
+    "problem": "A psychologist wants to determine if children learn better from videos or live demonstrations. What experimental design would address this question while controlling for confounding variables?"
+  },
+  {
+    "id": "scientific_90",
+    "category": "Scientific Reasoning",
+    "problem": "A study shows that daily consumption of a herbal supplement reduces cholesterol by 8% on average. What information is needed to evaluate the clinical significance of this finding?"
+  },
+  {
+    "id": "scientific_91",
+    "category": "Scientific Reasoning",
+    "problem": "A civil engineer tests a new concrete mixture that appears to be more resistant to freezing. What data should be collected to validate this property?"
+  },
+  {
+    "id": "scientific_92",
+    "category": "Scientific Reasoning",
+    "problem": "A marketing study finds that stores playing classical music sell more expensive products. What experimental design would test if the music is causing this effect?"
+  },
+  {
+    "id": "scientific_93",
+    "category": "Scientific Reasoning",
+    "problem": "A researcher wants to determine whether a teaching method is more effective for students of different learning styles. What is a major methodological challenge in this research?"
+  },
+  {
+    "id": "scientific_94",
+    "category": "Scientific Reasoning",
+    "problem": "An archaeologist discovers pottery fragments with unfamiliar markings. What systematic approach would help determine the origin and age of these artifacts?"
+  },
+  {
+    "id": "scientific_95",
+    "category": "Scientific Reasoning",
+    "problem": "A chemist measures the rate of a reaction at different temperatures and obtains the following rates: 20\u00b0C: 0.05 mol/s, 30\u00b0C: 0.10 mol/s, 40\u00b0C: 0.20 mol/s. What pattern is evident, and what does it suggest about the reaction?"
+  },
+  {
+    "id": "scientific_96",
+    "category": "Scientific Reasoning",
+    "problem": "A social scientist observes that neighborhoods with more green spaces have lower crime rates. What research design would best test if green spaces cause crime reduction?"
+  },
+  {
+    "id": "scientific_97",
+    "category": "Scientific Reasoning",
+    "problem": "A physicist develops a theory that predicts the existence of a previously undetected particle. What experimental evidence would confirm this theory?"
+  },
+  {
+    "id": "scientific_98",
+    "category": "Scientific Reasoning",
+    "problem": "A study finds a positive correlation between hours spent studying and exam scores, but the relationship plateaus after 3 hours. What conclusion can be drawn about the optimal study time?"
+  },
+  {
+    "id": "scientific_99",
+    "category": "Scientific Reasoning",
+    "problem": "A new medical device claims to measure blood glucose non-invasively. What validation studies should be conducted before approving this device for patient use?"
+  }
+]
