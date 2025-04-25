@@ -133,7 +133,7 @@ def process_chains_iterator(model, chains):
         yield tokenized_text, annotation_indices
 
 # %%
-chains = load_annotated_chain("annotated_chains_old/all_annotated_chains.json")
+chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
 model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 
 processed_chains = process_chains_iterator(model, chains)
@@ -221,6 +221,7 @@ steering_vectors = {}
 for category, mean_vector in mean_vectors.items():
     steering_vectors[category] = mean_vectors[category] - overall_mean
     # steering_vectors[category] = torch.randn(4096)
+    # steering_vectors[category] = overall_mean  # test effect of adding mean to activations
 
 
 # %%
@@ -516,18 +517,54 @@ print(model.tokenizer.decode(out[0]))
 with torch.inference_mode():
     with model.generate(text, max_new_tokens=128) as tracer:
         with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
+            model.model.layers[layer_of_interest].output[0][:] += 10 * steering_vectors["backtracking"].detach()
             out = model.generator.output.save()
 
 print(model.tokenizer.decode(out[0]))
 # %%
-# apply 10x uncertainty-estimation steering vector
+# apply 5x backtracking steering vector
 with model.generate(text, max_new_tokens=128) as tracer:
     with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] += 8 * steering_vectors["uncertainty-estimation"].detach()
+        model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
         out = model.generator.output.save()
 
 print(model.tokenizer.decode(out[0]))
+
+# %%
+# test effect of adding mean to activations
+with model.generate(text, max_new_tokens=128) as tracer:
+    with model.model.layers.all():
+        model.model.layers[layer_of_interest].output[0][:] += 3 * overall_mean.detach()
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+
+# %%
+# test effect of increasing magnitude of activations
+with model.generate(text, max_new_tokens=128) as tracer:
+    with model.model.layers.all():
+        model.model.layers[layer_of_interest].output[0][:] *= 8
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+
+
+# %%
+# test effect of adding gaussian noise to activations
+with model.generate(text, max_new_tokens=128) as tracer:
+    with model.model.layers.all():
+        activation = model.model.layers[layer_of_interest].output[0]
+        noise = torch.randn_like(activation)
+        noise = noise / noise.norm(dim=-1, keepdim=True)
+        activation += 12 * noise
+        model.model.layers[layer_of_interest].output[0][:] = activation
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+
+
+
+
 # %%
 # apply 5x initializing steering vector
 with model.generate(text, max_new_tokens=64) as tracer:
