@@ -9,8 +9,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "mps")
 print(f"Using device: {device}")
 
 # Path to the directory containing task files
-TASKS_DIR = "tasks"
-OUTPUT_DIR = "reasoning_chains"
+TASKS_DIR = "new_tasks"
+OUTPUT_DIR = "new_reasoning_chains"
 
 # Create output directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)

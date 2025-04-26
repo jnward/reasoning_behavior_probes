@@ -6,8 +6,8 @@ from openai import OpenAI
 from tqdm import tqdm
 
 # Constants
-REASONING_CHAINS_DIR = "reasoning_chains"
-ANNOTATED_CHAINS_DIR = "annotated_chains"
+REASONING_CHAINS_DIR = "new_reasoning_chains"
+ANNOTATED_CHAINS_DIR = "new_annotated_chains"
 
 # Create output directory
 os.makedirs(ANNOTATED_CHAINS_DIR, exist_ok=True)
@@ -26,6 +26,8 @@ def annotate_chain(thinking_process):
     prompt = f"""Please split the following reasoning chain of an LLM into
 annotated parts using labels and the following format ["label"]...["end-section"]. A sentence should be split into multiple
 parts if it incorporates multiple behaviours indicated by the labels.
+
+If a sentence contains newline characters, include them in the annotated part verbatim. There should be no characters inbetween an ["end-section"] label and the following label.
 
 Available labels:
 0. initializing -> The model is rephrasing the given task and states initial thoughts.
