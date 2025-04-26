@@ -85,13 +85,14 @@ def process_chains_iterator(model, chains):
         chain_id = chain.get('task_id', f'chain_{i}')
         yield tokenized_text, annotation_indices
 
-def generate_steering_vectors(file_path, layer_of_interest=10):
+def generate_steering_vectors(file_path, layer_of_interest=10, offset=-20, window_size=4):
     chains = load_annotated_chain(file_path)
     model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
     
     processed_chains = process_chains_iterator(model, chains)
     
     activations = defaultdict(list)
+    skipped_examples = defaultdict(int)
 
     with torch.inference_mode():
         for tokens, indices in tqdm(processed_chains):
@@ -105,9 +106,24 @@ def generate_steering_vectors(file_path, layer_of_interest=10):
                 if category not in ["backtracking", "uncertainty-estimation", "initializing", "deduction", "example-testing", "adding-knowledge"]:
                     continue
                 for start, end in index_tuples:
-                    end = start - 16
-                    start = start - 20
-                    activations[category].append(layer_activations[0, start-1:end+1].float().cpu())
+                    # Apply offset to start index and set window
+                    adjusted_start = start + offset
+                    adjusted_end = adjusted_start + window_size
+                    
+                    # Check if the adjusted indices are valid
+                    if adjusted_start < 1:  # 1-indexed, so start must be at least 1
+                        skipped_examples[category] += 1
+                        continue
+                    
+                    # Collect activations for the adjusted window
+                    activations[category].append(layer_activations[0, adjusted_start-1:adjusted_end].float().cpu())
+    
+    # Print skipped examples if there are any
+    total_skipped = sum(skipped_examples.values())
+    if total_skipped > 0:
+        print(f"Skipped {total_skipped} examples because they would go beyond the beginning:")
+        for category, count in skipped_examples.items():
+            print(f"  - {category}: {count} examples skipped")
     
     # Calculate overall mean
     overall_mean = torch.zeros(4096, dtype=torch.float64)
@@ -139,6 +155,12 @@ def generate_steering_vectors(file_path, layer_of_interest=10):
     steering_vectors = {k: v / v.norm() for k, v in steering_vectors.items()}
     
     return steering_vectors, overall_mean, model
+
+def generate_steering_vectors_with_offset(file_path, layer_of_interest=10, offset=0, window_size=4):
+    """
+    Convenience function for backward compatibility
+    """
+    return generate_steering_vectors(file_path, layer_of_interest, offset, window_size)
 
 if __name__ == "__main__":
     steering_vectors, overall_mean, model = generate_steering_vectors("annotated_chains/all_annotated_chains.json")

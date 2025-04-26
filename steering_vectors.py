@@ -174,8 +174,8 @@ with torch.inference_mode():
             for start, end in index_tuples:
                 # token_segment = tokens[start-1:end+1]
                 # end = start
-                end = start - 16
-                start = start - 20
+                start = start - 12
+                end = start + 4
                 # start = np.random.randint(0, len(tokens))
                 # end = start + 5
                 activations[category].append(layer_activations[0, start-1:end+1].float().cpu())
@@ -525,7 +525,7 @@ print(model.tokenizer.decode(out[0]))
 # apply 5x backtracking steering vector
 with model.generate(text, max_new_tokens=128) as tracer:
     with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
+        model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
         out = model.generator.output.save()
 
 print(model.tokenizer.decode(out[0]))
