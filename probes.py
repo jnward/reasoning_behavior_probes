@@ -18,7 +18,7 @@ def load_annotated_chain(file_path):
 # %% 
 # Test load_annotated_chain
 try:
-    chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
+    chains = load_annotated_chain("new_annotated_chains/all_annotated_chains.json")
     print(f"Loaded {len(chains)} chains")
     print(f"First chain keys: {chains[0].keys()}")
 except FileNotFoundError:
@@ -55,9 +55,22 @@ def extract_annotations(annotated_text):
         
         # Extract the text between category tag and end-section tag
         if end_section_tag != -1:
-            text = annotated_text[start_text_pos:end_section_tag].strip()
+            text = annotated_text[start_text_pos:end_section_tag]
+            
+            # Move past the end-section tag
+            after_end_tag_pos = end_section_tag + 15  # Length of "[\"end-section\"]"
+            
+            # Check if there's another category tag following
+            next_tag_pos = annotated_text.find('[\"', after_end_tag_pos)
+            
+            # If there is text between this end-section and the next category tag, include it
+            if next_tag_pos != -1 and next_tag_pos > after_end_tag_pos:
+                # Include the text between tags (which may contain newlines)
+                between_tags_text = annotated_text[after_end_tag_pos:next_tag_pos]
+                text += between_tags_text
+            
             annotations.append((category, text))
-            current_pos = end_section_tag + 15  # Length of "[\"end-section\"]"
+            current_pos = after_end_tag_pos if next_tag_pos == -1 else next_tag_pos
         else:
             # If no end-section tag, move to the next position
             current_pos = end_tag_pos + 2
@@ -88,10 +101,13 @@ def process_chain(model, chain):
     """
     # Format problem with user/assistant tags
     problem = chain["problem"]
-    formatted_problem = f"<|User|>{problem}<|Assistant|><think>\n"
-    
+    messages = [
+        {"role": "user", "content": problem},
+    ]
+    # formatted_problem = f"<|User|>{problem}<|Assistant|><think>\n"
+    formatted_problem = model.tokenizer.apply_chat_template(messages, tokenize=False,add_generation_prompt=True)
     # Tokenize the formatted problem
-    tokenized_problem = model.tokenizer.encode(formatted_problem, return_tensors="pt")[0]
+    tokenized_problem = model.tokenizer.encode(formatted_problem, return_tensors="pt", add_special_tokens=False)[0]
     
     # Extract all annotations from the annotated chain
     annotations = extract_annotations(chain["annotated_chain"])
@@ -107,8 +123,6 @@ def process_chain(model, chain):
     
     # Process each annotation
     for i, (category, text) in enumerate(annotations):
-        if i > 0:
-            text = " " + text
         # Tokenize this text segment
         segment_tokens = model.tokenizer.encode(text, add_special_tokens=False)
         
@@ -183,13 +197,14 @@ def prepare_probe_data(model, chains, layer_of_interest, target_category="backtr
         # Need to decode tokens back to text for model.trace
         text = model.tokenizer.decode(tokens)
         
-        if layer_of_interest == -1:
-            with model.trace(text) as tracer:
-                layer_activations = model.model.layers[0].input[0].unsqueeze(0).save()
-        else:   
-            with model.trace(text) as tracer:
-                layer_activations = model.model.layers[layer_of_interest].output[0].save()
-        
+        with torch.inference_mode():
+            if layer_of_interest == -1:
+                with model.trace(text) as tracer:
+                    layer_activations = model.model.layers[0].input[0].unsqueeze(0).save()
+            else:   
+                with model.trace(text) as tracer:
+                    layer_activations = model.model.layers[layer_of_interest].output[0].save()
+            
         # Create sequence of annotations in order of appearance
         all_annotations = []
         for category, index_tuples in indices.items():
@@ -287,7 +302,13 @@ def train_and_evaluate_probe(X, y, test_size=0.2, random_state=42):
     print(f"Test set: {len(y_test)} examples, {test_pos:.2%} positive")
     
     # Train the logistic regression model
-    model = LogisticRegression(max_iter=1000, class_weight='balanced', random_state=random_state)
+    model = LogisticRegression(
+        max_iter=1000,
+        class_weight='balanced',
+        random_state=random_state,
+        solver='liblinear',
+        C=1e-2,
+    )
     model.fit(X_train, y_train)
     
     # Evaluate on training set
@@ -505,19 +526,22 @@ def visualize_training_examples(model, chain, target_category="backtracking",
             for idx in example_indices:
                 token_classes[idx] = is_positive
     
-    # Create HTML with token highlighting
-    html = "<div style='font-family:monospace; line-height:1.5; background-color:white; color:black; padding:10px;'>"
+    # Create HTML with token highlighting - using pre-wrap to preserve whitespace and newlines
+    html = "<div style='font-family:monospace; line-height:1.5; background-color:white; color:black; padding:10px; white-space:pre-wrap;'>"
     
     for i, token in enumerate(token_texts):
+        # Escape HTML characters but preserve newlines
+        escaped_token = token.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        
         if token_classes[i] is None:
             # Not part of a training example
-            html += f"<span>{token}</span>"
+            html += f"<span>{escaped_token}</span>"
         elif token_classes[i]:
             # Positive example (followed by backtracking)
-            html += f"<span style='background-color:rgba({pos_rgb},0.3)'>{token}</span>"
+            html += f"<span style='background-color:rgba({pos_rgb},0.3)'>{escaped_token}</span>"
         else:
             # Negative example (not followed by backtracking)
-            html += f"<span style='background-color:rgba({neg_rgb},0.3)'>{token}</span>"
+            html += f"<span style='background-color:rgba({neg_rgb},0.3)'>{escaped_token}</span>"
     
     html += "</div>"
     
@@ -702,7 +726,7 @@ print("Model loaded successfully")
 
 # %%
 # Load chains
-chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
+chains = load_annotated_chain("new_annotated_chains/all_annotated_chains.json")
 print(f"Loaded {len(chains)} chains")
 
 # %%
@@ -712,7 +736,7 @@ if len(chains) > 0:
     
     # Visualize with 5 token window and 5 token buffer
     n_tokens = 1
-    buffer_tokens = -3
+    buffer_tokens = -2
     print(f"\nWindow size: {n_tokens} tokens, Buffer: {buffer_tokens} tokens")
     
     # Choose a chain with backtracking annotations if possible
@@ -726,19 +750,21 @@ if len(chains) > 0:
 
 # %%
 # Set parameters
-layer_of_interest = -1
+layer_of_interest = 20
 target_category = "backtracking"
 max_chains = None  # Limit to avoid memory issues, set to None for all chains
 balance_ratio = 1.0  # Equal number of positive and negative examples
 
 # %%
 # Experiment with different token windows and buffer sizes
-token_windows = [1]
-buffer_tokens = [-3, -2, -1, 0, 1, 2, 3, 4, 5]  # -2 is " Wait", -1 is "."
+token_windows = [4]
+buffer_tokens = [14]  # -2 is " Wait", -1 is "."
 print(f"Running experiments for predicting '{target_category}' annotations with balanced classes (ratio: {balance_ratio})...")
 
 results = experiment_with_token_windows(
-    model, chains, layer_of_interest, 
+    model,
+    chains,
+    layer_of_interest, 
     target_category=target_category,
     token_windows=token_windows,
     buffer_tokens=buffer_tokens,

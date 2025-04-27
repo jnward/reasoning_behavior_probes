@@ -169,6 +169,7 @@ with torch.inference_mode():
         torch.cuda.empty_cache()
         for category, index_tuples in indices.items():
             if category not in ["backtracking", "uncertainty-estimation", "initializing", "deduction", "example-testing", "adding-knowledge"]:
+            # if category not in ["backtracking"]:
                 print(f"Found spurious category: {category}, skipping...")
                 continue
             for start, end in index_tuples:
@@ -176,6 +177,7 @@ with torch.inference_mode():
                 # end = start
                 start = start - 12
                 end = start + 4
+                # print(model.tokenizer.decode(tokens[start-1:end+1]))
                 # start = np.random.randint(0, len(tokens))
                 # end = start + 5
                 activations[category].append(layer_activations[0, start-1:end+1].float().cpu())
@@ -223,7 +225,8 @@ for category, mean_vector in mean_vectors.items():
     # steering_vectors[category] = torch.randn(4096)
     # steering_vectors[category] = overall_mean  # test effect of adding mean to activations
 
-
+entropy_direction = torch.load("entropy_direction.pt")
+steering_vectors["entropy"] = entropy_direction
 # %%
 # free memory
 import gc
@@ -236,7 +239,7 @@ torch.cuda.empty_cache()
 import numpy as np
 import plotly.graph_objects as go
 
-# Get all categories
+# # Get all categories
 categories = list(steering_vectors.keys())
 n_categories = len(categories)
 
@@ -244,8 +247,8 @@ n_categories = len(categories)
 similarity_matrix = np.zeros((n_categories, n_categories))
 
 # Compute cosine similarity for each pair
-for i, cat1 in enumerate(categories):
-    for j, cat2 in enumerate(categories):
+for i, cat1 in enumerate(categories): # new
+    for j, cat2 in enumerate(categories): # original
         vec1 = steering_vectors[cat1]
         vec2 = steering_vectors[cat2]
         similarity = torch.nn.functional.cosine_similarity(vec1.unsqueeze(0), vec2.unsqueeze(0)).item()
@@ -262,6 +265,12 @@ fig = go.Figure(data=go.Heatmap(
     zmax=1,
     colorbar=dict(title='Cosine Similarity')
 ))
+
+# add x axis label
+fig.update_layout(
+    xaxis_title='Offset Steering Vectors',
+    yaxis_title='Original Steering Vectors'
+)
 
 fig.update_layout(
     title='Cosine Similarity Between Steering Vectors',
@@ -494,30 +503,12 @@ fig_3d.update_layout(
 fig_3d.show()
 
 
-
-
-# %%
-test_prompt = "What is the largest prime factor of 1011?"
-messages = [
-    {"role": "user", "content": test_prompt}
-]
-text = model.tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True,
-)
-# %%
-with model.generate(text, max_new_tokens=128) as tracer:
-    out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
 # %%
 # apply 10x backtracking steering vector
 with torch.inference_mode():
     with model.generate(text, max_new_tokens=128) as tracer:
         with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 10 * steering_vectors["backtracking"].detach()
+            model.model.layers[31].output[0][:] += 30 * steering_vectors["entropy"].detach()
             out = model.generator.output.save()
 
 print(model.tokenizer.decode(out[0]))
@@ -798,3 +789,76 @@ fig.show()
 
 # %%
 
+
+
+
+
+
+# test_prompt = "What is the largest prime factor of 1011?"
+test_prompt = "What is the third tallest building in NYC?"
+messages = [
+    {"role": "user", "content": test_prompt}
+]
+text = model.tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+    add_special_tokens=False,
+)
+# %%
+with model.generate(text, max_new_tokens=256, do_sample=False) as tracer:
+    out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+
+# %%
+wait_idx = 160
+partial_generation = model.tokenizer.decode(out[0][:wait_idx+1])
+print(partial_generation)
+
+start = wait_idx - 13
+end = start + 6
+print("-"*100)
+print(model.tokenizer.decode(out[0][start:end]))
+print("-"*100)
+partial_input = model.tokenizer.decode(out[0][:end], skip_special_tokens=True)
+print(partial_input)
+
+
+# %%
+with model.generate(partial_input, max_new_tokens=128, do_sample=False) as tracer:
+    out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+
+# %%
+with model.generate(partial_input, max_new_tokens=128, do_sample=False) as tracer:
+    acts = model.model.layers[layer_of_interest].output[0][:, start:end]
+    noise = torch.randn_like(acts)
+    # model.model.layers[layer_of_interest].output[0][:, start:end] -= (100 * steering_vectors["backtracking"].detach()) + (100 * steering_vectors["uncertainty-estimation"].detach())
+    model.model.layers[layer_of_interest].output[0][:, start:end] += 20 * noise
+
+    # target_acts = model.model.layers[layer_of_interest].output[0][:, start:end]
+    # # target_acts = model.model.layers[layer_of_interest].output[0][:].save()
+    # steer_vec = steering_vectors["backtracking"].detach()
+    
+    # # Project out the component in the direction of the steering vector
+    # # Formula: act_proj = act - (act·vec)/(vec·vec) * vec
+    # # Since steering vectors are normalized, (vec·vec) = 1
+    # # dot_products = torch.matmul(target_acts.float(), steer_vec)
+    # print(target_acts.shape)
+    # print(steer_vec.shape)
+    # dot_products = target_acts.float() @ steer_vec
+    # projection = dot_products.unsqueeze(-1) * steer_vec
+    # projection.save()
+    
+    # model.model.layers[layer_of_interest].output[0][:, start:end] = target_acts - 1000 * projection
+    # # model.model.layers[layer_of_interest].output[0][:] = target_acts - 100 * projection
+    out = model.generator.output.save()
+
+print(out.shape)
+# print(acts.shape)
+
+print(model.tokenizer.decode(out[0]))
+
+# %%

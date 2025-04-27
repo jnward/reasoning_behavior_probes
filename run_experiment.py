@@ -10,12 +10,13 @@ from generate_steering_vectors import generate_steering_vectors
 
 # Configuration parameters
 intervention_magnitudes = [0, 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 25]  # Added 0 for baseline
+# intervention_magnitudes = [0, 12]
 num_prompts = 10
 layer_of_interest = 10
 max_new_tokens = 128
-seed = 42
-intervention_types = ["backtracking", "deduction", "initializing", "noise", "overall_mean", "self"]
-
+seed = 43
+# intervention_types = ["backtracking", "deduction", "initializing", "noise", "overall_mean", "self"]
+intervention_types = ["noise"]
 def load_random_prompts(file_path, num_prompts):
     with open(file_path, "r") as f:
         all_prompts = json.load(f)
