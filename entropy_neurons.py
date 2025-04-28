@@ -45,7 +45,8 @@ activations = []
 logits = []
 for chain in tqdm(formatted_chains[:100]):
     with model.trace(chain) as tracer:
-        acts = model.lm_head.input.save()
+        # acts = model.lm_head.input.save()
+        acts = model.model.layers[10].output[0].save()
         out = model.output[0].save()
     activations.append(acts.cpu())
     logits.append(out.cpu())
@@ -100,5 +101,5 @@ logit_shift[top_logits]
 for token in top_logits:
     print(model.tokenizer.decode(token))
 # %%
-torch.save(direction.cpu().float(), "entropy_direction.pt")
+torch.save(direction.cpu().float(), "l10_entropy_direction.pt")
 # %%

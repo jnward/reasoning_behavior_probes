@@ -3,6 +3,11 @@ import json
 import torch
 from nnsight import LanguageModel
 import numpy as np
+from transformers import AutoTokenizer
+import os
+
+os.environ["HF_TOKEN"] = "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"
+
 # %%
 def load_annotated_chain(file_path):
     """Load annotated chains from a JSON file"""
@@ -48,7 +53,7 @@ def extract_annotations(annotated_text):
     
     return annotations
 
-def process_chain(model, chain):
+def process_chain(tokenizer, chain):
     """
     Process a chain to format it with user/assistant tags and track annotation indices.
     
@@ -62,14 +67,14 @@ def process_chain(model, chain):
     """
     # Format problem with user/assistant tags
     problem = chain["problem"]
-    formatted_problem = model.tokenizer.apply_chat_template(
+    formatted_problem = tokenizer.apply_chat_template(
         [{"role": "user", "content": problem}],
         tokenize=False,
         add_generation_prompt=True,
     )
     
     # Tokenize the formatted problem
-    tokenized_problem = model.tokenizer.encode(formatted_problem, return_tensors="pt", add_special_tokens=False)[0]
+    tokenized_problem = tokenizer.encode(formatted_problem, return_tensors="pt", add_special_tokens=False)[0]
     
     # Extract all annotations from the annotated chain
     annotations = extract_annotations(chain["annotated_chain"])
@@ -88,7 +93,7 @@ def process_chain(model, chain):
         if i > 0:
             text = " " + text
         # Tokenize this text segment
-        segment_tokens = model.tokenizer.encode(text, add_special_tokens=False)
+        segment_tokens = tokenizer.encode(text, add_special_tokens=False)
         
         # Record start and end token indices
         start_idx = current_token_pos
@@ -112,7 +117,7 @@ def process_chain(model, chain):
 
 # %%
 # Create an iterator for processing multiple chains
-def process_chains_iterator(model, chains):
+def process_chains_iterator(tokenizer, chains):
     """
     Process multiple chains and yield tokenized text with annotation indices for each.
     
@@ -126,17 +131,21 @@ def process_chains_iterator(model, chains):
     """
     for i, chain in enumerate(chains):
         # Process this chain
-        tokenized_text, annotation_indices = process_chain(model, chain)
+        tokenized_text, annotation_indices = process_chain(tokenizer, chain)
         
         # Yield the results along with chain identifier (task_id if available, otherwise index)
         chain_id = chain.get('task_id', f'chain_{i}')
         yield tokenized_text, annotation_indices
 
+
 # %%
 chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
-model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+# model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+base_model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+finetune_tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+base_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B")
 
-processed_chains = process_chains_iterator(model, chains)
+processed_chains = process_chains_iterator(finetune_tokenizer, chains)
 
 # %%
 # test the iterator, it should return a tokenized text and a dictionary of annotation indices
@@ -146,26 +155,50 @@ for category, index_tuples in indices.items():
     print(category)
     for start, end in index_tuples:
         token_segment = tokens[start-1:end+1]
-        print("\t" + model.tokenizer.decode(token_segment))
+        print("\t" + finetune_tokenizer.decode(token_segment))
 # %%
 from collections import defaultdict
 from tqdm import tqdm
 
-processed_chains = process_chains_iterator(model, chains)
+processed_chains = process_chains_iterator(finetune_tokenizer, chains)
 
+# %%
 layer_of_interest = 10
 activations = defaultdict(list)
 
+def convert_to_base_tokens(tokens: torch.Tensor):
+    """
+    Convert r1 tokens to base tokens. Only works for Llama tokenizers.
+    """
+    # patch_token = 77627 # ` ############`
+    patch_token = 27370 # ` ####`
+    tokens = tokens.clone()
+    tokens[tokens == 128011] = patch_token
+    tokens[tokens == 128012] = patch_token
+    tokens[tokens == 128013] = patch_token
+    tokens[tokens == 128014] = patch_token
+    return tokens
+
+
+# %%
 acc = 0
 with torch.inference_mode():
-    for tokens, indices in tqdm(processed_chains):
+    for ft_tokens, indices in tqdm(processed_chains):
         # need to decode tokens back to text, so we can use model.trace
-        text = model.tokenizer.decode(tokens)
-        tokens2 = model.tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")[0]
-        assert torch.equal(tokens, tokens2)
-        with model.trace(text) as tracer:
+        text = finetune_tokenizer.decode(ft_tokens)
+        ft_tokens2 = finetune_tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")[0]
+        assert torch.equal(ft_tokens, ft_tokens2)
+
+        base_tokens = convert_to_base_tokens(ft_tokens)
+        base_text = base_tokenizer.decode(base_tokens)
+        base_tokens2 = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
+        if not torch.equal(base_tokens, base_tokens2):
+            print("mismatch, skipping...")
+            continue
+
+        with base_model.trace(base_text) as tracer:
             # layer_activations = model.model.embed_tokens.output.save()
-            layer_activations = model.model.layers[layer_of_interest].output[0].save()
+            layer_activations = base_model.model.layers[layer_of_interest].output[0].save()
         torch.cuda.empty_cache()
         for category, index_tuples in indices.items():
             if category not in ["backtracking", "uncertainty-estimation", "initializing", "deduction", "example-testing", "adding-knowledge"]:
@@ -198,15 +231,6 @@ overall_mean /= num_activations
 overall_mean = overall_mean.to(torch.float32)
 
 # %%
-# calculate mean vectors for each category
-# mean_vectors = {}
-# for category, layer_activations in activations.items():
-#     print(category)
-#     means = [la.mean(dim=0) for la in layer_activations]
-#     mean = torch.stack(means, dim=0).mean(dim=0)
-#     mean_vectors[category] = mean
-# print(mean_vectors["backtracking"].shape)
-
 mean_vectors = {}
 for category, layer_activations in activations.items():
     category_mean = torch.zeros(4096, dtype=torch.float64)
@@ -222,19 +246,9 @@ for category, layer_activations in activations.items():
 steering_vectors = {}
 for category, mean_vector in mean_vectors.items():
     steering_vectors[category] = mean_vectors[category] - overall_mean
-    # steering_vectors[category] = torch.randn(4096)
-    # steering_vectors[category] = overall_mean  # test effect of adding mean to activations
-
-torch.save(steering_vectors, "steering_vectors.pt")
-
-# %%
 
 # entropy_direction = torch.load("l10_entropy_direction.pt")
 # steering_vectors["entropy"] = entropy_direction
-
-
-# %%
-base_steering_vectors = torch.load("base_steering_vectors.pt")
 
 # %%
 # free memory
@@ -242,6 +256,11 @@ import gc
 del(activations)
 gc.collect()
 torch.cuda.empty_cache()
+
+# %%
+# save steering vectors
+torch.save(steering_vectors, "base_steering_vectors.pt")
+
 
 # %%
 # compute cosine similarity matrix between all steering vectors
@@ -259,7 +278,7 @@ similarity_matrix = np.zeros((n_categories, n_categories))
 for i, cat1 in enumerate(categories): # new
     for j, cat2 in enumerate(categories): # original
         vec1 = steering_vectors[cat1]
-        vec2 = base_steering_vectors[cat2]
+        vec2 = steering_vectors[cat2]
         similarity = torch.nn.functional.cosine_similarity(vec1.unsqueeze(0), vec2.unsqueeze(0)).item()
         similarity_matrix[i, j] = similarity
 
@@ -275,14 +294,9 @@ fig = go.Figure(data=go.Heatmap(
     colorbar=dict(title='Cosine Similarity')
 ))
 
-# add x axis label
-fig.update_layout(
-    xaxis_title='FT Steering Vectors',
-    yaxis_title='Base Steering Vectors'
-)
 
 fig.update_layout(
-    title='Cosine Similarity Between Steering Vectors',
+    title='Cosine Similarity Between Base Steering Vectors',
     xaxis=dict(tickangle=45),
     height=600,
     width=700
@@ -511,369 +525,57 @@ fig_3d.update_layout(
 
 fig_3d.show()
 
+# %%
+del base_model
+gc.collect()
+torch.cuda.empty_cache()
+
+
+# %%
+# model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+
+# %%
+test_prompt = "What is the third tallest building in NYC?"
+messages = [
+    {"role": "user", "content": test_prompt}
+]
+text = finetune_tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+    add_special_tokens=False,
+)
+ft_tokens = finetune_tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")[0]
+base_tokens = convert_to_base_tokens(ft_tokens)
+base_text = base_tokenizer.decode(base_tokens)
+
+assert torch.equal(base_tokens, base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0])
+
+# %%
+print(text)
+print(base_text)
+
+with torch.inference_mode():
+    with model.generate(base_text + "Ok, so the user is asking that I find the third tallest building in NYC. I need to", max_new_tokens=128) as tracer:
+        with model.model.layers.all():
+            model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+
+# %%
+del model
+gc.collect()
+torch.cuda.empty_cache()
+model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 
 # %%
 # apply 10x backtracking steering vector
 with torch.inference_mode():
     with model.generate(text, max_new_tokens=128) as tracer:
         with model.model.layers.all():
-            model.model.layers[31].output[0][:] += 30 * steering_vectors["entropy"].detach()
+            model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
             out = model.generator.output.save()
 
 print(model.tokenizer.decode(out[0]))
-# %%
-# apply 5x backtracking steering vector
-with model.generate(text, max_new_tokens=128) as tracer:
-    with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
-        out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
-# %%
-# test effect of adding mean to activations
-with model.generate(text, max_new_tokens=128) as tracer:
-    with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] += 3 * overall_mean.detach()
-        out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
-# %%
-# test effect of increasing magnitude of activations
-with model.generate(text, max_new_tokens=128) as tracer:
-    with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] *= 8
-        out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
-
-# %%
-# test effect of adding gaussian noise to activations
-with model.generate(text, max_new_tokens=128) as tracer:
-    with model.model.layers.all():
-        activation = model.model.layers[layer_of_interest].output[0]
-        noise = torch.randn_like(activation)
-        noise = noise / noise.norm(dim=-1, keepdim=True)
-        activation += 12 * noise
-        model.model.layers[layer_of_interest].output[0][:] = activation
-        out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
-
-
-
-# %%
-# apply 5x initializing steering vector
-with model.generate(text, max_new_tokens=64) as tracer:
-    with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["initializing"].detach()
-        out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-# %%
-import random
-
-# get random chain from dataset
-with open("reasoning_chains/all_reasoning_chains.json", "r") as f:
-    original_chains = json.load(f)
-
-random_chain = random.choice(original_chains)
-
-# %%
-print(random_chain)
-
-# %%
-# get activations for random chain
-formatted_text = model.tokenizer.apply_chat_template(
-    [{"role": "user", "content": random_chain["problem"]},
-    {"role": "assistant", "content": random_chain["reasoning_chain"]}],
-    tokenize=False,
-    add_generation_prompt=True,
-)
-# %%
-with torch.inference_mode():
-    with model.trace(formatted_text) as tracer:
-        layer_activations = model.model.layers[layer_of_interest].output[0].squeeze().save()
-
-print(layer_activations.shape)
-
-# %%
-# get cosine similarity between activations and steering vectors
-cosine_similarities = {}
-
-for category, steering_vector in steering_vectors.items():
-    cosine_similarities[category] = torch.nn.functional.cosine_similarity(layer_activations.cpu(), steering_vector, dim=1).float()
-
-# %%
-# get dot products between activations and steering vectors
-dot_products = {}
-
-for category, steering_vector in steering_vectors.items():
-    # Compute dot product between each activation vector and the steering vector
-    dot_products[category] = torch.matmul(layer_activations.cpu().float(), steering_vector).float()
-
-# %%
-import plotly.express as px
-import pandas as pd
-# plot each category's cosine similarity as a multi-line plot
-# print tokens on the x-axis
-tokens = model.tokenizer.encode(formatted_text)
-token_text = [model.tokenizer.decode(t) for t in tokens]
-print(len(token_text))
-
-# create a dataframe with the cosine similarities
-df = pd.DataFrame(cosine_similarities)
-df["token"] = token_text
-df["position"] = range(len(token_text))  # Add position column
-
-# Use position for x-axis but display token text as labels
-fig = px.line(df, x="position", y=list(cosine_similarities.keys()), hover_data=["token"])
-fig.update_xaxes(
-    tickmode='array',
-    tickvals=list(range(len(token_text))),
-    ticktext=token_text
-)
-fig.show()
-
-# %%
-def create_token_visualization(token_text, similarities, category="backtracking", threshold=0.4, color="blue"):
-    """
-    Create HTML visualization of tokens highlighted based on cosine similarity.
-    
-    Args:
-        token_text: List of tokens
-        similarities: Dictionary of cosine similarities
-        category: Which similarity category to use for highlighting
-        threshold: Values below this threshold will be set to zero
-        color: Color for highlighting ("blue", "orange", "red", "green")
-    
-    Returns:
-        HTML string with highlighted tokens
-    """
-    # Get the specific category's similarities
-    similarity_values = similarities[category]
-    
-    # Find maximum similarity for normalization
-    max_sim = float(max(similarity_values))
-    
-    # Define color RGB values
-    color_map = {
-        "blue": "0,0,255",
-        "orange": "255,165,0",
-        "red": "255,0,0",
-        "green": "0,128,0"
-    }
-    rgb = color_map.get(color, "0,0,255")  # Default to blue if color not found
-    
-    # Create HTML with token highlighting - white background and black text for dark mode
-    html = "<div style='font-family:monospace; line-height:1.5; background-color:white; color:black; padding:10px;'>"
-    
-    for i, token in enumerate(token_text):
-        # Get similarity value (between -1 and 1)
-        sim = float(similarity_values[i])
-        
-        # Apply threshold - values below threshold are set to zero
-        if sim < threshold:
-            sim = 0
-        else:
-            # Normalize only non-zero values
-            if max_sim > 0:
-                sim = sim / max_sim
-        
-        # Create span with background color
-        html += f"<span style='background-color:rgba({rgb},{max(0, sim):.3f})'>{token}</span>"
-    
-    html += "</div>"
-    
-    return html
-
-# Test the visualization function
-from IPython.display import display, HTML
-
-# Save to file
-html_viz = create_token_visualization(
-    token_text,
-    cosine_similarities,
-    category="uncertainty-estimation",
-    threshold=0.0,
-    color="orange"
-)
-with open("token_visualization.html", "w") as f:
-    f.write(html_viz)
-
-# Display in the interactive window
-display(HTML(html_viz))
-
-# %%
-def create_token_visualization_dot_product(token_text, dot_products, category="backtracking", threshold=0, color="blue"):
-    """
-    Create HTML visualization of tokens highlighted based on dot product.
-    
-    Args:
-        token_text: List of tokens
-        dot_products: Dictionary of dot products
-        category: Which dot product category to use for highlighting
-        threshold: Values below this threshold will be set to zero
-        color: Color for highlighting ("blue", "orange", "red", "green")
-    
-    Returns:
-        HTML string with highlighted tokens
-    """
-    # Get the specific category's dot products
-    similarity_values = dot_products[category]
-    
-    # Find maximum absolute dot product for normalization
-    # max_abs_value = float(max(abs(similarity_values)))
-    max_abs_value = 2
-    
-    # Define color RGB values
-    color_map = {
-        "blue": "0,0,255",
-        "orange": "255,165,0",
-        "red": "255,0,0",
-        "green": "0,128,0"
-    }
-    rgb = color_map.get(color, "0,0,255")  # Default to blue if color not found
-    
-    # Create HTML with token highlighting - white background and black text for dark mode
-    html = "<div style='font-family:monospace; line-height:1.5; background-color:white; color:black; padding:10px;'>"
-    
-    for i, token in enumerate(token_text):
-        # Get dot product value
-        dp_value = float(similarity_values[i])
-        
-        # Apply threshold - values below threshold are set to zero
-        if abs(dp_value) < threshold:
-            intensity = 0
-        else:
-            # Normalize to [0,1] for visualization intensity
-            if max_abs_value > 0:
-                intensity = abs(dp_value) / max_abs_value
-            else:
-                intensity = 0
-        
-        # Create span with background color
-        html += f"<span style='background-color:rgba({rgb},{intensity:.3f})'>{token}</span>"
-    
-    html += "</div>"
-    
-    return html
-
-# Test the dot product visualization function
-html_viz_dot = create_token_visualization_dot_product(
-    token_text,
-    dot_products,
-    category="uncertainty-estimation",
-    threshold=0.3,
-    color="green"
-)
-with open("token_visualization_dot_product.html", "w") as f:
-    f.write(html_viz_dot)
-
-# Display in the interactive window
-display(HTML(html_viz_dot))
-
-# %%
-# Compare dot products and cosine similarity for a selected category
-category = "uncertainty-estimation"
-comparison_df = pd.DataFrame({
-    "position": range(len(token_text)),
-    "token": token_text,
-    "dot_product": dot_products[category].numpy(),
-    "cosine_similarity": cosine_similarities[category].numpy()
-})
-
-# Create comparison plot
-fig = px.line(comparison_df, x="position", y=["dot_product", "cosine_similarity"], 
-              hover_data=["token"], title=f"Comparison of Dot Product vs Cosine Similarity for '{category}'")
-fig.update_xaxes(
-    tickmode='array',
-    tickvals=list(range(0, len(token_text), 20)),  # Show every 20th token label to avoid crowding
-    ticktext=[token_text[i] for i in range(0, len(token_text), 20)]
-)
-fig.show()
-
-# %%
-
-
-
-
-
-
-# test_prompt = "What is the largest prime factor of 1011?"
-test_prompt = "What is the third tallest building in NYC?"
-messages = [
-    {"role": "user", "content": test_prompt}
-]
-text = model.tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True,
-    add_special_tokens=False,
-)
-# %%
-with model.generate(text, max_new_tokens=256, do_sample=False) as tracer:
-    out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
-# %%
-wait_idx = 160
-partial_generation = model.tokenizer.decode(out[0][:wait_idx+1])
-print(partial_generation)
-
-start = wait_idx - 13
-end = start + 6
-print("-"*100)
-print(model.tokenizer.decode(out[0][start:end]))
-print("-"*100)
-partial_input = model.tokenizer.decode(out[0][:end], skip_special_tokens=True)
-print(partial_input)
-
-
-# %%
-with model.generate(partial_input, max_new_tokens=128, do_sample=False) as tracer:
-    out = model.generator.output.save()
-
-print(model.tokenizer.decode(out[0]))
-
-# %%
-with model.generate(partial_input, max_new_tokens=128, do_sample=False) as tracer:
-    with model.model.layers.all():  # do I need this? 
-        acts = model.model.layers[layer_of_interest].output[0][:, start:end]
-        noise = torch.randn_like(acts)
-        model.model.layers[layer_of_interest].output[0][:, start:end] += (100 * steering_vectors["backtracking"].detach())
-        # model.model.layers[layer_of_interest].output[0][:] += (12 * steering_vectors["backtracking"].detach())
-
-        # model.model.layers[layer_of_interest].output[0][:, start:end] += 20 * noise
-        acts = model.model.layers[layer_of_interest].output[0][:, start:end].save()
-
-        # target_acts = model.model.layers[layer_of_interest].output[0][:, start:end]
-        # # target_acts = model.model.layers[layer_of_interest].output[0][:].save()
-        # steer_vec = steering_vectors["backtracking"].detach()
-        
-        # # Project out the component in the direction of the steering vector
-        # # Formula: act_proj = act - (act·vec)/(vec·vec) * vec
-        # # Since steering vectors are normalized, (vec·vec) = 1
-        # # dot_products = torch.matmul(target_acts.float(), steer_vec)
-        # print(target_acts.shape)
-        # print(steer_vec.shape)
-        # dot_products = target_acts.float() @ steer_vec
-        # projection = dot_products.unsqueeze(-1) * steer_vec
-        # projection.save()
-        
-        # model.model.layers[layer_of_interest].output[0][:, start:end] = target_acts - 1000 * projection
-        # # model.model.layers[layer_of_interest].output[0][:] = target_acts - 100 * projection
-        out = model.generator.output.save()
-
-print(acts.shape)
-
-print(out.shape)
-# print(acts.shape)
-
-print(model.tokenizer.decode(out[0]))
-
-# %%
