@@ -225,7 +225,7 @@ for category, mean_vector in mean_vectors.items():
     # steering_vectors[category] = torch.randn(4096)
     # steering_vectors[category] = overall_mean  # test effect of adding mean to activations
 
-torch.save(steering_vectors, "steering_vectors.pt")
+torch.save(steering_vectors, "ft_steering_vectors.pt")
 
 # %%
 
