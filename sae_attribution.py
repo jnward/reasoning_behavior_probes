@@ -42,9 +42,14 @@ print(example)
 # messages = [
 #     {"role": "user", "content": prompt}
 # ]
-messages = example["messages"]
+messages = [example["messages"][0]]
 formatted_prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+formatted_response = tokenizer.encode(example["messages"][1]["content"], add_special_tokens=False)
+formatted_prompt += tokenizer.decode(formatted_response)
 print(formatted_prompt)
+
+input_ids = tokenizer.encode(formatted_prompt, return_tensors="pt", add_special_tokens=False).to(device)
+print(input_ids.shape)
 
 # %%
 # with model.generate(formatted_prompt, max_new_tokens=256, do_sample=False, temperature=None, top_p=None) as gen:
