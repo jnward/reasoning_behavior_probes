@@ -31,7 +31,7 @@ dataset = dataset.shuffle(seed=42)
 
 n_features = 65536
 k = 100
-layer_num = 4
+layer_num = 6
 
 sae = SparseAutoencoder(
     d_in=4096,
@@ -41,7 +41,11 @@ sae = SparseAutoencoder(
 )
 
 # %%
-state_dict = torch.load("saes/r1-sae-layer5_65536_100-33000.pt")
+# state_dict = torch.load("saes/r1-sae-layer5_65536_100-33000.pt")
+# state_dict = torch.load("saes/r1-sae-layer5_65536_100_multi-21000.pt")
+state_dict = torch.load("saes/r1-sae-layer7_65536_100_multi-39000.pt")
+# state_dict = torch.load("saes/r1-sae-layer11_65536_100_multi-48827.pt")
+# state_dict = torch.load("saes/r1-sae-layer21_65536_100_multi-24000.pt")
 sae.load_state_dict(state_dict)
 
 # %%
@@ -59,7 +63,7 @@ def get_token_iter(dataset, tokenizer, min_ctx_len=512):
             continue
         yield tokens.input_ids
 
-my_data_generator = get_token_iter(dataset, tokenizer, min_ctx_len=512)
+my_data_generator = get_token_iter(dataset, tokenizer, min_ctx_len=64)
 
 example = next(iter(my_data_generator))
 print(tokenizer.decode(example[0]))
@@ -214,8 +218,8 @@ print(f"Total activations recorded: {feature_df['activation_count'].sum()}")
 
 # %%
 # Save dataframe
-feature_df.to_pickle("feature_activations.pkl")
-print("\nDataframe saved to feature_activations.pkl")
+feature_df.to_pickle(f"feature_activations_layer{layer_num}.pkl")
+print(f"\nDataframe saved to feature_activations_layer{layer_num}.pkl")
 
 # %%
 # Additional feature analyses
@@ -240,11 +244,32 @@ def analyze_feature_distribution(feature_df, feature_idx, min_activations=10, to
     return row
 
 # %%
-feature_idx = 100
-# %%
-# Run additional analyses
-feature_idx += 1
-row = analyze_feature_distribution(feature_df, feature_idx=feature_idx, min_activations=10, total_tokens=10000)
-row
+import pandas as pd
+layer_num = 20
 
+def analyze_feature_distribution(feature_df, feature_idx, min_activations=10, total_tokens=10000):
+    # Filter features that were activated at least min_activations times
+    print(f"Total tokens processed: {total_tokens}")
+
+    row = feature_df[feature_df['feature_id'] == feature_idx].iloc[0]
+    pct_active = (row['activation_count'] / total_tokens) * 100
+    print(f"Activated in {pct_active:.2f}% of tokens")
+    
+    # Create tabular display for examples
+    examples_data = []
+    for example in row['top_examples'][:10]:  # Show top 10 examples
+        examples_data.append({
+            'Token': example['token'],
+            'Activation': f"{example['activation']:.4f}",
+            'Context': example['context']
+        })
+    examples_df = pd.DataFrame(examples_data)
+    display(examples_df)
+    return row
+
+feature_df = pd.read_pickle(f"feature_activations_layer{layer_num}.pkl")
+
+# %%
+feature_idx = 26847
+row = analyze_feature_distribution(feature_df, feature_idx=feature_idx, min_activations=10, total_tokens=100000)
 # %%
