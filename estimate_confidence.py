@@ -3,6 +3,18 @@ from nnsight import LanguageModel
 import torch
 
 device = "cuda"
+use_base = True
+torch.set_grad_enabled(False)
+
+import os
+os.environ["HF_TOKEN"] = "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"
+
+if use_base:
+    base_model = LanguageModel(
+        "meta-llama/Llama-3.1-8B",
+        device_map=device,
+        torch_dtype=torch.bfloat16
+    )
 
 model = LanguageModel(
     "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
@@ -10,8 +22,21 @@ model = LanguageModel(
     torch_dtype=torch.bfloat16
 )
 
+def convert_to_base_tokens(tokens: torch.Tensor):
+    """
+    Convert r1 tokens to base tokens. Only works for Llama tokenizers.
+    """
+    # patch_token = 77627 # ` ############`
+    patch_token = 27370 # ` ####`
+    tokens = tokens.clone()
+    tokens[tokens == 128011] = patch_token
+    tokens[tokens == 128012] = patch_token
+    tokens[tokens == 128013] = patch_token
+    tokens[tokens == 128014] = patch_token
+    return tokens
+
 # %%
-steering_vectors = torch.load("ft_steering_vectors.pt")
+steering_vectors = torch.load("base_steering_vectors.pt")
 for key, vector in steering_vectors.items():
     steering_vectors[key] = vector / vector.norm()
     print(steering_vectors[key].shape)
@@ -22,9 +47,11 @@ for key, vector in steering_vectors.items():
 from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+base_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B")
 
 prompt = "What is 32^2?"
-strengths = [0, 5, 10, 15, 20, 25, 30]
+# strengths = [0, 5, 10, 15, 20, 25, 30]
+strengths = [0, 1, 2, 3, 4, 5, 6]
 
 def test_confidence(prompt, my_steering_vector, use_noise=False):
     messages = [
@@ -55,19 +82,27 @@ def test_confidence(prompt, my_steering_vector, use_noise=False):
 
     logit_diffs = []
 
+    if use_base:
+        test_model = base_model
+        thinking_tokens = tokenizer.encode(thinking_text, add_special_tokens=False, return_tensors="pt")[0]
+        base_tokens = convert_to_base_tokens(thinking_tokens)
+        thinking_text = base_tokenizer.decode(base_tokens)
+    else:   
+        test_model = model
+
     for strength in strengths:
-        with model.trace(thinking_text) as tracer:
+        with test_model.trace(thinking_text) as tracer:
             if use_noise:
-                with model.model.layers.all():
-                    acts = model.model.layers[10].output[0][:]
+                with test_model.model.layers.all():
+                    acts = test_model.model.layers[10].output[0][:]
                     noise = torch.randn_like(acts)
                     noise_normed = noise / noise.norm(dim=-1, keepdim=True)
-                    model.model.layers[10].output[0][:] += strength * noise_normed
-                logits = model.output[0].save()
+                    test_model.model.layers[10].output[0][:] += strength * noise_normed
+                logits = test_model.output[0].save()
             else:
-                with model.model.layers.all():
-                    model.model.layers[10].output[0][:] += strength * my_steering_vector
-                logits = model.output[0].save()
+                with test_model.model.layers.all():
+                    test_model.model.layers[10].output[0][:] += strength * my_steering_vector
+                logits = test_model.output[0].save()
 
         logits[0, -1, :].shape
         high_logit = logits[0, -1, [tokenizer.encode(' high', add_special_tokens=False)[0]]].item()
@@ -106,6 +141,7 @@ for steering_category in steering_vectors.keys():
         logit_diffs = test_confidence(prompt, steering_vectors[steering_category])
         all_logit_diffs.append(logit_diffs)
     category_logit_diffs.append(all_logit_diffs)
+    
 # %%
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
@@ -137,12 +173,12 @@ for row in [1, 2]:
 # apply y-axis range to other subplots
 for row in [1, 2]:
     for col in [1, 2, 3]:
-        fig.update_yaxes(range=[-2, 14], row=row, col=col)
+        fig.update_yaxes(range=[-2, 5], row=row, col=col)
 # move legend below plots
 fig.update_layout(
     height=800,
     width=1000,
-    title_text='Effect of Steering Strength on Confidence Estimate',
+    title_text='Effect of Steering Strength on Confidence Estimate (Base Model)',
     legend=dict(
         orientation='h',
         yanchor='bottom',
@@ -151,6 +187,8 @@ fig.update_layout(
         x=0.3
     )
 )
+# save png
+fig.write_image("confidence_steering.png")
 fig.show()
 
 # %%
@@ -188,7 +226,7 @@ fig_noise.update_layout(
     yaxis_title='Logit Difference (high - low)',
     # legend=dict(orientation='h', yanchor='bottom', y=-0.6, xanchor='center', x=0.5)
 )
-fig_noise.update_yaxes(range=[-2, 14])
+fig_noise.update_yaxes(range=[-2, 5])
 fig_noise.show()
 
 # %%

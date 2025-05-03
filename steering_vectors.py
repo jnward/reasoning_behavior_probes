@@ -3,6 +3,7 @@ import json
 import torch
 from nnsight import LanguageModel
 import numpy as np
+import textwrap
 # %%
 def load_annotated_chain(file_path):
     """Load annotated chains from a JSON file"""
@@ -514,30 +515,52 @@ fig_3d.show()
 
 # %%
 # apply 10x backtracking steering vector
-with torch.inference_mode():
-    with model.generate(text, max_new_tokens=128) as tracer:
-        with model.model.layers.all():
-            model.model.layers[31].output[0][:] += 30 * steering_vectors["entropy"].detach()
-            out = model.generator.output.save()
+# with torch.inference_mode():
+#     with model.generate(text, max_new_tokens=128) as tracer:
+#         with model.model.layers.all():
+#             model.model.layers[31].output[0][:] += 30 * steering_vectors["entropy"].detach()
+#             out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+
+
+# %%
+import textwrap
+
+prompt = "What is the largest prime factor of 1011?"
+messages = [
+    {"role": "user", "content": prompt}
+]
+text = model.tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+    add_special_tokens=False,
+)
+# get baseline
+tokens = model.tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")
+with model.generate(tokens, max_new_tokens=128) as gen:
+    out = model.generator.output.save()
+
+baseline = model.tokenizer.decode(out[0])
+print(textwrap.fill(baseline, width=40, drop_whitespace=False, replace_whitespace=False))
+
 # %%
 # apply 5x backtracking steering vector
-with model.generate(text, max_new_tokens=128) as tracer:
+with model.generate(tokens, max_new_tokens=128) as tracer:
     with model.model.layers.all():
-        model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
+        model.model.layers[layer_of_interest].output[0][:] += 8 * steering_vectors["backtracking"].detach()
         out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
-
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
 # %%
+
 # test effect of adding mean to activations
 with model.generate(text, max_new_tokens=128) as tracer:
     with model.model.layers.all():
         model.model.layers[layer_of_interest].output[0][:] += 3 * overall_mean.detach()
         out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
 
 # %%
 # test effect of increasing magnitude of activations
@@ -546,7 +569,7 @@ with model.generate(text, max_new_tokens=128) as tracer:
         model.model.layers[layer_of_interest].output[0][:] *= 8
         out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=80))
 
 
 # %%
@@ -560,7 +583,7 @@ with model.generate(text, max_new_tokens=128) as tracer:
         model.model.layers[layer_of_interest].output[0][:] = activation
         out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=80))
 
 
 
@@ -572,7 +595,7 @@ with model.generate(text, max_new_tokens=64) as tracer:
         model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["initializing"].detach()
         out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=80))
 # %%
 import random
 
@@ -580,7 +603,10 @@ import random
 with open("reasoning_chains/all_reasoning_chains.json", "r") as f:
     original_chains = json.load(f)
 
-random_chain = random.choice(original_chains)
+thinking_text = ""
+while "Wait" not in thinking_text:
+    random_chain = random.choice(original_chains)
+    thinking_text = random_chain["reasoning_chain"]
 
 # %%
 print(random_chain)
@@ -593,9 +619,10 @@ formatted_text = model.tokenizer.apply_chat_template(
     tokenize=False,
     add_generation_prompt=True,
 )
+tokens = model.tokenizer.encode(formatted_text, add_special_tokens=False, return_tensors="pt")
 # %%
 with torch.inference_mode():
-    with model.trace(formatted_text) as tracer:
+    with model.trace(tokens) as tracer:
         layer_activations = model.model.layers[layer_of_interest].output[0].squeeze().save()
 
 print(layer_activations.shape)
@@ -620,7 +647,7 @@ import plotly.express as px
 import pandas as pd
 # plot each category's cosine similarity as a multi-line plot
 # print tokens on the x-axis
-tokens = model.tokenizer.encode(formatted_text)
+tokens = model.tokenizer.encode(formatted_text, add_special_tokens=False)
 token_text = [model.tokenizer.decode(t) for t in tokens]
 print(len(token_text))
 
@@ -766,8 +793,8 @@ def create_token_visualization_dot_product(token_text, dot_products, category="b
 html_viz_dot = create_token_visualization_dot_product(
     token_text,
     dot_products,
-    category="uncertainty-estimation",
-    threshold=0.3,
+    category="backtracking",
+    threshold=0.0,
     color="green"
 )
 with open("token_visualization_dot_product.html", "w") as f:
@@ -778,7 +805,7 @@ display(HTML(html_viz_dot))
 
 # %%
 # Compare dot products and cosine similarity for a selected category
-category = "uncertainty-estimation"
+category = "backtracking"
 comparison_df = pd.DataFrame({
     "position": range(len(token_text)),
     "token": token_text,
@@ -818,7 +845,7 @@ text = model.tokenizer.apply_chat_template(
 with model.generate(text, max_new_tokens=256, do_sample=False) as tracer:
     out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=80))
 
 # %%
 wait_idx = 160
@@ -838,7 +865,7 @@ print(partial_input)
 with model.generate(partial_input, max_new_tokens=128, do_sample=False) as tracer:
     out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=80))
 
 # %%
 with model.generate(partial_input, max_new_tokens=128, do_sample=False) as tracer:
@@ -874,6 +901,6 @@ print(acts.shape)
 print(out.shape)
 # print(acts.shape)
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=80))
 
 # %%

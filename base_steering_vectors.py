@@ -530,16 +530,18 @@ del base_model
 gc.collect()
 torch.cuda.empty_cache()
 
-
+# %%
+import textwrap
 # %%
 # model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 
 # %%
-test_prompt = "What is the third tallest building in NYC?"
+test_prompt = "How many prime factors does 1101 have?"
 messages = [
     {"role": "user", "content": test_prompt}
 ]
+
 text = finetune_tokenizer.apply_chat_template(
     messages,
     tokenize=False,
@@ -555,14 +557,16 @@ assert torch.equal(base_tokens, base_tokenizer.encode(base_text, add_special_tok
 # %%
 print(text)
 print(base_text)
+base_text = base_text + "Ok, so the user is asking how many prime factors 1101 has. I need to"
+base_tokens = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
 
 with torch.inference_mode():
-    with model.generate(base_text + "Ok, so the user is asking that I find the third tallest building in NYC. I need to", max_new_tokens=128) as tracer:
+    with model.generate(base_tokens, max_new_tokens=128) as tracer:
         with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
+            model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
         out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
 
 # %%
 del model
@@ -573,9 +577,11 @@ model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cu
 # %%
 # apply 10x backtracking steering vector
 with torch.inference_mode():
-    with model.generate(text, max_new_tokens=128) as tracer:
+    with model.generate(ft_tokens, max_new_tokens=128) as tracer:
         with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 12 * steering_vectors["backtracking"].detach()
+            model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
             out = model.generator.output.save()
 
-print(model.tokenizer.decode(out[0]))
+print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
+
+# %%
