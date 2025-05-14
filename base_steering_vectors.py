@@ -7,6 +7,7 @@ from transformers import AutoTokenizer
 import os
 
 os.environ["HF_TOKEN"] = "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"
+use_base_model = True
 
 # %%
 def load_annotated_chain(file_path):
@@ -139,11 +140,16 @@ def process_chains_iterator(tokenizer, chains):
 
 
 # %%
-chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
-# model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
-base_model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
-finetune_tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+# chains = load_annotated_chain("annotated_chains/all_annotated_chains.json")
+chains = load_annotated_chain("new_annotated_chains/all_annotated_chains.json")
+
+if use_base_model:
+    model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+else:
+    model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+
 base_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B")
+finetune_tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
 
 processed_chains = process_chains_iterator(finetune_tokenizer, chains)
 
@@ -183,29 +189,35 @@ def convert_to_base_tokens(tokens: torch.Tensor):
 # %%
 acc = 0
 with torch.inference_mode():
-    for ft_tokens, indices in tqdm(processed_chains):
+    for ft_tokens, indices in tqdm(processed_chains, total=len(chains)):
         # need to decode tokens back to text, so we can use model.trace
         text = finetune_tokenizer.decode(ft_tokens)
         ft_tokens2 = finetune_tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")[0]
         assert torch.equal(ft_tokens, ft_tokens2)
 
-        base_tokens = convert_to_base_tokens(ft_tokens)
-        base_text = base_tokenizer.decode(base_tokens)
-        base_tokens2 = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
-        if not torch.equal(base_tokens, base_tokens2):
-            print("mismatch, skipping...")
-            continue
+        if use_base_model:
+            base_tokens = convert_to_base_tokens(ft_tokens)
+            base_text = base_tokenizer.decode(base_tokens)
+            base_tokens2 = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
+            if not torch.equal(base_tokens, base_tokens2):
+                print("mismatch, skipping...")
+                continue
+            input_text = base_text
+        else:
+            input_text = text
 
-        with base_model.trace(base_text) as tracer:
+        with model.trace(input_text) as tracer:
             # layer_activations = model.model.embed_tokens.output.save()
-            layer_activations = base_model.model.layers[layer_of_interest].output[0].save()
+            layer_activations = model.model.layers[layer_of_interest].output[0].save()
         torch.cuda.empty_cache()
         for category, index_tuples in indices.items():
             if category not in ["backtracking", "uncertainty-estimation", "initializing", "deduction", "example-testing", "adding-knowledge"]:
-            # if category not in ["backtracking"]:
                 print(f"Found spurious category: {category}, skipping...")
                 continue
-            for start, end in index_tuples:
+            for i, (start, _) in enumerate(index_tuples):
+                # if category == "backtracking" and i > 0:
+                #     # enforce that backtracking vectors are only computed pre-backtracking
+                #     continue
                 # token_segment = tokens[start-1:end+1]
                 # end = start
                 start = start - 12
@@ -259,7 +271,12 @@ torch.cuda.empty_cache()
 
 # %%
 # save steering vectors
-torch.save(steering_vectors, "base_steering_vectors.pt")
+if use_base_model:
+    torch.save(steering_vectors, "base_steering_vectors_new.pt")
+    print("saved base steering vectors to base_steering_vectors_new.pt")
+else:
+    torch.save(steering_vectors, "steering_vectors_new.pt")
+    print("saved finetune steering vectors to steering_vectors_new.pt")
 
 
 # %%
@@ -526,7 +543,7 @@ fig_3d.update_layout(
 fig_3d.show()
 
 # %%
-del base_model
+del model
 gc.collect()
 torch.cuda.empty_cache()
 
@@ -534,10 +551,11 @@ torch.cuda.empty_cache()
 import textwrap
 # %%
 # model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
-model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+# model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 
 # %%
-test_prompt = "How many prime factors does 1101 have?"
+# test_prompt = "How many prime factors does 1101 have?"
+test_prompt = "How many ways are there to shuffle a 31 card deck?"
 messages = [
     {"role": "user", "content": test_prompt}
 ]
@@ -555,23 +573,24 @@ base_text = base_tokenizer.decode(base_tokens)
 assert torch.equal(base_tokens, base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0])
 
 # %%
-print(text)
-print(base_text)
-base_text = base_text + "Ok, so the user is asking how many prime factors 1101 has. I need to"
-base_tokens = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
+# print(text)
+# print(base_text)
+# base_text = base_text + "Ok, so the user is asking how many prime factors 1101 has. I need to"
+# base_tokens = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
 
-with torch.inference_mode():
-    with model.generate(base_tokens, max_new_tokens=128) as tracer:
-        with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
-        out = model.generator.output.save()
+# with torch.inference_mode():
+#     with model.generate(base_tokens, max_new_tokens=128) as tracer:
+#         with model.model.layers.all():
+#             model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
+#         out = model.generator.output.save()
 
-print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
+# print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
+
 
 # %%
-del model
-gc.collect()
-torch.cuda.empty_cache()
+# del model
+# gc.collect()
+# torch.cuda.empty_cache()
 model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 
 # %%
@@ -579,9 +598,153 @@ model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cu
 with torch.inference_mode():
     with model.generate(ft_tokens, max_new_tokens=128) as tracer:
         with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
+            model.model.layers[layer_of_interest].output[0][:] += 10 * steering_vectors["backtracking"].detach()
             out = model.generator.output.save()
 
 print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
 
+# %%
+with torch.inference_mode():
+    with model.trace(tokens) as tracer:
+        layer_activations = model.model.layers[layer_of_interest].output[0].squeeze().save()
+
+print(layer_activations.shape)
+
+# %%
+def create_token_visualization_dot_product(token_text, dot_products, category="backtracking", threshold=0, color="blue"):
+    """
+    Create HTML visualization of tokens highlighted based on dot product.
+    
+    Args:
+        token_text: List of tokens
+        dot_products: Dictionary of dot products
+        category: Which dot product category to use for highlighting
+        threshold: Values below this threshold will be set to zero
+        color: Color for highlighting ("blue", "orange", "red", "green")
+    
+    Returns:
+        HTML string with highlighted tokens
+    """
+    print(len(token_text))
+    print(len(dot_products[category]))
+    # Get the specific category's dot products
+    similarity_values = dot_products[category]
+    
+    # Find maximum absolute dot product for normalization
+    max_abs_value = float(max(abs(similarity_values[30:])))
+    # max_abs_value = 4
+    
+    # Define color RGB values
+    color_map = {
+        "blue": "0,0,255",
+        "orange": "255,165,0",
+        "red": "255,0,0",
+        "green": "0,128,0"
+    }
+    rgb = color_map.get(color, "0,0,255")  # Default to blue if color not found
+    
+    # Create HTML with token highlighting - white background and black text for dark mode
+    html = "<div style='font-family:monospace; line-height:1.5; background-color:white; color:black; padding:10px;'>"
+    
+    for i, token in enumerate(token_text):
+        # Get dot product value
+        dp_value = float(similarity_values[i])
+        
+        # Apply threshold - values below threshold are set to zero
+        if abs(dp_value) < threshold:
+            intensity = 0
+        else:
+            # Normalize to [0,1] for visualization intensity
+            if max_abs_value > 0:
+                intensity = abs(dp_value) / max_abs_value
+            else:
+                intensity = 0
+
+        num_newlines = token.count("\n")
+        if "wait" in token.lower():
+            # add red outline
+            html += f"<span style='background-color:rgba({rgb},{intensity:.3f}); border:2px solid red'>{token}</span>"
+        else:
+            # Create span with background color
+            html += f"<span style='background-color:rgba({rgb},{intensity:.3f})'>{token.replace('\n', '\\n')}</span>"
+        if num_newlines > 0:
+            html += f"<br>" * num_newlines
+    
+    html += "</div>"
+    
+    return html
+
+# %%
+from IPython.display import HTML, display
+import random
+# processed_chains = process_chains_iterator(finetune_tokenizer, chains)
+def format_chain(chain):
+    formatted_input = model.tokenizer.apply_chat_template(
+        [{"role": "user", "content": chain["problem"]}],
+        tokenize=False,
+        add_generation_prompt=True,
+        add_special_tokens=False,
+    )
+    formatted_input += chain["reasoning_chain"]
+    tokenized_input = model.tokenizer.encode(formatted_input, add_special_tokens=False, return_tensors="pt")[0]
+    return tokenized_input
+
+processed_chains = [format_chain(chain) for chain in chains]
+# set seed for reproducibility
+random.seed(42)
+random.shuffle(processed_chains)
+
+print(processed_chains[0])
+
+chain_idx = 0
+
+
+# %%
+# test the iterator, it should return a tokenized text and a dictionary of annotation indices
+tokens = processed_chains[chain_idx]
+token_text = [model.tokenizer.decode(t) for t in tokens]
+
+# get dot products between activations and steering vectors
+dot_products = {}
+
+with torch.inference_mode():
+
+    with model.trace(tokens) as tracer:
+        layer_activations = model.model.layers[layer_of_interest].output[0][0].save()
+
+for category, steering_vector in steering_vectors.items():
+    # Compute dot product between each activation vector and the steering vector
+
+    dot_products[category] = torch.matmul(layer_activations.cpu().float(), steering_vector).float()
+
+# Test the dot product visualization function
+html_viz_dot = create_token_visualization_dot_product(
+    token_text,
+    dot_products,
+    category="backtracking",
+    threshold=0.0,
+    color="green"
+)
+with open("token_visualization_dot_product.html", "w") as f:
+    f.write(html_viz_dot)
+
+# Display in the interactive window
+display(HTML(html_viz_dot))
+
+chain_idx += 1
+# %%
+steering_vectors
+# %%
+import torch
+base_steering_vectors = torch.load("base_steering_vectors_new.pt")
+finetune_steering_vectors = torch.load("steering_vectors_new.pt")
+
+
+# %%
+finetune_steering_vectors["backtracking"] = finetune_steering_vectors["backtracking"] / finetune_steering_vectors["backtracking"].norm()
+base_steering_vectors["backtracking"] = base_steering_vectors["backtracking"] / base_steering_vectors["backtracking"].norm()
+
+
+# %%
+finetune_steering_vectors["backtracking"].dot(base_steering_vectors["backtracking"])
 # %%

@@ -3,7 +3,7 @@ from nnsight import LanguageModel
 import torch
 
 device = "cuda"
-use_base = True
+use_base = False
 torch.set_grad_enabled(False)
 
 import os
@@ -36,7 +36,9 @@ def convert_to_base_tokens(tokens: torch.Tensor):
     return tokens
 
 # %%
-steering_vectors = torch.load("base_steering_vectors.pt")
+steering_vectors = torch.load("base_steering_vectors_new.pt")
+# steering_vectors = torch.load("ft_steering_vectors.pt")
+steering_vectors = {k: torch.randn(v.shape) for k, v in steering_vectors.items()}
 for key, vector in steering_vectors.items():
     steering_vectors[key] = vector / vector.norm()
     print(steering_vectors[key].shape)
@@ -53,7 +55,7 @@ prompt = "What is 32^2?"
 # strengths = [0, 5, 10, 15, 20, 25, 30]
 strengths = [0, 1, 2, 3, 4, 5, 6]
 
-def test_confidence(prompt, my_steering_vector, use_noise=False):
+def extract_thinking_text(prompt):
     messages = [
         {"role": "user", "content": prompt}
     ]
@@ -77,9 +79,11 @@ def test_confidence(prompt, my_steering_vector, use_noise=False):
         return None
 
     thinking_text = output_text.split("</think>")[0]
-    thinking_text += "\nI should estimate my confidence in this answer. My confidence level is"
-    # print(thinking_text)
+    return thinking_text
 
+def test_confidence(thinking_text, my_steering_vector, use_noise=False):
+    # print(thinking_text)
+    thinking_text += "\nI should estimate my confidence in this answer. My confidence level is"
     logit_diffs = []
 
     if use_base:
@@ -120,6 +124,9 @@ def test_confidence(prompt, my_steering_vector, use_noise=False):
 
 # test_confidence(prompt)
 # %%
+from tqdm import tqdm
+from collections import defaultdict
+
 prompts = [
     "Is 111 a prime number?",
     "What is 32^2?",
@@ -134,22 +141,37 @@ prompts = [
     "If a car travels at 60 miles per hour, how far will it travel in 2.5 hours?"
 ]
 
-category_logit_diffs = []
-for steering_category in steering_vectors.keys():
-    all_logit_diffs = []
-    for prompt in prompts:
-        logit_diffs = test_confidence(prompt, steering_vectors[steering_category])
-        all_logit_diffs.append(logit_diffs)
-    category_logit_diffs.append(all_logit_diffs)
+category_logit_diffs = defaultdict(list)
+for prompt in tqdm(prompts):
+    thinking_text = None
+    tries = 0
+    while thinking_text is None:
+        thinking_text = extract_thinking_text(prompt)
+        tries += 1
+        if tries > 10:
+            print(f"Failed to extract thinking text for prompt: {prompt}")
+            break
+
+    if thinking_text is None:
+        continue
+
+    for steering_category in steering_vectors.keys():
+        all_logit_diffs = []
+        logit_diffs = test_confidence(thinking_text, steering_vectors[steering_category])
+        category_logit_diffs[steering_category].append(logit_diffs)
     
 # %%
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+import plotly.express as px
 
 categories = list(steering_vectors.keys())
 fig = make_subplots(rows=2, cols=3, subplot_titles=categories)
 
-for idx, (steering_category, all_logit_diffs) in enumerate(zip(steering_vectors.keys(), category_logit_diffs)):
+colors = px.colors.qualitative.Dark24
+color_map = {prompt: colors[i % len(colors)] for i, prompt in enumerate(prompts)}
+
+for idx, (steering_category, all_logit_diffs) in enumerate(category_logit_diffs.items()):
     row = idx // 3 + 1
     col = idx % 3 + 1
     for i, logit_diff in enumerate(all_logit_diffs):
@@ -161,6 +183,7 @@ for idx, (steering_category, all_logit_diffs) in enumerate(zip(steering_vectors.
                 y=logit_diff,
                 mode='lines',
                 name=prompts[i],
+                line=dict(color=color_map[prompts[i]]),
                 showlegend=(idx == 0)
             ),
             row=row, col=col
@@ -173,7 +196,7 @@ for row in [1, 2]:
 # apply y-axis range to other subplots
 for row in [1, 2]:
     for col in [1, 2, 3]:
-        fig.update_yaxes(range=[-2, 5], row=row, col=col)
+        fig.update_yaxes(range=[-5, 12], row=row, col=col)
 # move legend below plots
 fig.update_layout(
     height=800,
@@ -188,13 +211,19 @@ fig.update_layout(
     )
 )
 # save png
+# save without kaleido
 fig.write_image("confidence_steering.png")
 fig.show()
 
 # %%
+from tqdm import tqdm
+
 noise_logit_diffs = []
-for prompt in prompts:
-    logit_diffs = test_confidence(prompt, None, use_noise=True)
+for prompt in tqdm(prompts):
+    thinking_text = extract_thinking_text(prompt)
+    if thinking_text is None:
+        continue
+    logit_diffs = test_confidence(thinking_text, None, use_noise=True)
     noise_logit_diffs.append(logit_diffs)
 
 # %%
@@ -228,5 +257,62 @@ fig_noise.update_layout(
 )
 fig_noise.update_yaxes(range=[-2, 5])
 fig_noise.show()
+
+# %%
+# Random directions experiment
+delta = next(iter(steering_vectors.values())).shape
+random_dirs = [torch.randn_like(next(iter(steering_vectors.values()))) for _ in range(25)]
+random_dirs = [v / v.norm() for v in random_dirs]
+
+random_dir_logit_diffs = defaultdict(list)
+for prompt in tqdm(prompts[:]):
+    thinking_text = extract_thinking_text(prompt)
+    if thinking_text is None:
+        continue
+    for idx, vec in enumerate(random_dirs):
+        random_dir_logit_diffs[idx].append(test_confidence(thinking_text, vec))
+
+fig_rand = make_subplots(rows=5, cols=5, subplot_titles=[f"random_{i}" for i in range(25)])
+for idx, all_logit_diffs in random_dir_logit_diffs.items():
+    row = idx // 5 + 1
+    col = idx % 5 + 1
+    for j, logit_diff in enumerate(all_logit_diffs):
+        if logit_diff is None:
+            continue
+        fig_rand.add_trace(
+            go.Scatter(
+                x=strengths,
+                y=logit_diff,
+                mode='lines',
+                name=prompts[j],
+                line=dict(color=color_map[prompts[j]]),
+                showlegend=(idx == 0)
+            ),
+            row=row, col=col
+        )
+
+for r in range(1,5):
+    for c in range(1,6):
+        fig_rand.update_xaxes(showticklabels=False, row=r, col=c)
+for c in range(1,6):
+    fig_rand.update_xaxes(title_text='Steering Strength', row=5, col=c)
+for r in range(1,6):
+    fig_rand.update_yaxes(title_text='Logit Diff', range=[0, 12], row=r, col=1)
+for r in range(1,6):
+    for c in range(1,6):
+        fig_rand.update_yaxes(range=[-5, 12], row=r, col=c)
+fig_rand.update_layout(
+    height=800,
+    width=900,
+    title_text='Effect of Steering Strength on Confidence Estimate (Random Directions)',
+    legend=dict(
+        orientation='h',
+        yanchor='bottom',
+        y=-0.6,
+        xanchor='center',
+        x=0.3
+    )
+)
+fig_rand.show()
 
 # %%
