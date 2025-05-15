@@ -547,61 +547,63 @@ del model
 gc.collect()
 torch.cuda.empty_cache()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # %%
+import torch
 import textwrap
-# %%
-# model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+from nnsight import LanguageModel
+import json
+
+
+torch.set_grad_enabled(False)
+
+steering_vectors = torch.load("base_steering_vectors.pt")
+steering_vectors = {k: v / v.norm() for k, v in steering_vectors.items()}
+
+model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
+finetune_tokenizer = model.tokenizer
 # model = LanguageModel("meta-llama/Llama-3.1-8B", device_map="cuda", torch_dtype=torch.bfloat16)
 
-# %%
-# test_prompt = "How many prime factors does 1101 have?"
-test_prompt = "How many ways are there to shuffle a 31 card deck?"
-messages = [
-    {"role": "user", "content": test_prompt}
-]
 
-text = finetune_tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True,
-    add_special_tokens=False,
-)
-ft_tokens = finetune_tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")[0]
-base_tokens = convert_to_base_tokens(ft_tokens)
-base_text = base_tokenizer.decode(base_tokens)
+with open("annotated_chains/all_annotated_chains.json", "r") as f:
+    chains = json.load(f)
 
-assert torch.equal(base_tokens, base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0])
+    from IPython.display import HTML, display
+import random
+# processed_chains = process_chains_iterator(finetune_tokenizer, chains)
+def format_chain(chain):
+    formatted_input = model.tokenizer.apply_chat_template(
+        [{"role": "user", "content": chain["problem"]}],
+        tokenize=False,
+        add_generation_prompt=True,
+        add_special_tokens=False,
+    )
+    formatted_input += chain["reasoning_chain"]
+    tokenized_input = model.tokenizer.encode(formatted_input, add_special_tokens=False, return_tensors="pt")[0]
+    return tokenized_input
 
-# %%
-# print(text)
-# print(base_text)
-# base_text = base_text + "Ok, so the user is asking how many prime factors 1101 has. I need to"
-# base_tokens = base_tokenizer.encode(base_text, add_special_tokens=False, return_tensors="pt")[0]
+processed_chains = [format_chain(chain) for chain in chains]
+# set seed for reproducibility
+random.seed(42)
+random.shuffle(processed_chains)
 
-# with torch.inference_mode():
-#     with model.generate(base_tokens, max_new_tokens=128) as tracer:
-#         with model.model.layers.all():
-#             model.model.layers[layer_of_interest].output[0][:] += 5 * steering_vectors["backtracking"].detach()
-#         out = model.generator.output.save()
+layer_of_interest = 10
 
-# print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
-
-
-# %%
-# del model
-# gc.collect()
-# torch.cuda.empty_cache()
-model = LanguageModel("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", device_map="cuda", torch_dtype=torch.bfloat16)
-
-# %%
-# apply 10x backtracking steering vector
-with torch.inference_mode():
-    with model.generate(ft_tokens, max_new_tokens=128) as tracer:
-        with model.model.layers.all():
-            model.model.layers[layer_of_interest].output[0][:] += 10 * steering_vectors["backtracking"].detach()
-            out = model.generator.output.save()
-
-print(textwrap.fill(model.tokenizer.decode(out[0]), width=40, drop_whitespace=False, replace_whitespace=False))
+tokens = processed_chains[0]
 
 # %%
 with torch.inference_mode():
@@ -675,24 +677,6 @@ def create_token_visualization_dot_product(token_text, dot_products, category="b
     return html
 
 # %%
-from IPython.display import HTML, display
-import random
-# processed_chains = process_chains_iterator(finetune_tokenizer, chains)
-def format_chain(chain):
-    formatted_input = model.tokenizer.apply_chat_template(
-        [{"role": "user", "content": chain["problem"]}],
-        tokenize=False,
-        add_generation_prompt=True,
-        add_special_tokens=False,
-    )
-    formatted_input += chain["reasoning_chain"]
-    tokenized_input = model.tokenizer.encode(formatted_input, add_special_tokens=False, return_tensors="pt")[0]
-    return tokenized_input
-
-processed_chains = [format_chain(chain) for chain in chains]
-# set seed for reproducibility
-random.seed(42)
-random.shuffle(processed_chains)
 
 print(processed_chains[0])
 
@@ -705,22 +689,30 @@ tokens = processed_chains[chain_idx]
 token_text = [model.tokenizer.decode(t) for t in tokens]
 
 # get dot products between activations and steering vectors
-dot_products = {}
+dot_products_raw = {}
+dot_products_centered = {}
 
 with torch.inference_mode():
 
     with model.trace(tokens) as tracer:
         layer_activations = model.model.layers[layer_of_interest].output[0][0].save()
 
+mean_act = layer_activations[0:].mean(dim=0)
+
 for category, steering_vector in steering_vectors.items():
     # Compute dot product between each activation vector and the steering vector
 
-    dot_products[category] = torch.matmul(layer_activations.cpu().float(), steering_vector).float()
+    # dot_products[category] = torch.matmul(layer_activations.cpu().float(), steering_vector).float()
+    dot_products_raw[category] = torch.matmul(layer_activations.cpu().float(), steering_vector).float()
+    dot_products_centered[category] = torch.matmul(
+        (layer_activations - mean_act).cpu().float(),
+        steering_vector.cpu().float()
+    )
 
 # Test the dot product visualization function
 html_viz_dot = create_token_visualization_dot_product(
     token_text,
-    dot_products,
+    dot_products_raw,
     category="backtracking",
     threshold=0.0,
     color="green"
@@ -730,6 +722,19 @@ with open("token_visualization_dot_product.html", "w") as f:
 
 # Display in the interactive window
 display(HTML(html_viz_dot))
+
+html_viz_dot_centered = create_token_visualization_dot_product(
+    token_text,
+    dot_products_centered,
+    category="backtracking",
+    threshold=0.0,
+    color="green"
+)   
+with open("token_visualization_dot_product_centered.html", "w") as f:
+    f.write(html_viz_dot_centered)
+
+# Display in the interactive window
+display(HTML(html_viz_dot_centered))
 
 chain_idx += 1
 # %%
