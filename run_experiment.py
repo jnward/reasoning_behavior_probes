@@ -15,8 +15,8 @@ num_prompts = 10
 layer_of_interest = 10
 max_new_tokens = 128
 seed = 43
-# intervention_types = ["backtracking", "deduction", "initializing", "noise", "overall_mean", "self"]
-intervention_types = ["noise"]
+intervention_types = ["backtracking", "deduction", "initializing", "noise", "overall_mean", "self", "noise"]
+# intervention_types = ["noise"]
 def load_random_prompts(file_path, num_prompts):
     with open(file_path, "r") as f:
         all_prompts = json.load(f)
@@ -75,6 +75,8 @@ def run_experiment():
     # Generate steering vectors
     print("Generating steering vectors...")
     steering_vectors, overall_mean, model = generate_steering_vectors("annotated_chains/all_annotated_chains.json", layer_of_interest)
+    steering_vectors = torch.load("base_steering_vectors.pt")
+    steering_vectors = {k: v / v.norm(dim=-1, keepdim=True) for k, v in steering_vectors.items()}
     
     # Prepare intervention vectors
     intervention_vectors = steering_vectors.copy()
