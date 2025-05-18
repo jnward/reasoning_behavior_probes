@@ -663,7 +663,9 @@ def create_token_visualization_dot_product(token_text, dot_products, category="b
                 intensity = 0
 
         num_newlines = token.count("\n")
-        if "wait" in token.lower():
+        if token == "<think>" or token == "</think>":
+            html += f"<span style='background-color:rgba({rgb},{intensity:.3f})'>{token.replace('<','&lt;').replace('>','&gt;')}</span>"
+        elif "wait" in token.lower():
             # add red outline
             html += f"<span style='background-color:rgba({rgb},{intensity:.3f}); border:2px solid red'>{token}</span>"
         else:
@@ -737,8 +739,43 @@ with open("token_visualization_dot_product_centered.html", "w") as f:
 display(HTML(html_viz_dot_centered))
 
 chain_idx += 1
+
+
+
+
+
 # %%
-steering_vectors
+import textwrap
+
+prompt = "What is the largest prime factor of 1011?"
+messages = [
+    {"role": "user", "content": prompt}
+]
+text = model.tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+    add_special_tokens=False,
+)
+# get baseline
+tokens = model.tokenizer.encode(text, add_special_tokens=False, return_tensors="pt")
+with model.generate(tokens, max_new_tokens=128) as gen:
+    out = model.generator.output.save()
+
+baseline = model.tokenizer.decode(out[0])
+print(textwrap.fill(baseline, width=40, drop_whitespace=False, replace_whitespace=False))
+
+# %%
+# apply 5x backtracking steering vector
+with model.generate(tokens, max_new_tokens=128) as tracer:
+    with model.model.layers.all():
+        model.model.layers[layer_of_interest].output[0][:] += 0 * steering_vectors["backtracking"].detach()
+        out = model.generator.output.save()
+
+print(model.tokenizer.decode(out[0]))
+# print(textwrap.fill(model.tokenizer.decode(out[0]), width=None, drop_whitespace=False, replace_whitespace=False))
+
+
 # %%
 import torch
 base_steering_vectors = torch.load("base_steering_vectors_new.pt")
@@ -752,4 +789,7 @@ base_steering_vectors["backtracking"] = base_steering_vectors["backtracking"] / 
 
 # %%
 finetune_steering_vectors["backtracking"].dot(base_steering_vectors["backtracking"])
+# %%
+
+
 # %%

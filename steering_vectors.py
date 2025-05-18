@@ -4,6 +4,7 @@ import torch
 from nnsight import LanguageModel
 import numpy as np
 import textwrap
+
 # %%
 def load_annotated_chain(file_path):
     """Load annotated chains from a JSON file"""
