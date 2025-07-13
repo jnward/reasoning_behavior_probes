@@ -670,7 +670,8 @@ def create_token_visualization_dot_product(token_text, dot_products, category="b
             html += f"<span style='background-color:rgba({rgb},{intensity:.3f}); border:2px solid red'>{token}</span>"
         else:
             # Create span with background color
-            html += f"<span style='background-color:rgba({rgb},{intensity:.3f})'>{token.replace('\n', '\\n')}</span>"
+            token_display = token.replace('\n', '\\n')
+            html += f"<span style='background-color:rgba({rgb},{intensity:.3f})'>{token_display}</span>"
         if num_newlines > 0:
             html += f"<br>" * num_newlines
     
@@ -682,7 +683,7 @@ def create_token_visualization_dot_product(token_text, dot_products, category="b
 
 print(processed_chains[0])
 
-chain_idx = 0
+chain_idx = 1
 
 
 # %%

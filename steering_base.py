@@ -153,17 +153,22 @@ magnitudes = intervention_magnitudes
 x = np.arange(len(magnitudes))
 width = 0.2
 fig, ax = plt.subplots(dpi=200)
-ax.bar(x - 1.5*width, bb_results_mean, width, yerr=bb_results_std, label='Base model + base steering vector (always zero)')
-ax.bar(x - 0.5*width, bf_results_mean, width, yerr=bf_results_std, label='Base model + reasoning steering vector (always zero)')
-ax.bar(x + 0.5*width, fb_results_mean, width, yerr=fb_results_std, label='Reasoning model + base steering vector')
-ax.bar(x + 1.5*width, ff_results_mean, width, yerr=ff_results_std, label='Reasoning model + reasoning steering vector')
+ax.bar(x - 1.5*width, bb_results_mean, width, yerr=bb_results_std, label='Base model + base steering vector (always zero)', 
+       error_kw={'ecolor': 'gray', 'capsize': 2.5, 'capthick': 0.8, 'elinewidth': 0.8})
+ax.bar(x - 0.5*width, bf_results_mean, width, yerr=bf_results_std, label='Base model + reasoning steering vector (always zero)',
+       error_kw={'ecolor': 'gray', 'capsize': 2.5, 'capthick': 0.8, 'elinewidth': 0.8})
+ax.bar(x + 0.5*width, fb_results_mean, width, yerr=fb_results_std, label='Reasoning model + base steering vector',
+       error_kw={'ecolor': 'gray', 'capsize': 2.5, 'capthick': 0.8, 'elinewidth': 0.8})
+ax.bar(x + 1.5*width, ff_results_mean, width, yerr=ff_results_std, label='Reasoning model + reasoning steering vector',
+       error_kw={'ecolor': 'gray', 'capsize': 2.5, 'capthick': 0.8, 'elinewidth': 0.8})
 ax.set_xticks(x)
 ax.set_xticklabels(magnitudes)
 ax.set_xlabel('Steering Magnitude')
-ax.set_ylabel('"Wait" token proportion')
+ax.set_ylabel('"Wait" token %')
 ax.set_title('Steering Effect Comparison')
 ax.set_ylim(0, 75)
 ax.legend()
+plt.savefig('fig3_steering_effect.pdf', format='pdf', bbox_inches='tight')
 plt.show()
 
 # %%
